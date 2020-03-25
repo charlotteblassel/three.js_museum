@@ -18,7 +18,7 @@ export default class Piano
                     {
     
                         this.piano = gltf.scene.children[0]
-                        this.piano.scale.set(4, 4, 4)
+                        this.piano.scale.set(0.14, 0.14, 0.14)
                         this.group.add(this.piano)
                     }
             }

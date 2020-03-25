@@ -4,7 +4,7 @@ import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockContro
 import Walls from './scripts/Walls.js'
 import Doors from './scripts/Doors.js'
 import Grounds from './scripts/Grounds.js'
-import Tambourin from './scripts/TambourinTry.js'
+import Tambourin from './scripts/Tambourin.js'
 import Guitar from './scripts/Guitar.js'
 import Bell from './scripts/Bell.js'
 import Piano from './scripts/Piano.js'
@@ -244,23 +244,32 @@ museumGroup.add(sideLeftWallHeight.group)
 
 
 const tambourin = new Tambourin()
-tambourin.group.position.y = 3
+tambourin.group.position.y = 0.15
+tambourin.group.position.z = -5
 scene.add(tambourin.group)
 
 
 const guitar = new Guitar()
+guitar.group.position.x = 1
+guitar.group.position.z = -2
 scene.add(guitar.group)
 
 const bell = new Bell()
+bell.group.position.x = -2
 scene.add(bell.group)
 
 const piano = new Piano()
+piano.group.position.x = 3
 scene.add(piano.group)
 
 const xylophone = new Xylophone()
+xylophone.group.position.z = -3
+xylophone.group.position.y = -0.2
 scene.add(xylophone.group)
 
 const bassviolin = new Bassviolin()
+bassviolin.group.position.y = 0.8
+bassviolin.group.position.x = -1
 scene.add(bassviolin.group)
 
 /**

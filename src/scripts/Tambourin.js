@@ -18,7 +18,7 @@ export default class Tambourin
                     {
     
                         this.tambourin = gltf.scene.children[0]
-                        this.tambourin.scale.set(0.2, 0.2, 0.2)
+                        this.tambourin.scale.set(0.3, 0.3, 0.3)
                         this.group.add(this.tambourin)
                     }
             }
