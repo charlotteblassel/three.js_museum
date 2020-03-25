@@ -15,10 +15,10 @@ window.addEventListener(
 //         guitareSound1.play()
 //         if(_event.code === 'KeyE'){
 //             console.log(guitareSound1)
-//         }  
+//         }
 //         if(_event.code === 'KeyR'){
 //             guitareSound2.play()
-//         }  
+//         }
 //     }
 // )
 
@@ -35,7 +35,7 @@ import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
 import Bassviolin from './scripts/Bassviolin.js'
 
-
+//import trySounds from "../static/sounds/quack-sound-effect.mp3"
 
 /**
  * Sizes+
@@ -284,14 +284,6 @@ scene.add(piano.group)
 const xylophone = new Xylophone()
 scene.add(xylophone.group)
 
-const maracas = new Maracas()
-scene.add(maracas.group)
-
-const violin = new Violin()
-scene.add(violin.group)
-console.log(violin)
-console.log(violin.group.position)
-
 const bassviolin = new Bassviolin()
 scene.add(bassviolin.group)
 
@@ -390,4 +382,3 @@ const loop = () =>
     renderer.render(scene, camera)
 }
 loop()
-
