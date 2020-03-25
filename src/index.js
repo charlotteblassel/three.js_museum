@@ -141,7 +141,7 @@ const outsideGround = new Grounds(30, 30, 0, 0, 0, Math.PI * -0.5, 0)
 museumGroup.add(outsideGround.group)
 
 // Doors
-const leftDoor = new Doors(1, 2, 0.1, -0.5, 1, 3)
+const leftDoor = new Doors(2.2, 2.2, -0.4, 1, 3)
 museumGroup.add(leftDoor.group)
 
 // Walls
@@ -238,8 +238,10 @@ console.log(tambourin.group)
  */
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(sizes.width, sizes.height)
+renderer.shadowMap.enabled = true
 renderer.setPixelRatio(window.devicePixelRatio)
 document.body.appendChild(renderer.domElement)
+renderer.render(scene, camera)
 
 /**
  * Camera Controll
@@ -282,8 +284,8 @@ const loop = () =>
     const time = performance.now();
     const delta = (time - prevTime) / 1000;
 
-    velocity.x -= velocity.x * 20.0 * delta;
-    velocity.z -= velocity.z * 20.0 * delta;
+    velocity.x -= velocity.x * 10.0 * delta;
+    velocity.z -= velocity.z * 10.0 * delta;
 
     /**
      *   Creat a variable to have the axe of direction  exp : if direction x === -1 the locker go left
