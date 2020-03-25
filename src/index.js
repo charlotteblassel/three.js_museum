@@ -4,7 +4,7 @@ import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockContro
 import Walls from './scripts/Walls.js'
 import Doors from './scripts/Doors.js'
 import Grounds from './scripts/Grounds.js'
-import Tambourin from "./scripts/tambourin.js"
+import Tambourin from "./scripts/Tambourin.js"
 import Guitar from "./scripts/Guitar.js"
 
 /**
