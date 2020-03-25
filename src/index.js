@@ -315,7 +315,6 @@ const loop = () =>
 
     if(camera.position.x > 3){
         console.log("duck")
-    }
     
 
     // Render

@@ -4,7 +4,7 @@ Piano :
     • Quand tu approches, jouer du piano avec le clavier sans animation au début
     • Equalizer ?
 
-Drumkit :
+Drumkit (by Peter Simcoe):
     • From scratch ?
     • 9 touches avec animations surbrillance comme un vrai drumkit
     • Si possible d'autres features
