@@ -11,8 +11,12 @@ import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
 import Bassviolin from './scripts/Bassviolin.js'
 
+
+
+import trySounds from "../static/sounds/quack-sound-effect.mp3"
+
 /**
- * Sizes
+ * Sizes+
  */
 const sizes = {}
 sizes.width = window.innerWidth
@@ -268,6 +272,13 @@ console.log(violin.group.position)
 
 const bassviolin = new Bassviolin()
 scene.add(bassviolin.group)
+
+/**
+ * Sound
+ */
+
+
+
 
 /**
  * Renderer

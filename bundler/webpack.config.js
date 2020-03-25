@@ -60,7 +60,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(wav)$/,
+                test: /\.(mp3)$/,
                 use:
                 [
                     {
