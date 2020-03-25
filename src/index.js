@@ -285,6 +285,15 @@ import piano5 from "../static/sounds/piano/piano5.mp3"
 import piano6 from "../static/sounds/piano/piano6.mp3"
 import piano7 from "../static/sounds/piano/piano7.mp3"
 
+
+import guitar1 from "../static/sounds/guitare/guitare1.mp3"
+import guitar2 from "../static/sounds/guitare/guitare1.mp3"
+import guitar3 from "../static/sounds/guitare/guitare1.mp3"
+import guitar4 from "../static/sounds/guitare/guitare1.mp3"
+import guitar5 from "../static/sounds/guitare/guitare1.mp3"
+import guitar6 from "../static/sounds/guitare/guitare1.mp3"
+import guitar7 from "../static/sounds/guitare/guitare1.mp3"
+
 const pianoSound1 = new Audio(piano1)
 const pianoSound2 = new Audio(piano2)
 const pianoSound3 = new Audio(piano3)
@@ -292,6 +301,16 @@ const pianoSound4 = new Audio(piano4)
 const pianoSound5 = new Audio(piano5)
 const pianoSound6 = new Audio(piano6)
 const pianoSound7 = new Audio(piano7)
+
+const guitarSound1 = new Audio(guitar1)
+const guitarSound2 = new Audio(guitar2)
+const guitarSound3 = new Audio(guitar3)
+const guitarSound4 = new Audio(guitar4)
+const guitarSound5 = new Audio(guitar5)
+const guitarSound6 = new Audio(guitar6)
+const guitarSound7 = new Audio(guitar7)
+
+
 
 
 const gay = () =>{
@@ -301,43 +320,96 @@ const gay = () =>{
             if(_event.code === 'KeyE'){
                 pianoSound1.play()
                 pianoSound1.currentTime=0
-                console.log("pte")
+                
             }
             if(_event.code === 'KeyR'){
                 pianoSound2.play()
                 pianoSound2.currentTime=0
-                console.log("pte")
+                
             }
             if(_event.code === 'KeyT'){
                 pianoSound3.play()
                 pianoSound3.currentTime=0
-                console.log("pte")
+                
             }
             if(_event.code === 'KeyY'){
                 pianoSound4.play()
                 pianoSound4.currentTime=0
-                console.log("pte")
+                
             }
             if(_event.code === 'KeyU'){
                 pianoSound5.play()
                 pianoSound5.currentTime=0
-                console.log("pte")
+                
             }
             if(_event.code === 'KeyI'){
                 pianoSound6.play()
                 pianoSound6.currentTime=0
-                console.log("pte")
+                
             }
             if(_event.code === 'KeyO'){
                 pianoSound7.play()
                 pianoSound7.currentTime=0
-                console.log("pte")
+                
             }
         }
     )
     
 }
 
+
+
+const pédé = () =>{
+    window.addEventListener(
+        'keypress',
+        (_event)=>{
+            if(_event.code === 'KeyE'){
+                guitarSound1.play()
+                guitarSound1.currentTime=0
+                
+            }
+            if(_event.code === 'KeyR'){
+                guitarSound2.play()
+                guitarSound2.currentTime=0
+                
+            }
+            if(_event.code === 'KeyT'){
+                guitarSound3.play()
+                guitarSound3.currentTime=0
+                
+            }
+            if(_event.code === 'KeyY'){
+                guitarSound4.play()
+                guitarSound4.currentTime=0
+                
+            }
+            if(_event.code === 'KeyU'){
+                guitarSound5.play()
+                guitarSound5.currentTime=0
+                
+            }
+            if(_event.code === 'KeyI'){
+                guitarSound6.play()
+                guitarSound6.currentTime=0
+                
+            }
+            if(_event.code === 'KeyO'){
+                guitarSound7.play()
+                guitarSound7.currentTime=0
+                
+            }
+        }
+    )
+    
+}
+
+const tryIt = () =>{
+    if(camera.position.x > 5){
+        gay()
+    }else{
+        pédé()
+    }
+}
 
 /**
  * Renderer
@@ -414,16 +486,13 @@ const loop = () =>
     /**
      *  Aplicate the controls and velocity together
     */
-    controls.moveRight( - velocity.x * delta);
-    controls.moveForward( - velocity.z * delta);
+    controls.moveRight( - velocity.x * delta)
+    controls.moveForward( - velocity.z * delta)
 
     prevTime = time;
 
-    if(camera.position.x > 5){
-        gay()
-        console.log("pute")
-    }
-
+   
+    tryIt()
     // Render
     renderer.render(scene, camera)
 }
