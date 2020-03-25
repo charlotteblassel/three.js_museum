@@ -228,7 +228,7 @@ museumGroup.add(sideLeftWallHeight.group)
 
 
 const tambourin = new Tambourin()
-tambourin.group.position.y = -0.9
+tambourin.group.position.y = 2
 scene.add(tambourin.group)
 console.log(tambourin.group)
 
