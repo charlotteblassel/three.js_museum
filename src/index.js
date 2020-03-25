@@ -11,7 +11,7 @@ import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
 import Bassviolin from './scripts/Bassviolin.js'
 
-import trySounds from "../static/sounds/quack-sound-effect.mp3"
+//import trySounds from '../static/sounds/quack-sound-effect.mp3'
 
 /**
  * Sizes+
@@ -242,7 +242,6 @@ museumGroup.add(sideLeftWallHeight.group)
  * Music instrument
  */
 
-
 const tambourin = new Tambourin()
 tambourin.group.position.y = 0.15
 tambourin.group.position.z = -5
@@ -278,21 +277,21 @@ scene.add(bassviolin.group)
 
 // AUDIO
 
-import piano1 from "../static/sounds/piano/piano1.mp3"
-import piano2 from "../static/sounds/piano/piano2.mp3"
-import piano3 from "../static/sounds/piano/piano3.mp3"
-import piano4 from "../static/sounds/piano/piano4.mp3"
-import piano5 from "../static/sounds/piano/piano5.mp3"
-import piano6 from "../static/sounds/piano/piano6.mp3"
-import piano7 from "../static/sounds/piano/piano7.mp3"
+// import piano1 from "../static/sounds/piano/piano1.mp3"
+// import piano2 from "../static/sounds/piano/piano2.mp3"
+// import piano3 from "../static/sounds/piano/piano3.mp3"
+// import piano4 from "../static/sounds/piano/piano4.mp3"
+// import piano5 from "../static/sounds/piano/piano5.mp3"
+// import piano6 from "../static/sounds/piano/piano6.mp3"
+// import piano7 from "../static/sounds/piano/piano7.mp3"
 
-const pianoSound1 = new Audio(piano1)
-const pianoSound2 = new Audio(piano2)
-const pianoSound3 = new Audio(piano3)
-const pianoSound4 = new Audio(piano4)
-const pianoSound5 = new Audio(piano5)
-const pianoSound6 = new Audio(piano6)
-const pianoSound7 = new Audio(piano7)
+// const pianoSound1 = new Audio(piano1)
+// const pianoSound2 = new Audio(piano2)
+// const pianoSound3 = new Audio(piano3)
+// const pianoSound4 = new Audio(piano4)
+// const pianoSound5 = new Audio(piano5)
+// const pianoSound6 = new Audio(piano6)
+// const pianoSound7 = new Audio(piano7)
 
 window.addEventListener(
     'keypress',
