@@ -1,3 +1,27 @@
+// AUDIO
+
+import guitare from "./scripts/guitare.mp3"
+
+window.addEventListener(
+'click',
+()=>{
+    guitare.play()
+}
+)
+
+// window.addEventListener(
+//     'keypress',
+//     (_event)=>{
+//         guitareSound1.play()
+//         if(_event.code === 'KeyE'){
+//             console.log(guitareSound1)
+//         }  
+//         if(_event.code === 'KeyR'){
+//             guitareSound2.play()
+//         }  
+//     }
+// )
+
 import './style/main.styl'
 import * as THREE from 'three'
 import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockControls.js'
@@ -333,3 +357,4 @@ const loop = () =>
     renderer.render(scene, camera)
 }
 loop()
+
