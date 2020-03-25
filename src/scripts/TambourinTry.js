@@ -1,8 +1,5 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import metalSource from '../assets/metal/metalSkin.jpg'
-import tissuSource from '../assets/tissus/tissusSkin.jpg'
-import woodSource from '../assets/wood/wood.jpg'
 
 
 export default class Tambourin

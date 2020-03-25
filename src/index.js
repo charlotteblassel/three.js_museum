@@ -28,11 +28,19 @@ import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockContro
 import Walls from './scripts/Walls.js'
 import Doors from './scripts/Doors.js'
 import Grounds from './scripts/Grounds.js'
-import Tambourin from "./scripts/TambourinTry.js"
-import Guitar from "./scripts/Guitar.js"
+import Tambourin from './scripts/TambourinTry.js'
+import Guitar from './scripts/Guitar.js'
+import Bell from './scripts/Bell.js'
+import Piano from './scripts/Piano.js'
+import Xylophone from './scripts/Xylophone'
+import Bassviolin from './scripts/Bassviolin.js'
+
+
+
+import trySounds from "../static/sounds/quack-sound-effect.mp3"
 
 /**
- * Sizes
+ * Sizes+
  */
 const sizes = {}
 sizes.width = window.innerWidth
@@ -121,13 +129,13 @@ const onKeyUp = ( _event ) =>{
     {
         moveRight = false;
     }
-    if (_event.key === ' '  || _event.code === 'space')
+       if (_event.key === ' '  || _event.code === 'space')
     {
-        camera.position.y += 1
+        camera.position.y += 3
     }
     if (_event.key === 'Control' ||  _event.code === 'ControlLeft')
     {
-        camera.position.y -= 1
+        camera.position.y -= 3
     }
 }
 
@@ -216,7 +224,7 @@ const backWallThree = new Walls(2, 2, 0.1, 1.9, 1, -12.80, 0)
 museumGroup.add(backWallThree.group)
 const backWallFour = new Walls(2, 2, 0.1, 3.9, 1, -12.80, 0)
 museumGroup.add(backWallFour.group)
-const backWallFive = new Walls(2, 2, 0.1, 0, 1, -12.80, 0) 
+const backWallFive = new Walls(2, 2, 0.1, 0, 1, -12.80, 0)
 museumGroup.add(backWallFive.group)
 // const upFrontWall = new Walls(6, 2, 0.1, 0, 3, 3, 0)
 // museumGroup.add(upFrontWall.group)
@@ -257,7 +265,7 @@ museumGroup.add(sideLeftWallHeight.group)
 
 
 /**
- * Music instrument 
+ * Music instrument
  */
 
 
@@ -268,6 +276,33 @@ scene.add(tambourin.group)
 
 const guitar = new Guitar()
 scene.add(guitar.group)
+
+const bell = new Bell()
+scene.add(bell.group)
+
+const piano = new Piano()
+scene.add(piano.group)
+
+const xylophone = new Xylophone()
+scene.add(xylophone.group)
+
+const maracas = new Maracas()
+scene.add(maracas.group)
+
+const violin = new Violin()
+scene.add(violin.group)
+console.log(violin)
+console.log(violin.group.position)
+
+const bassviolin = new Bassviolin()
+scene.add(bassviolin.group)
+
+/**
+ * Sound
+ */
+
+
+
 
 /**
  * Renderer
@@ -350,7 +385,7 @@ const loop = () =>
     prevTime = time;
 
     if(camera.position.x > 5){
-        
+
     }
 
     // Render
