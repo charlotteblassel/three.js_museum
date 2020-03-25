@@ -9,8 +9,6 @@ import Guitar from './scripts/Guitar.js'
 import Bell from './scripts/Bell.js'
 import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
-import Maracas from './scripts/Maracas.js'
-import Violin from './scripts/Violin.js'
 import Bassviolin from './scripts/Bassviolin.js'
 
 /**
@@ -267,8 +265,6 @@ const violin = new Violin()
 scene.add(violin.group)
 console.log(violin)
 console.log(violin.group.position)
-
-
 
 const bassviolin = new Bassviolin()
 scene.add(bassviolin.group)
