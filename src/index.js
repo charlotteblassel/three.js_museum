@@ -4,7 +4,7 @@ import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockContro
 import Walls from './scripts/Walls.js'
 import Doors from './scripts/Doors.js'
 import Grounds from './scripts/Grounds.js'
-import Tambourin from "./scripts/Tambourin.js"
+import Tambourin from "./scripts/TambourinTry.js"
 import Guitar from "./scripts/Guitar.js"
 
 /**
@@ -76,6 +76,7 @@ const onKeyDown = ( _event ) => {
     {
         moveRight = true;
     }
+
 }
 
 // Controls KeyUp
@@ -96,7 +97,16 @@ const onKeyUp = ( _event ) =>{
     {
         moveRight = false;
     }
+    if (_event.key === ' '  || _event.code === 'space')
+    {
+        camera.position.y += 1
+    }
+    if (_event.key === 'Control' ||  _event.code === 'ControlLeft')
+    {
+        camera.position.y -= 1
+    }
 }
+
 
 document.addEventListener('keydown', onKeyDown)
 document.addEventListener('keyup', onKeyUp)
@@ -228,9 +238,9 @@ museumGroup.add(sideLeftWallHeight.group)
 
 
 const tambourin = new Tambourin()
-tambourin.group.position.y = 2
+tambourin.group.position.y = 3
 scene.add(tambourin.group)
-console.log(tambourin.group)
+
 
 const guitar = new Guitar()
 scene.add(guitar.group)
@@ -272,6 +282,7 @@ document.body.addEventListener( 'keydown', (_e) => {
         blocker.style.display = 'none';
     }
 },)
+
 
 /**
  * Loop
@@ -316,10 +327,10 @@ const loop = () =>
 
     prevTime = time;
 
-    if(camera.position.x > 3){
-        console.log("duck")
-    
+    if(camera.position.x > 5){
+        
     }
+
     // Render
     renderer.render(scene, camera)
 }
