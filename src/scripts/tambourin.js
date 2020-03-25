@@ -24,25 +24,25 @@ export default class Tambourin
                 
 
                 this.tambourin = _gltf.scene.children[0].children[1]
-                this.tambourin.scale.set(2.25, 2.25, 2.25)
+                this.tambourin.scale.set(0.45, 0.45, 0.45)
                 this.tambourin.material = new THREE.MeshToonMaterial({ map: metalTexture})
-                this.tambourin.position.y = 0.4
+                this.tambourin.position.y = 0.08
 
-                const headOfTambourinGeometry = new THREE.CylinderGeometry( 2, 2, 0.01, 32);
+                const headOfTambourinGeometry = new THREE.CylinderGeometry( 0.4, 0.4, 0.002, 32);
                 const headOfTambourinMaterial = new THREE.MeshStandardMaterial({side: THREE.DoubleSide, map: tissuTexture })
                 const headOfTambour = new THREE.Mesh(headOfTambourinGeometry, headOfTambourinMaterial)
-                headOfTambour.position.y = 0.50
+                headOfTambour.position.y = 0.1
 
-                const cirlcedgeometry = new THREE.CylinderGeometry( 2, 2, 1, 32);
+                const cirlcedgeometry = new THREE.CylinderGeometry( 0.4, 0.4, 0.2, 32);
                 const circleMaterial = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, map: woodTexture})
                 const bodyMesh = new THREE.Mesh(cirlcedgeometry, circleMaterial)
 
                 
-                const secondCircleGeometry = new THREE.CylinderGeometry( 2.03, 2.03, 0.01, 32);
+                const secondCircleGeometry = new THREE.CylinderGeometry( 0.406, 0.406, 0.002, 32);
                 const secondCircleMaterial = new THREE.MeshBasicMaterial( { color: 0xffff00, side: THREE.DoubleSide} );
                 const circle = new THREE.Mesh( secondCircleGeometry, secondCircleMaterial );
                 circle.rotation.x = Math.PI *2
-                circle.position.y = 0.4
+                circle.position.y = 0.08
 
 
                 this.group.add(this.tambourin)
