@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 
-export default class Tambourin
+export default class Guitar
 {
     constructor()
     {
@@ -11,23 +11,23 @@ export default class Tambourin
         const gltfLoader = new GLTFLoader()
 
         gltfLoader.load(
-            '/model/tambourin/tamberine.gltf',
+            '/model/guitar/Washburn Guitar.gltf',
             (_gltf) =>
             {
                 
                 
 
-                this.tambourin = _gltf.scene.children[0].children[1]
-                this.tambourin.scale.set(0.45, 0.45, 0.45)
-                this.tambourin.material = new THREE.MeshToonMaterial({ map: metalTexture})
-                this.tambourin.position.y = 0.08
+                this.guitar = _gltf.scene.children[0].children[1]
+                this.guitar.scale.set(0.45, 0.45, 0.45)
+                this.guitar.material = new THREE.MeshNormalMaterial()
+                this.guitar.position.y = 0.08
 
                
 
              
 
 
-                this.group.add(this.tambourin)
+                this.group.add(this.guitar)
             }
         )
     }

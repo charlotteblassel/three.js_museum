@@ -4,7 +4,8 @@ import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockContro
 import Walls from './scripts/Walls.js'
 import Doors from './scripts/Doors.js'
 import Grounds from './scripts/Grounds.js'
-import Tambourin from "./scripts/tambourin"
+import Tambourin from "./scripts/tambourin.js"
+import Guitar from "./scripts/Guitar.js"
 
 /**
  * Sizes
@@ -230,6 +231,9 @@ const tambourin = new Tambourin()
 tambourin.group.position.y = 2
 scene.add(tambourin.group)
 console.log(tambourin.group)
+
+const guitar = new Guitar()
+scene.add(guitar.group)
 
 
 
