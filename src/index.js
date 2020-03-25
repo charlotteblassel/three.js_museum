@@ -7,6 +7,8 @@ import Grounds from './scripts/Grounds.js'
 import Tambourin from "./scripts/TambourinTry.js"
 import Guitar from "./scripts/Guitar.js"
 import Bell from "./scripts/Bell.js"
+import Piano from './scripts/Piano.js'
+import Xylophone from './scripts/Xylophone'
 
 /**
  * Sizes
@@ -248,6 +250,12 @@ scene.add(guitar.group)
 
 const bell = new Bell()
 scene.add(bell.group)
+
+const piano = new Piano()
+scene.add(piano.group)
+
+const xylophone = new Xylophone()
+scene.add(xylophone.group)
 
 
 
