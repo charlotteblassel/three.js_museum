@@ -262,14 +262,6 @@ scene.add(piano.group)
 const xylophone = new Xylophone()
 scene.add(xylophone.group)
 
-const maracas = new Maracas()
-scene.add(maracas.group)
-
-const violin = new Violin()
-scene.add(violin.group)
-console.log(violin)
-console.log(violin.group.position)
-
 const bassviolin = new Bassviolin()
 scene.add(bassviolin.group)
 
