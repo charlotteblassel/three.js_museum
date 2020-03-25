@@ -277,55 +277,66 @@ scene.add(bassviolin.group)
 
 // AUDIO
 
-// import piano1 from "../static/sounds/piano/piano1.mp3"
-// import piano2 from "../static/sounds/piano/piano2.mp3"
-// import piano3 from "../static/sounds/piano/piano3.mp3"
-// import piano4 from "../static/sounds/piano/piano4.mp3"
-// import piano5 from "../static/sounds/piano/piano5.mp3"
-// import piano6 from "../static/sounds/piano/piano6.mp3"
-// import piano7 from "../static/sounds/piano/piano7.mp3"
+import piano1 from "../static/sounds/piano/piano1.mp3"
+import piano2 from "../static/sounds/piano/piano2.mp3"
+import piano3 from "../static/sounds/piano/piano3.mp3"
+import piano4 from "../static/sounds/piano/piano4.mp3"
+import piano5 from "../static/sounds/piano/piano5.mp3"
+import piano6 from "../static/sounds/piano/piano6.mp3"
+import piano7 from "../static/sounds/piano/piano7.mp3"
 
-// const pianoSound1 = new Audio(piano1)
-// const pianoSound2 = new Audio(piano2)
-// const pianoSound3 = new Audio(piano3)
-// const pianoSound4 = new Audio(piano4)
-// const pianoSound5 = new Audio(piano5)
-// const pianoSound6 = new Audio(piano6)
-// const pianoSound7 = new Audio(piano7)
+const pianoSound1 = new Audio(piano1)
+const pianoSound2 = new Audio(piano2)
+const pianoSound3 = new Audio(piano3)
+const pianoSound4 = new Audio(piano4)
+const pianoSound5 = new Audio(piano5)
+const pianoSound6 = new Audio(piano6)
+const pianoSound7 = new Audio(piano7)
 
-window.addEventListener(
-    'keypress',
-    (_event)=>{
-        if(_event.code === 'KeyE'){
-            pianoSound1.play()
-            pianoSound1.currentTime=0
+
+const gay = () =>{
+    window.addEventListener(
+        'keypress',
+        (_event)=>{
+            if(_event.code === 'KeyE'){
+                pianoSound1.play()
+                pianoSound1.currentTime=0
+                console.log("pte")
+            }
+            if(_event.code === 'KeyR'){
+                pianoSound2.play()
+                pianoSound2.currentTime=0
+                console.log("pte")
+            }
+            if(_event.code === 'KeyT'){
+                pianoSound3.play()
+                pianoSound3.currentTime=0
+                console.log("pte")
+            }
+            if(_event.code === 'KeyY'){
+                pianoSound4.play()
+                pianoSound4.currentTime=0
+                console.log("pte")
+            }
+            if(_event.code === 'KeyU'){
+                pianoSound5.play()
+                pianoSound5.currentTime=0
+                console.log("pte")
+            }
+            if(_event.code === 'KeyI'){
+                pianoSound6.play()
+                pianoSound6.currentTime=0
+                console.log("pte")
+            }
+            if(_event.code === 'KeyO'){
+                pianoSound7.play()
+                pianoSound7.currentTime=0
+                console.log("pte")
+            }
         }
-        if(_event.code === 'KeyR'){
-            pianoSound2.play()
-            pianoSound2.currentTime=0
-        }
-        if(_event.code === 'KeyT'){
-            pianoSound3.play()
-            pianoSound3.currentTime=0
-        }
-        if(_event.code === 'KeyY'){
-            pianoSound4.play()
-            pianoSound4.currentTime=0
-        }
-        if(_event.code === 'KeyU'){
-            pianoSound5.play()
-            pianoSound5.currentTime=0
-        }
-        if(_event.code === 'KeyI'){
-            pianoSound6.play()
-            pianoSound6.currentTime=0
-        }
-        if(_event.code === 'KeyO'){
-            pianoSound7.play()
-            pianoSound7.currentTime=0
-        }
-    }
-)
+    )
+    
+}
 
 
 /**
@@ -409,7 +420,8 @@ const loop = () =>
     prevTime = time;
 
     if(camera.position.x > 5){
-
+        gay()
+        console.log("pute")
     }
 
     // Render
