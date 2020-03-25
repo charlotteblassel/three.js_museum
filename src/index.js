@@ -262,6 +262,10 @@ scene.add(piano.group)
 const xylophone = new Xylophone()
 scene.add(xylophone.group)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 266e10644d1a731f22dfdb475b949d5f90a2411d
 const bassviolin = new Bassviolin()
 scene.add(bassviolin.group)
 
