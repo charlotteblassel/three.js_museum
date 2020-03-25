@@ -4,6 +4,7 @@ import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockContro
 import Walls from './scripts/Walls.js'
 import Doors from './scripts/Doors.js'
 import Grounds from './scripts/Grounds.js'
+import Tambourin from "./scripts/tambourin"
 
 
 /**
@@ -220,6 +221,19 @@ museumGroup.add(sideRightWallHeight.group)
 const sideLeftWallHeight = new Walls(2, 2, 0.1, -6.85, 1, -11.75, Math.PI * 0.5)
 museumGroup.add(sideLeftWallHeight.group)
 
+
+/**
+ * Music instrument 
+ */
+
+
+const tambourin = new Tambourin()
+tambourin.group.position.y = -0.9
+scene.add(tambourin.group)
+console.log(tambourin.group)
+
+
+
 /**
  * Renderer
  */
@@ -296,10 +310,13 @@ const loop = () =>
     */
     controls.moveRight( - velocity.x * delta);
     controls.moveForward( - velocity.z * delta);
-    controls.moveRight( - velocity.x * delta);
-    controls.moveForward( - velocity.z * delta);
 
     prevTime = time;
+
+    if(camera.position.x > 3){
+        console.log("duck")
+    }
+    
 
     // Render
     renderer.render(scene, camera)
