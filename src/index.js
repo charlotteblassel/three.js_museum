@@ -1,11 +1,11 @@
 // AUDIO
 
-import guitare from "./scripts/guitare.mp3"
-
+import quack from "./scripts/quack.mp3"
+const quackSound = new Audio(quack)
 window.addEventListener(
 'click',
 ()=>{
-    guitare.play()
+    quackSound.play()
 }
 )
 
@@ -36,8 +36,6 @@ import Xylophone from './scripts/Xylophone'
 import Bassviolin from './scripts/Bassviolin.js'
 
 
-
-import trySounds from "../static/sounds/quack-sound-effect.mp3"
 
 /**
  * Sizes+
