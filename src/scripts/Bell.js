@@ -18,7 +18,7 @@ export default class Bell
                     {
     
                         this.bell = gltf.scene.children[0]
-                        this.bell.scale.set(4, 4, 4)
+                        this.bell.scale.set(3, 3, 3)
                         this.group.add(this.bell)
                     }
             }

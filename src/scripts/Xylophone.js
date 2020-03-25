@@ -18,7 +18,7 @@ export default class Xylophone
                     {
     
                         this.xylophone = gltf.scene.children[0]
-                        this.xylophone.scale.set(4, 4, 4)
+                        this.xylophone.scale.set(0.4, 0.4, 0.4)
                         this.group.add(this.xylophone)
                     }
             }
