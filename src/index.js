@@ -9,6 +9,7 @@ import Guitar from "./scripts/Guitar.js"
 import Bell from "./scripts/Bell.js"
 import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
+import Maracas from './scripts/Maracas'
 
 /**
  * Sizes
@@ -195,7 +196,7 @@ const backWallThree = new Walls(2, 2, 0.1, 1.9, 1, -12.80, 0)
 museumGroup.add(backWallThree.group)
 const backWallFour = new Walls(2, 2, 0.1, 3.9, 1, -12.80, 0)
 museumGroup.add(backWallFour.group)
-const backWallFive = new Walls(2, 2, 0.1, 0, 1, -12.80, 0) 
+const backWallFive = new Walls(2, 2, 0.1, 0, 1, -12.80, 0)
 museumGroup.add(backWallFive.group)
 // const upFrontWall = new Walls(6, 2, 0.1, 0, 3, 3, 0)
 // museumGroup.add(upFrontWall.group)
@@ -236,7 +237,7 @@ museumGroup.add(sideLeftWallHeight.group)
 
 
 /**
- * Music instrument 
+ * Music instrument
  */
 
 
@@ -257,7 +258,8 @@ scene.add(piano.group)
 const xylophone = new Xylophone()
 scene.add(xylophone.group)
 
-
+const maracas = new Maracas()
+scene.add(maracas.group)
 
 /**
  * Renderer
@@ -340,7 +342,7 @@ const loop = () =>
     prevTime = time;
 
     if(camera.position.x > 5){
-        
+
     }
 
     // Render
