@@ -245,8 +245,6 @@ scene.add(tambourin.group)
 const guitar = new Guitar()
 scene.add(guitar.group)
 
-
-
 /**
  * Renderer
  */
