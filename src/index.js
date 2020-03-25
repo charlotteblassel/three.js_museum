@@ -9,7 +9,8 @@ import Guitar from "./scripts/Guitar.js"
 import Bell from "./scripts/Bell.js"
 import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
-import Maracas from './scripts/Maracas'
+import Maracas from './scripts/Maracas.js'
+import Violin from "./scripts/Violon.js"
 
 /**
  * Sizes
@@ -241,25 +242,30 @@ museumGroup.add(sideLeftWallHeight.group)
  */
 
 
-const tambourin = new Tambourin()
-tambourin.group.position.y = 3
-scene.add(tambourin.group)
+// const tambourin = new Tambourin()
+// tambourin.group.position.y = 3
+// scene.add(tambourin.group)
 
 
-const guitar = new Guitar()
-scene.add(guitar.group)
+// const guitar = new Guitar()
+// scene.add(guitar.group)
 
-const bell = new Bell()
-scene.add(bell.group)
+// const bell = new Bell()
+// scene.add(bell.group)
 
-const piano = new Piano()
-scene.add(piano.group)
+// const piano = new Piano()
+// scene.add(piano.group)
 
-const xylophone = new Xylophone()
-scene.add(xylophone.group)
+// const xylophone = new Xylophone()
+// scene.add(xylophone.group)
 
-const maracas = new Maracas()
-scene.add(maracas.group)
+// const maracas = new Maracas()
+// scene.add(maracas.group)
+
+// const violin = new Violin()
+// scene.add(violin.group)
+// console.log(violin)
+// console.log(violin.group.position)
 
 /**
  * Renderer

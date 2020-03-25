@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 
-export default class Maracas
+export default class Violin
 {
     constructor()
     {
@@ -11,16 +11,17 @@ export default class Maracas
         const gltfLoader = new GLTFLoader()
 
         gltfLoader.load(
-            '/model/maracas/Maracas.gltf',
+            '/model/violin/Violin.gltf',
             (gltf) =>
             {
                 while(gltf.scene.children.length)
                     {
     
-                        this.maracas = gltf.scene.children[0]
-                        this.maracas.scale.set(10, 10, 10)
-                        this.group.add(this.maracas)
-                        console.log("pute")                    }
+                        this.violin = gltf.scene.children[0]
+                        this.violin.scale.set(4, 4, 4)
+                        this.violin.material = new THREE.MeshNormalMaterial()
+                        this.group.add(this.violin)
+                    }
             }
         )
     }
