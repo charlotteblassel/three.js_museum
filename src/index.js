@@ -6,10 +6,7 @@ import Doors from './scripts/Doors.js'
 import Grounds from './scripts/Grounds.js'
 import Tambourin from "./scripts/TambourinTry.js"
 import Guitar from "./scripts/Guitar.js"
-
-
-
-
+import Bell from "./scripts/Bell.js"
 
 /**
  * Sizes
@@ -101,13 +98,13 @@ const onKeyUp = ( _event ) =>{
     {
         moveRight = false;
     }
-    if (_event.key === ' '  || _event.code === 'space')
+       if (_event.key === ' '  || _event.code === 'space')
     {
-        camera.position.y += 1
+        camera.position.y += 3
     }
     if (_event.key === 'Control' ||  _event.code === 'ControlLeft')
     {
-        camera.position.y -= 1
+        camera.position.y -= 3
     }
 }
 
@@ -248,6 +245,11 @@ scene.add(tambourin.group)
 
 const guitar = new Guitar()
 scene.add(guitar.group)
+
+const bell = new Bell()
+scene.add(bell.group)
+
+
 
 /**
  * Renderer

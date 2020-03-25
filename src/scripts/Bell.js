@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 
-export default class Tambourin
+export default class Bell
 {
     constructor()
     {
@@ -11,15 +11,15 @@ export default class Tambourin
         const gltfLoader = new GLTFLoader()
 
         gltfLoader.load(
-            '/model/tambourin/tamberine.gltf',
+            '/model/bell/Bell.gltf',
             (gltf) =>
             {
                 while(gltf.scene.children.length)
                     {
     
-                        this.tambourin = gltf.scene.children[0]
-                        this.tambourin.scale.set(0.2, 0.2, 0.2)
-                        this.group.add(this.tambourin)
+                        this.bell = gltf.scene.children[0]
+                        this.bell.scale.set(4, 4, 4)
+                        this.group.add(this.bell)
                     }
             }
         )
