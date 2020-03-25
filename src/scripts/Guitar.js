@@ -12,22 +12,26 @@ export default class Guitar
 
         gltfLoader.load(
             '/model/guitar/Washburn Guitar.gltf',
-            (_gltf) =>
+            (gltf) =>
             {
                 
-                
 
-                this.guitar = _gltf.scene.children[0].children[1]
-                this.guitar.scale.set(0.45, 0.45, 0.45)
-                this.guitar.material = new THREE.MeshNormalMaterial()
-                this.guitar.position.y = 0.08
+                while(gltf.scene.children.length)
+                    {
+    
+                        this.guitar = gltf.scene.children[0]
+                        this.guitar.scale.set(0.45, 0.45, 0.45)
+                        // this.guitar.material = new THREE.MeshNormalMaterial()
+                        this.guitar.position.y = 0.08
+                        this.group.add(this.guitar)
+                    }
 
                
 
              
 
 
-                this.group.add(this.guitar)
+                
             }
         )
     }
