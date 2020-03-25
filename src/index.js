@@ -5,7 +5,6 @@ import Walls from './scripts/Walls.js'
 import Doors from './scripts/Doors.js'
 import Grounds from './scripts/Grounds.js'
 
-
 /**
  * Sizes
  */
