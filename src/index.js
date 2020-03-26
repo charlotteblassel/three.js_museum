@@ -419,7 +419,9 @@ bell.group.position.x = -2
 scene.add(bell.group)
 
 const piano = new Piano()
-piano.group.position.x = 3
+piano.group.position.x = -9.9
+piano.group.position.z = -15.1
+piano.group.position.y = 0.5
 scene.add(piano.group)
 
 const xylophone = new Xylophone()
@@ -507,7 +509,7 @@ audioFirstRoom.add(sound)
 
 // let positionCamera = camera.position.x
 
-const gay = () =>{
+const playPiano = () =>{
     window.addEventListener(
         'keypress',
         (_event)=>{
