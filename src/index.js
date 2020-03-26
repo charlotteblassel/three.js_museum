@@ -14,7 +14,8 @@ import Bell from './scripts/Bell.js'
 import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone.js'
 import Bassviolin from './scripts/Bassviolin.js'
-import Sky from "./assets/sky.jpg"
+import Sky from './assets/sky.jpg'
+import Poster from './scripts/Poster.js'
 
 /**
  * Textures
@@ -126,6 +127,14 @@ document.addEventListener("keyup", onKeyUp);
  */
 const ambientLight = new THREE.AmbientLight(0xffffff, 1)
 scene.add(ambientLight)
+
+const spotLight = new THREE.SpotLight(0xfddfff , 1, 1, Math.PI * 0.2, 0.5)
+spotLight.position.z = 3
+spotLight.position.y = 2
+scene.add(spotLight)
+
+spotLight.target.position.z = - 2
+scene.add(spotLight.target)
 
 /**
  * Museum
@@ -432,9 +441,9 @@ guitar.group.position.y = 0.5;
 scene.add(guitar.group);
 
 const bell = new Bell();
-bell.group.position.x = 0.65;
-bell.group.position.z = -1.5;
-bell.group.position.y = 2;
+bell.group.position.x = 1.5;
+bell.group.position.z = -0.2;
+bell.group.position.y = 1.9;
 scene.add(bell.group);
 
 const piano = new Piano();
@@ -451,10 +460,16 @@ scene.add(xylophone.group);
 
 const bassviolin = new Bassviolin();
 bassviolin.group.position.x = 0;
-bassviolin.group.position.z = -33;
+bassviolin.group.position.z = -36;
 bassviolin.group.position.y = 1.7;
-
 scene.add(bassviolin.group);
+
+const poster = new Poster();
+poster.group.position.x = 6.83;
+poster.group.position.z = -8;
+poster.group.position.y = 1.5;
+poster.group.rotation.y = Math.PI / 2
+scene.add(poster.group);
 
 /**
  * Sound
