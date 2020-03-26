@@ -129,11 +129,23 @@ document.addEventListener("keyup", onKeyUp);
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
-const spotLight = new THREE.SpotLight(0xfddfff, 1, 12, Math.PI * 0.2, 0.5);
-spotLight.position.z = -32;
-spotLight.position.y = 2;
+const spotLight = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
+spotLight.position.z = -32
+spotLight.position.y = 2
+scene.add(spotLight)
 
-spotLight.target.position.z = -36;
+spotLight.target.position.z = -36
+scene.add(spotLight.target)
+
+const spotLight2 = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
+spotLight2.position.x = 0
+spotLight2.position.z = -20
+spotLight2.position.y = 2
+scene.add(spotLight2)
+
+spotLight2.target.position.z = 3
+scene.add(spotLight2.target)
+
 
 /**
  * Museum
@@ -490,9 +502,10 @@ tambourin.group.position.y = 0.6;
 scene.add(tambourin.group);
 
 const guitar = new Guitar();
-guitar.group.position.x = -10.2;
-guitar.group.position.z = -26.8;
+guitar.group.position.x = -9.5;
+guitar.group.position.z = -26.5;
 guitar.group.position.y = 0.5;
+guitar.group.rotation.y = Math.PI / 2;
 scene.add(guitar.group);
 
 const bell = new Bell();
