@@ -602,6 +602,27 @@ audioLoader.load(guitar2, buffer => {
     soundGuitarposition1.setBuffer(buffer)
     soundGuitarposition1.setRefDistance(1.8)
 })
+audioLoader.load(guitar1, buffer => {
+  soundGuitarposition2.setBuffer(buffer)
+  soundGuitarposition2.setRefDistance(1.8)
+})
+audioLoader.load(guitar2, buffer => {
+    soundGuitarposition3.setBuffer(buffer)
+    soundGuitarposition3.setRefDistance(1.8)
+})
+audioLoader.load(guitar1, buffer => {
+  soundGuitarposition4.setBuffer(buffer)
+  soundGuitarposition4.setRefDistance(1.8)
+})
+audioLoader.load(guitar2, buffer => {
+    soundGuitarposition5.setBuffer(buffer)
+    soundGuitarposition5.setRefDistance(1.8)
+})
+audioLoader.load(guitar2, buffer => {
+    soundGuitarposition6.setBuffer(buffer)
+    soundGuitarposition6.setRefDistance(1.8)
+})
+
 
 
 const playSound = (_positionalSound) =>
@@ -630,47 +651,17 @@ window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
     playSound(soundGuitarposition)
   } else if (_event.code === "KeyR") {
-    audioLoader.load(guitar2, buffer => {
-      soundGuitarposition1.setBuffer(buffer);
-      soundGuitarposition1.setRefDistance(1.8);
-      soundGuitarposition1.currentTime = 0;
-      soundGuitarposition1.play();
-    });
+    playSound(soundGuitarposition1)
   } else if (_event.code === "KeyT") {
-    audioLoader.load(guitar3, buffer => {
-      soundGuitarposition2.setBuffer(buffer);
-      soundGuitarposition2.setRefDistance(1.8);
-      soundGuitarposition2.currentTime = 0;
-      soundGuitarposition2.play();
-    });
+    playSound(soundGuitarposition2)
   } else if (_event.code === "KeyY") {
-    audioLoader.load(guitar4, buffer => {
-      soundGuitarposition3.setBuffer(buffer);
-      soundGuitarposition3.setRefDistance(1.8);
-      soundGuitarposition3.currentTime = 0;
-      soundGuitarposition3.play();
-    });
+    playSound(soundGuitarposition3)
   } else if (_event.code === "KeyU") {
-    audioLoader.load(guitar5, buffer => {
-      soundGuitarposition4.setBuffer(buffer);
-      soundGuitarposition4.setRefDistance(1.8);
-      soundGuitarposition4.currentTime = 0;
-      soundGuitarposition4.play();
-    });
+    playSound(soundGuitarposition4)
   } else if (_event.code === "KeyI") {
-    audioLoader.load(guitar6, buffer => {
-      soundGuitarposition5.setBuffer(buffer);
-      soundGuitarposition5.setRefDistance(1.8);
-      soundGuitarposition5.currentTime = 0;
-      soundGuitarposition5.play();
-    });
+    playSound(soundGuitarposition5)
   } else if (_event.code === "KeyO") {
-    audioLoader.load(guitar7, buffer => {
-      soundGuitarposition6.setBuffer(buffer);
-      soundGuitarposition6.setRefDistance(1.8);
-      soundGuitarposition6.currentTime = 0;
-      soundGuitarposition6.play();
-    });
+    playSound(soundGuitarposition6)
   }
 });
 // Displaying an element on which the positional sound is based
@@ -695,43 +686,7 @@ audioGuitar.add(
   soundGuitarposition6
 );
 
-const soundpianoposition = new THREE.PositionalAudio(listener);
-const soundpianoposition1 = new THREE.PositionalAudio(listener);
-const soundpianoposition2 = new THREE.PositionalAudio(listener);
-const soundpianoposition3 = new THREE.PositionalAudio(listener);
-const soundpianoposition4 = new THREE.PositionalAudio(listener);
-const soundpianoposition5 = new THREE.PositionalAudio(listener);
-const soundpianoposition6 = new THREE.PositionalAudio(listener);
 
-// const listener2 = new THREE.AudioListener();
-// camera.add(listener2);
-// const sound2 = new THREE.PositionalAudio(listener2)
-
-// const audioLoader2 = new THREE.AudioLoader();
-
-// window.addEventListener("keypress", _event => {
-
-//     if (_event.code === "KeyE") {
-//         audioLoader2.load(piano1, buffer => {
-//           sound2.setBuffer(buffer)
-//           sound2.setRefDistance(0.7);
-//           sound.setMaxDistance(0.1)
-//           sound2.currentTime = 0
-//           sound2.play();
-//         })
-//       }
-
-// })
-// const audioPiano = new THREE.Mesh(
-//   new THREE.SphereBufferGeometry(1, 1, 8),
-//   new THREE.MeshNormalMaterial({
-//     color: 0xff0000
-//   })
-// )
-
-// audioPiano.position.set(-9.9, 0.5, -15.1)
-// scene.add(audioPiano);
-// audioPiano.add(sound2)
 
 var axis = new THREE.Vector3(0, 4, 0).normalize();
 var speed = 0.05;
