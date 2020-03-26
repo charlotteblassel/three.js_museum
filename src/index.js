@@ -12,7 +12,8 @@ import Bell from './scripts/Bell.js'
 import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
 import Bassviolin from './scripts/Bassviolin.js'
-import Sky from "./assets/sky.jpg"
+import Sky from './assets/sky.jpg'
+// import Tree from './scripts/Tree.js'
 
 /**
  * Textures
@@ -129,30 +130,6 @@ document.addEventListener('keyup', onKeyUp)
  */
 const ambientLight = new THREE.AmbientLight(0xffffff, 1)
 scene.add(ambientLight)
-
-// const moonLight = new THREE.DirectionalLight(0x0096ff, 1)
-// moonLight.position.set(1, 1, 1)
-// scene.add(moonLight)
-
-const doorLight = new THREE.PointLight(0xffd800, 2, 5)
-doorLight.position.y = 2.2
-doorLight.position.x = - 2.7
-scene.add(doorLight)
-
-// const ghostLightA = new THREE.PointLight(0xea00ff, 3, 5)
-// ghostLightA.position.z = 5
-// ghostLightA.position.y = 1
-// scene.add(ghostLightA)
-
-const ghostLightB = new THREE.PointLight(0x00d8ff, 3, 5)
-ghostLightB.position.x = 5
-ghostLightB.position.y = 1
-scene.add(ghostLightB)
-
-const ghostLightC = new THREE.PointLight(0xd8ff00, 3, 5)
-ghostLightC.position.z = - 5
-ghostLightC.position.y = 1
-scene.add(ghostLightC)
 
 /**
  * Museum
@@ -402,6 +379,20 @@ const upRightWallTwentyFour = new Walls(3, 2.35, 4.2, -36, 0, 0)
 museumGroup.add(upRightWallTwentyFour.group)
 
 /**
+ * Tree
+ */
+
+// const tree1 = new Tree()
+// tree1.group.position.x = 3
+// tree1.group.position.z = -1.5
+// scene.add(tree1.group)
+
+// const tree2 = new Tree()
+// tree2.group.position.x = -3
+// tree2.group.position.z = -1.5
+// scene.add(tree2.group)
+
+/**
  * Music instrument
  */
 const tambourin = new Tambourin()
@@ -438,7 +429,6 @@ const bassviolin = new Bassviolin()
 bassviolin.group.position.x = 0
 bassviolin.group.position.z = -33
 bassviolin.group.position.y = 1.7
-
 scene.add(bassviolin.group)
 
 /**
