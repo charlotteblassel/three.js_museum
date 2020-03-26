@@ -15,7 +15,6 @@ import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone.js'
 import Bassviolin from './scripts/Bassviolin.js'
 import Sky from './assets/sky.jpg'
-import Poster from './scripts/Poster.js'
 
 /**
  * Textures
@@ -463,13 +462,6 @@ bassviolin.group.position.x = 0;
 bassviolin.group.position.z = -36;
 bassviolin.group.position.y = 1.7;
 scene.add(bassviolin.group);
-
-const poster = new Poster();
-poster.group.position.x = 6.83;
-poster.group.position.z = -8;
-poster.group.position.y = 1.5;
-poster.group.rotation.y = Math.PI / 2
-scene.add(poster.group);
 
 /**
  * Sound
