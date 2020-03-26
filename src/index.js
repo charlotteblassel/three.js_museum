@@ -489,7 +489,8 @@ const audioLoder = new THREE.AudioLoader();
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
     audioLoder.load(guitar1, buffer => {
-      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.setBuffer(buffer), sound.setRefDistance(1);
+      soundThird.setMaxDistance(0.10)
       sound.currentTime = 0;
       sound.play();
     })
@@ -544,7 +545,9 @@ const audioFirstRoom = new THREE.Mesh(
   })
 );
 
+audioFirstRoom.position.set(-10.2, 0.5, -26.8)
 scene.add(audioFirstRoom);
+audioFirstRoom.add(sound)
 
 // let positionCamera = camera.position.x;
 
