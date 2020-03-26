@@ -473,7 +473,39 @@ const guitarSound7 = new Audio(guitar7)
 
 
 
-let positionCamera = camera.position.x
+const listener = new THREE.AudioListener()
+camera.add(listener)
+
+const sound = new THREE.PositionalAudio(listener)
+const audioLoder = new THREE.AudioLoader()
+
+window.addEventListener("keypress", (_event)=>{
+    if(_event.code === 'KeyE'){
+        
+        
+    }
+})
+audioLoder.load(guitar1,(buffer)=>{
+    sound.setBuffer(buffer),
+    sound.setRefDistance(0.12)
+    sound.play()
+})
+
+const audioFirstRoom = new THREE.Mesh(
+    new THREE.SphereBufferGeometry(1, 1, 8),
+    new THREE.MeshNormalMaterial({color: 0xFF0000})
+)
+// finally add the sound to the mesh
+scene.add(audioFirstRoom)
+audioFirstRoom.add(sound)
+
+
+
+
+
+
+
+// let positionCamera = camera.position.x
 
 const gay = () =>{
     window.addEventListener(
@@ -482,106 +514,48 @@ const gay = () =>{
             if(_event.code === 'KeyE'){
                 pianoSound1.play()
                 pianoSound1.currentTime=0
-                positionCamera = camera.position.x
+               
                 
                 
             }
             if(_event.code === 'KeyR'){
                 pianoSound2.play()
                 pianoSound2.currentTime=0
-                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyT'){
                 pianoSound3.play()
                 pianoSound3.currentTime=0
-                positionCamera = camera.position.x
+                
                 
                 
             }
             if(_event.code === 'KeyY'){
                 pianoSound4.play()
                 pianoSound4.currentTime=0
-                positionCamera = camera.position.x
+                
                 
                 
             }
             if(_event.code === 'KeyU'){
                 pianoSound5.play()
                 pianoSound5.currentTime=0
-                positionCamera = camera.position.x
+                
                 
                 
             }
             if(_event.code === 'KeyI'){
                 pianoSound6.play()
                 pianoSound6.currentTime=0
-                positionCamera = camera.position.x
+                
                 
                 
             }
             if(_event.code === 'KeyO'){
                 pianoSound7.play()
                 pianoSound7.currentTime=0
-                positionCamera = camera.position.x
                 
-                
-            }
-        }
-    )
-    
-}
-
-
-
-const kara = (instru) =>{
-    window.addEventListener('keypress',(_event)=>{
-            if(_event.code === 'KeyE'){
-                instru+Sound1.play()
-                // instru.Sound1.currentTime=0
-                positionCamera = camera.position.x
-                
-                
-            }
-            if(_event.code === 'KeyR'){
-                instru+Sound2.play()
-                // instru.Sound2 .currentTime=0
-                positionCamera = camera.position.x
-                
-                
-            }
-            if(_event.code === 'KeyT'){
-                instru+Sound3.play()
-                // instru.Sound3.currentTime=0
-                positionCamera = camera.position.x
-                
-                
-            }
-            if(_event.code === 'KeyY'){
-                instru+Sound4.play()
-                // instru.Sound4.currentTime=0
-                positionCamera = camera.position.x
-                
-                
-            }
-            if(_event.code === 'KeyU'){
-                instru+Sound5.play()
-                // instru.Sound5.currentTime=0
-                positionCamera = camera.position.x
-                
-                
-            }
-            if(_event.code === 'KeyI'){
-                instru+Sound6.play()
-                // instru.Sound6.currentTime=0
-                positionCamera = camera.position.x
-                
-                
-            }
-            if(_event.code === 'KeyO'){
-                instru+Sound7.play()
-                // instru.Sound7.currentTime=0
-                positionCamera = camera.position.x
                 
                 
             }
@@ -590,7 +564,10 @@ const kara = (instru) =>{
     
 }
 
-const pianoAudioInstance = new Audio()
+
+
+
+
 
 
 
