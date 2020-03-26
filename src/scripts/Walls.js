@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import bricksColorSource from '../assets/bricks/color.jpg'
-import bricksNormalSource from '../assets/bricks/normal.png'
+import bricksNormalSource from '../assets/bricks/normal.jpg'
 import bricksAmbientOcclusionSource from '../assets/bricks/ambientOcclusion.jpg'
 
 /**
@@ -27,10 +27,9 @@ export default class Walls
             new THREE.PlaneGeometry(this.width, this.width),
             new THREE.MeshStandardMaterial({
                 map: bricksColorTexture,
-                // normalMap: bricksNormalTexture,
+                normalMap: bricksNormalTexture,
                 aoMap: bricksAmbientOcclusionTexture,
                 side: THREE.DoubleSide
-                // wireframe:true
             })
         )
         this.wallMesh.position.x = this.positionX
