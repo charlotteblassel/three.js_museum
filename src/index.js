@@ -502,8 +502,8 @@ tambourin.group.position.y = 0.6;
 scene.add(tambourin.group);
 
 const guitar = new Guitar();
-guitar.group.position.x = -10.2;
-guitar.group.position.z = -26.8;
+guitar.group.position.x = -9.5;
+guitar.group.position.z = -26.5;
 guitar.group.position.y = 0.5;
 guitar.group.rotation.y = Math.PI / 2;
 scene.add(guitar.group);
