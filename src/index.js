@@ -132,8 +132,19 @@ scene.add(ambientLight)
 const spotLight = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
 spotLight.position.z = -32
 spotLight.position.y = 2
+scene.add(spotLight)
 
 spotLight.target.position.z = -36
+scene.add(spotLight.target)
+
+const spotLight2 = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
+spotLight2.position.x = 0
+spotLight2.position.z = -20
+spotLight2.position.y = 2
+scene.add(spotLight2)
+
+spotLight2.target.position.z = 3
+scene.add(spotLight2.target)
 
 /**
  * Museum
