@@ -586,16 +586,37 @@ const soundGuitarposition6 = new THREE.PositionalAudio(listener);
 
 const audioLoader = new THREE.AudioLoader();
 
+// Loading the sound
+audioLoader.load(guitar1, buffer => {
+  soundGuitarposition.setBuffer(buffer)
+  soundGuitarposition.setRefDistance(1.8)
+})
+
+const playSound = (_positionalSound) =>
+{
+  _positionalSound._startedAt = _positionalSound.context.currentTime + 0
+
+  const source = _positionalSound.context.createBufferSource()
+  source.buffer = _positionalSound.buffer
+  source.loop = _positionalSound.loop
+  source.loopStart = _positionalSound.loopStart
+  source.loopEnd = _positionalSound.loopEnd
+  source.onended = _positionalSound.onEnded.bind( _positionalSound )
+  source.start(_positionalSound._startedAt, _positionalSound._pausedAt + _positionalSound.offset, _positionalSound.duration)
+
+  _positionalSound.isPlaying = true
+
+  _positionalSound.source = source
+
+  _positionalSound.setDetune( _positionalSound.detune )
+  _positionalSound.setPlaybackRate( _positionalSound.playbackRate )
+
+  _positionalSound.connect()
+}
+
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
-    audioLoader.load(guitar1, buffer => {
-      soundGuitarposition.setBuffer(buffer);
-      soundGuitarposition.setRefDistance(1.8);
-      soundGuitarposition.pause()
-      soundGuitarposition.currentTime = 0;
-      soundGuitarposition.play();
-
-    })
+    playSound(soundGuitarposition)
   } else if (_event.code === "KeyR") {
     audioLoader.load(guitar2, buffer => {
       soundGuitarposition1.setBuffer(buffer);
