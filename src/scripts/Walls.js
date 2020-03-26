@@ -29,6 +29,7 @@ export default class Walls
                 map: bricksColorTexture,
                 normalMap: bricksNormalTexture,
                 aoMap: bricksAmbientOcclusionTexture,
+                // displacementScale: 0.2,
                 side: THREE.DoubleSide
             })
         )

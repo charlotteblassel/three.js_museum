@@ -70,13 +70,13 @@ let moveRight = false;
 /**
  * Controls
  */
-controls = new PointerLockControls(camera, document.body)
-let prevTime = performance.now()
-let velocity = new THREE.Vector3()
-let clock = new THREE.Clock()
-let direction = new  THREE.Vector3()
-controls.unlock()
-scene.add(controls.getObject())
+controls = new PointerLockControls(camera, document.body);
+let prevTime = performance.now();
+let velocity = new THREE.Vector3();
+let clock = new THREE.Clock();
+let direction = new  THREE.Vector3();
+controls.unlock();
+scene.add(controls.getObject());
 
 // Controls KeysDown
 const onKeyDown = _event => {
@@ -161,7 +161,7 @@ const instrumentCeillingThree = new Ceilling(6, 6, -9.85, 5.7, -27, Math.PI / -2
 museumGroup.add(instrumentCeillingThree.group)
 const instrumentCeillingFour = new Ceilling(6, 6, 9.85, 5.7, -27, Math.PI / -2, 0)
 museumGroup.add(instrumentCeillingFour.group)
-const instrumentCeillingFive = new Ceilling(7.72, 7.72, 0, 5.7, -35.125, Math.PI / -2, 0)
+const instrumentCeillingFive = new Ceilling(7.72, 7.72, 0, 5.70, -35.14, Math.PI / -2, 0)
 museumGroup.add(instrumentCeillingFive.group)
 const centralCeilling = new Ceilling(13.7, 33, 0, 5.7, -16.5, Math.PI / -2, 0)
 museumGroup.add(centralCeilling.group)
