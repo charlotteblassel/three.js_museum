@@ -19,6 +19,11 @@ const doorMetalnessTexture = textureLoader.load(doorMetalnessImageSource)
 const doorNormalTexture = textureLoader.load(doorNormalImageSource)
 const doorAlphaTexture = textureLoader.load(doorAlphaImageSource)
 const doorColorRoughnessTexture = textureLoader.load(doorColorRoughnessSource)
+doorColorTexture.repeat.x = 1
+doorColorTexture.wrapS = THREE.RepeatWrapping
+doorColorTexture.wrapT = THREE.RepeatWrapping
+doorNormalTexture.wrapS = THREE.RepeatWrapping
+doorNormalTexture.wrapT = THREE.RepeatWrapping
 
 export default class Doors
 {
@@ -35,9 +40,9 @@ export default class Doors
             new THREE.PlaneGeometry(this.x, this.y, 10, 10),
             new THREE.MeshStandardMaterial({
                 map: doorColorTexture,
-                // aoMap: doorAmbientOcclusionTexture,
+                aoMap: doorAmbientOcclusionTexture,
                 displacementMap: doorHeightTexture,
-                displacementScale: 0.2,
+                displacementScale: 0.15,
                 metalnessMap: doorMetalnessTexture,
                 roughnessMap: doorColorRoughnessTexture,
                 normalMap: doorNormalTexture,
