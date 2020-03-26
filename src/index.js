@@ -588,7 +588,6 @@ window.addEventListener("keypress", _event => {
     audioLoader.load(guitar1, buffer => {
       soundGuitarposition.setBuffer(buffer);
       soundGuitarposition.setRefDistance(1.8);
-      soundGuitarposition.pause();
       soundGuitarposition.currentTime = 0;
       soundGuitarposition.play();
     });
