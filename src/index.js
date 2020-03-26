@@ -129,23 +129,22 @@ document.addEventListener("keyup", onKeyUp);
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
-const spotLight = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
-spotLight.position.z = -32
-spotLight.position.y = 2
-scene.add(spotLight)
+const spotLight = new THREE.SpotLight(0xfddfff, 1, 12, Math.PI * 0.2, 0.5);
+spotLight.position.z = -32;
+spotLight.position.y = 2;
+scene.add(spotLight);
 
-spotLight.target.position.z = -36
-scene.add(spotLight.target)
+spotLight.target.position.z = -36;
+scene.add(spotLight.target);
 
-const spotLight2 = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
-spotLight2.position.x = 0
-spotLight2.position.z = -20
-spotLight2.position.y = 2
-scene.add(spotLight2)
+const spotLight2 = new THREE.SpotLight(0xfddfff, 1, 12, Math.PI * 0.2, 0.5);
+spotLight2.position.x = 0;
+spotLight2.position.z = -20;
+spotLight2.position.y = 2;
+scene.add(spotLight2);
 
-spotLight2.target.position.z = 3
-scene.add(spotLight2.target)
-
+spotLight2.target.position.z = 3;
+scene.add(spotLight2.target);
 
 /**
  * Museum
@@ -524,7 +523,7 @@ const xylophone = new Xylophone();
 xylophone.group.position.x = 10.1;
 xylophone.group.position.z = -15;
 xylophone.group.position.y = 0.2;
-xylophone.group.rotation.y = Math.PI /2
+xylophone.group.rotation.y = Math.PI / 2;
 scene.add(xylophone.group);
 
 const bassviolin = new Bassviolin();
@@ -574,7 +573,6 @@ const guitarSound7 = new Audio(guitar7);
 const listener = new THREE.AudioListener();
 camera.add(listener);
 
-
 const soundGuitarposition = new THREE.PositionalAudio(listener);
 const soundGuitarposition1 = new THREE.PositionalAudio(listener);
 const soundGuitarposition2 = new THREE.PositionalAudio(listener);
@@ -583,7 +581,6 @@ const soundGuitarposition4 = new THREE.PositionalAudio(listener);
 const soundGuitarposition5 = new THREE.PositionalAudio(listener);
 const soundGuitarposition6 = new THREE.PositionalAudio(listener);
 
-
 const audioLoader = new THREE.AudioLoader();
 
 window.addEventListener("keypress", _event => {
@@ -591,55 +588,54 @@ window.addEventListener("keypress", _event => {
     audioLoader.load(guitar1, buffer => {
       soundGuitarposition.setBuffer(buffer);
       soundGuitarposition.setRefDistance(1.8);
-      soundGuitarposition.pause()
+      soundGuitarposition.pause();
       soundGuitarposition.currentTime = 0;
       soundGuitarposition.play();
-
-    })
+    });
   } else if (_event.code === "KeyR") {
     audioLoader.load(guitar2, buffer => {
       soundGuitarposition1.setBuffer(buffer);
       soundGuitarposition1.setRefDistance(1.8);
       soundGuitarposition1.currentTime = 0;
       soundGuitarposition1.play();
-    })
+    });
   } else if (_event.code === "KeyT") {
     audioLoader.load(guitar3, buffer => {
       soundGuitarposition2.setBuffer(buffer);
       soundGuitarposition2.setRefDistance(1.8);
       soundGuitarposition2.currentTime = 0;
       soundGuitarposition2.play();
-    })
+    });
   } else if (_event.code === "KeyY") {
     audioLoader.load(guitar4, buffer => {
       soundGuitarposition3.setBuffer(buffer);
       soundGuitarposition3.setRefDistance(1.8);
       soundGuitarposition3.currentTime = 0;
       soundGuitarposition3.play();
-    })
+    });
   } else if (_event.code === "KeyU") {
     audioLoader.load(guitar5, buffer => {
       soundGuitarposition4.setBuffer(buffer);
       soundGuitarposition4.setRefDistance(1.8);
       soundGuitarposition4.currentTime = 0;
       soundGuitarposition4.play();
-    })
+    });
   } else if (_event.code === "KeyI") {
     audioLoader.load(guitar6, buffer => {
       soundGuitarposition5.setBuffer(buffer);
       soundGuitarposition5.setRefDistance(1.8);
       soundGuitarposition5.currentTime = 0;
       soundGuitarposition5.play();
-    })
+    });
   } else if (_event.code === "KeyO") {
     audioLoader.load(guitar7, buffer => {
       soundGuitarposition6.setBuffer(buffer);
       soundGuitarposition6.setRefDistance(1.8);
       soundGuitarposition6.currentTime = 0;
       soundGuitarposition6.play();
-    })
+    });
   }
-})
+});
 const audioGuitar = new THREE.Mesh(
   new THREE.SphereBufferGeometry(1, 1, 8),
   new THREE.MeshNormalMaterial({
@@ -647,14 +643,17 @@ const audioGuitar = new THREE.Mesh(
   })
 );
 
-
 audioGuitar.position.set(-10.2, 0.5, -26.8);
 scene.add(audioGuitar);
-audioGuitar.add(soundGuitarposition, soundGuitarposition1,soundGuitarposition2, soundGuitarposition3, soundGuitarposition4, soundGuitarposition5, soundGuitarposition6);
-
-
-
-
+audioGuitar.add(
+  soundGuitarposition,
+  soundGuitarposition1,
+  soundGuitarposition2,
+  soundGuitarposition3,
+  soundGuitarposition4,
+  soundGuitarposition5,
+  soundGuitarposition6
+);
 
 const soundpianoposition = new THREE.PositionalAudio(listener);
 const soundpianoposition1 = new THREE.PositionalAudio(listener);
@@ -778,3 +777,5 @@ const loop = () => {
   renderer.render(scene, camera);
 };
 loop();
+
+window.addEventListener("click", () => {});
