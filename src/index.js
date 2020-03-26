@@ -407,11 +407,11 @@ guitar.group.position.z = -26.8
 guitar.group.position.y = 0.5
 scene.add(guitar.group)
 
-const bell = new Bell()
-bell.group.position.x = 0.65
-bell.group.position.z = -1.5
-bell.group.position.y = 2
-scene.add(bell.group)
+// const bell = new Bell()
+// bell.group.position.x = 0.65
+// bell.group.position.z = -1.5
+// bell.group.position.y = 2
+// scene.add(bell.group)
 
 const piano = new Piano()
 piano.group.position.x = -9.9
