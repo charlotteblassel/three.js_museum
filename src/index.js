@@ -6,8 +6,12 @@ import Doors from './scripts/Doors.js'
 import Grass from './scripts/Grass.js'
 import Floor from './scripts/Floor.js'
 import Bases from './scripts/Base.js'
-import Tambourin from "./scripts/TambourinTry.js"
+import Tambourin from "./scripts/Tambourin.js"
 import Guitar from "./scripts/Guitar.js"
+import Bell from './scripts/Bell.js'
+import Piano from './scripts/Piano.js'
+import Xylophone from './scripts/Xylophone'
+import Bassviolin from './scripts/Bassviolin.js'
 import Sky from "./assets/sky.jpg"
 
 /**
@@ -17,7 +21,7 @@ const textureLoader = new THREE.TextureLoader()
 const skyBackground = textureLoader.load(Sky)
 
 /**
- * Sizes
+ * Sizes+
  */
 const sizes = {}
 sizes.width = window.innerWidth
@@ -106,13 +110,13 @@ const onKeyUp = ( _event ) =>{
     {
         moveRight = false;
     }
-    if (_event.key === ' '  || _event.code === 'space')
+       if (_event.key === ' '  || _event.code === 'space')
     {
-        camera.position.y += 1
+        camera.position.y += 3
     }
     if (_event.key === 'Control' ||  _event.code === 'ControlLeft')
     {
-        camera.position.y -= 1
+        camera.position.y -= 3
     }
 }
 
@@ -401,11 +405,172 @@ museumGroup.add(upRightWallTwentyFour.group)
  * Music instrument
  */
 const tambourin = new Tambourin()
-tambourin.group.position.y = 3
+tambourin.group.position.y = 0.15
+tambourin.group.position.z = -5
 scene.add(tambourin.group)
 
 const guitar = new Guitar()
+guitar.group.position.x = 1
+guitar.group.position.z = -2
 scene.add(guitar.group)
+
+const bell = new Bell()
+bell.group.position.x = -2
+scene.add(bell.group)
+
+const piano = new Piano()
+piano.group.position.x = 3
+scene.add(piano.group)
+
+const xylophone = new Xylophone()
+xylophone.group.position.z = -3
+xylophone.group.position.y = -0.2
+scene.add(xylophone.group)
+
+const bassviolin = new Bassviolin()
+bassviolin.group.position.y = 0.8
+bassviolin.group.position.x = -1
+scene.add(bassviolin.group)
+
+/**
+ * Sound
+ */
+
+// AUDIO
+
+import piano1 from "../static/sounds/piano/piano1.mp3"
+import piano2 from "../static/sounds/piano/piano2.mp3"
+import piano3 from "../static/sounds/piano/piano3.mp3"
+import piano4 from "../static/sounds/piano/piano4.mp3"
+import piano5 from "../static/sounds/piano/piano5.mp3"
+import piano6 from "../static/sounds/piano/piano6.mp3"
+import piano7 from "../static/sounds/piano/piano7.mp3"
+
+
+import guitar1 from "../static/sounds/guitare/guitare1.mp3"
+import guitar2 from "../static/sounds/guitare/guitare1.mp3"
+import guitar3 from "../static/sounds/guitare/guitare1.mp3"
+import guitar4 from "../static/sounds/guitare/guitare1.mp3"
+import guitar5 from "../static/sounds/guitare/guitare1.mp3"
+import guitar6 from "../static/sounds/guitare/guitare1.mp3"
+import guitar7 from "../static/sounds/guitare/guitare1.mp3"
+
+const pianoSound1 = new Audio(piano1)
+const pianoSound2 = new Audio(piano2)
+const pianoSound3 = new Audio(piano3)
+const pianoSound4 = new Audio(piano4)
+const pianoSound5 = new Audio(piano5)
+const pianoSound6 = new Audio(piano6)
+const pianoSound7 = new Audio(piano7)
+
+const guitarSound1 = new Audio(guitar1)
+const guitarSound2 = new Audio(guitar2)
+const guitarSound3 = new Audio(guitar3)
+const guitarSound4 = new Audio(guitar4)
+const guitarSound5 = new Audio(guitar5)
+const guitarSound6 = new Audio(guitar6)
+const guitarSound7 = new Audio(guitar7)
+
+
+
+
+const gay = () =>{
+    window.addEventListener(
+        'keypress',
+        (_event)=>{
+            if(_event.code === 'KeyE'){
+                pianoSound1.play()
+                pianoSound1.currentTime=0
+                
+            }
+            if(_event.code === 'KeyR'){
+                pianoSound2.play()
+                pianoSound2.currentTime=0
+                
+            }
+            if(_event.code === 'KeyT'){
+                pianoSound3.play()
+                pianoSound3.currentTime=0
+                
+            }
+            if(_event.code === 'KeyY'){
+                pianoSound4.play()
+                pianoSound4.currentTime=0
+                
+            }
+            if(_event.code === 'KeyU'){
+                pianoSound5.play()
+                pianoSound5.currentTime=0
+                
+            }
+            if(_event.code === 'KeyI'){
+                pianoSound6.play()
+                pianoSound6.currentTime=0
+                
+            }
+            if(_event.code === 'KeyO'){
+                pianoSound7.play()
+                pianoSound7.currentTime=0
+                
+            }
+        }
+    )
+    
+}
+
+
+
+const pédé = () =>{
+    window.addEventListener(
+        'keypress',
+        (_event)=>{
+            if(_event.code === 'KeyE'){
+                guitarSound1.play()
+                guitarSound1.currentTime=0
+                
+            }
+            if(_event.code === 'KeyR'){
+                guitarSound2.play()
+                guitarSound2.currentTime=0
+                
+            }
+            if(_event.code === 'KeyT'){
+                guitarSound3.play()
+                guitarSound3.currentTime=0
+                
+            }
+            if(_event.code === 'KeyY'){
+                guitarSound4.play()
+                guitarSound4.currentTime=0
+                
+            }
+            if(_event.code === 'KeyU'){
+                guitarSound5.play()
+                guitarSound5.currentTime=0
+                
+            }
+            if(_event.code === 'KeyI'){
+                guitarSound6.play()
+                guitarSound6.currentTime=0
+                
+            }
+            if(_event.code === 'KeyO'){
+                guitarSound7.play()
+                guitarSound7.currentTime=0
+                
+            }
+        }
+    )
+    
+}
+
+const tryIt = () =>{
+    if(camera.position.x > 5){
+        gay()
+    }else{
+        pédé()
+    }
+}
 
 /**
  * Renderer
@@ -483,15 +648,15 @@ const loop = () =>
 
     /**
      *  Aplicate the controls and velocity together
-     */
-    controls.moveRight( - velocity.x * delta);
-    controls.moveForward( - velocity.z * delta);
+    */
+    controls.moveRight( - velocity.x * delta)
+    controls.moveForward( - velocity.z * delta)
 
     prevTime = time;
 
-    /**
-     * Render
-     */
+   
+    tryIt()
+    // Render
     renderer.render(scene, camera)
 }
 loop()

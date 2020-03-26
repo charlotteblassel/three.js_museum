@@ -60,6 +60,16 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(mp3)$/,
+                use:
+                [
+                    {
+                        loader: 'file-loader',
+                        options: { outputPath: 'sounds/' }
+                    }
+                ]
+            },
+            {
                 test: /\.(ttf|otf|woff|woff2|eot)$/,
                 use:
                 [
@@ -72,4 +82,3 @@ module.exports = {
         ]
     }
 }
-
