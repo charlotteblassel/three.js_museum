@@ -522,48 +522,63 @@ const audioLoader = new THREE.AudioLoader();
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
     audioLoader.load(guitar1, buffer => {
-      sound.setBuffer(buffer), sound.setRefDistance(1);
+      sound.setBuffer(buffer)
+      sound.setMaxDistance(0.1)
+      sound.setDirectionalCone(60, 90, 0)
+      sound.setDistanceModel = "inverse"
       sound.currentTime = 0
       sound.play();
     })
   } else if (_event.code === "KeyR") {
     audioLoader.load(guitar2, buffer => {
-      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.setBuffer(buffer)
+      sound.setRefDistance(0.12)
+
       sound.currentTime = 0;
       sound.play();
     })
   } 
   else if (_event.code === "KeyT") {
     audioLoader.load(guitar3, buffer => {
-      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.setBuffer(buffer)
+      sound.setRefDistance(0.12)
+
       sound.currentTime = 0;
       sound.play();
     })
   }
   else if (_event.code === "KeyY") {
     audioLoader.load(guitar4, buffer => {
-      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.setBuffer(buffer)
+      sound.setRefDistance(0.12)
+
       sound.currentTime = 0;
       sound.play();
     })
   }
   else if (_event.code === "KeyU") {
     audioLoader.load(guitar5, buffer => {
-      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.setBuffer(buffer)
+      sound.setRefDistance(0.12)
+
       sound.currentTime = 0;
       sound.play();
     })
   }
   else if (_event.code === "KeyI") {
     audioLoader.load(guitar6, buffer => {
-      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.setBuffer(buffer)
+      sound.setRefDistance(0.12)
+
       sound.currentTime = 0;
       sound.play();
     })
   }
   else if (_event.code === "KeyO") {
     audioLoader.load(guitar7, buffer => {
-      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.setBuffer(buffer)
+      sound.setRefDistance(0.12)
+
       sound.currentTime = 0;
       sound.play();
     })
@@ -587,33 +602,35 @@ audioFirstRoom.add(sound)
 
 
 
-const listener2 = new THREE.AudioListener();
-camera.add(listener2);
-const sound2 = new THREE.PositionalAudio(listener2)
+// const listener2 = new THREE.AudioListener();
+// camera.add(listener2);
+// const sound2 = new THREE.PositionalAudio(listener2)
 
-const audioLoader2 = new THREE.AudioLoader();
+// const audioLoader2 = new THREE.AudioLoader();
 
-window.addEventListener("keypress", _event => {
+// window.addEventListener("keypress", _event => {
 
-    if (_event.code === "KeyE") {
-        audioLoader2.load(piano1, buffer => {
-          sound2.setBuffer(buffer), sound2.setRefDistance(1);
-          sound2.currentTime = 0
-          sound2.play();
-        })
-      }
+//     if (_event.code === "KeyE") {
+//         audioLoader2.load(piano1, buffer => {
+//           sound2.setBuffer(buffer)
+//           sound2.setRefDistance(0.7);
+//           sound.setMaxDistance(0.1)
+//           sound2.currentTime = 0
+//           sound2.play();
+//         })
+//       }
   
-})
-const audioPiano = new THREE.Mesh(
-  new THREE.SphereBufferGeometry(1, 1, 8),
-  new THREE.MeshNormalMaterial({
-    color: 0xff0000
-  })
-)
+// })
+// const audioPiano = new THREE.Mesh(
+//   new THREE.SphereBufferGeometry(1, 1, 8),
+//   new THREE.MeshNormalMaterial({
+//     color: 0xff0000
+//   })
+// )
 
-audioPiano.position.set(-9.9, 0.5, -15.1)
-scene.add(audioPiano);
-audioPiano.add(sound2)
+// audioPiano.position.set(-9.9, 0.5, -15.1)
+// scene.add(audioPiano);
+// audioPiano.add(sound2)
 
 
 // var axis = new THREE.Vector3(0, 4, 0).normalize();
