@@ -488,20 +488,20 @@ const audioLoder = new THREE.AudioLoader();
 
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
-    audioLoder.load(guitar6, buffer => {
+    audioLoder.load(guitar1, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
       sound.currentTime = 0;
       sound.play();
     })
   } else if (_event.code === "KeyR") {
-    audioLoder.load(piano1, buffer => {
+    audioLoder.load(guitar2, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
       sound.currentTime = 0;
       sound.play();
     })
   } 
   else if (_event.code === "KeyT") {
-    audioLoder.load(piano6, buffer => {
+    audioLoder.load(guitar3, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
       sound.currentTime = 0;
       sound.play();
@@ -509,6 +509,27 @@ window.addEventListener("keypress", _event => {
   }
   else if (_event.code === "KeyY") {
     audioLoder.load(guitar4, buffer => {
+      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.currentTime = 1;
+      sound.play();
+    })
+  }
+  else if (_event.code === "KeyU") {
+    audioLoder.load(guitar5, buffer => {
+      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.currentTime = 1;
+      sound.play();
+    })
+  }
+  else if (_event.code === "KeyI") {
+    audioLoder.load(guitar6, buffer => {
+      sound.setBuffer(buffer), sound.setRefDistance(0.12);
+      sound.currentTime = 1;
+      sound.play();
+    })
+  }
+  else if (_event.code === "KeyO") {
+    audioLoder.load(guitar7, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
       sound.currentTime = 1;
       sound.play();
