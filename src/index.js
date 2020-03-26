@@ -479,19 +479,18 @@ const guitarSound7 = new Audio(guitar7);
 
 const listener = new THREE.AudioListener();
 camera.add(listener);
+for(i = 1; i > 7; i++ ){
+    sound[i] = new THREE.PositionalAudio(listener)
+}
 
-const sound = new THREE.PositionalAudio(listener)
-const sound1 = new THREE.PositionalAudio(listener)
-const sound2 = new THREE.PositionalAudio(listener)
-const sound3 = new THREE.PositionalAudio(listener)
 const audioLoder = new THREE.AudioLoader();
 
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
     audioLoder.load(guitar1, buffer => {
-      sound.setBuffer(buffer), sound.setRefDistance(1);
+      sound1.setBuffer(buffer), sound1.setRefDistance(1);
       soundThird.setMaxDistance(0.10)
-      sound.currentTime = 0;
+      sound1.currentTime = 0;
       sound.play();
     })
   } else if (_event.code === "KeyR") {
@@ -543,7 +542,7 @@ const audioFirstRoom = new THREE.Mesh(
   new THREE.MeshNormalMaterial({
     color: 0xff0000
   })
-);
+)
 
 audioFirstRoom.position.set(-10.2, 0.5, -26.8)
 scene.add(audioFirstRoom);
@@ -665,5 +664,5 @@ const loop = () => {
   // xylophone.group.rotateX(0.09)
 
   renderer.render(scene, camera);
-};
-loop();
+}
+loop()
