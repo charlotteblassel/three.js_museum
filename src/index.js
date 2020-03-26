@@ -592,19 +592,7 @@ const kara = (instru) =>{
     
 }
 
-kara("piano")
-
-const tryIt = () =>{
-    if(camera.position.x > 5){
-        kara("piano")
-    }else if(camera.position.x < 5){
-        kara("guitar")
-    }
-}
-
-tryIt()
-tryIt()
-
+const pianoAudioInstance = new Audio()
 
 
 
@@ -714,8 +702,10 @@ const loop = () =>
     prevTime = time;
 
    
-    // tryIt()
-    // Render
+    // xylophone.group.rotateY(0.09)
+    // xylophone.group.rotateX(0.09)
+
+
     renderer.render(scene, camera)
 }
 loop()
