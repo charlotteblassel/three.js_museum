@@ -131,19 +131,12 @@ document.addEventListener("keyup", onKeyUp);
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
-<<<<<<< HEAD
 // We added lights over each instrument
 
 const spotLight = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
 spotLight.position.z = -32
 spotLight.position.y = 2
 scene.add(spotLight)
-=======
-const spotLight = new THREE.SpotLight(0xfddfff, 1, 12, Math.PI * 0.2, 0.5);
-spotLight.position.z = -32;
-spotLight.position.y = 2;
-scene.add(spotLight);
->>>>>>> c277539e78b130cb8fdf826b926d6abb9a8d9ec5
 
 spotLight.target.position.z = -36;
 scene.add(spotLight.target);
@@ -154,12 +147,6 @@ spotLight2.position.z = -20;
 spotLight2.position.y = 2;
 scene.add(spotLight2);
 
-<<<<<<< HEAD
-=======
-spotLight2.target.position.z = 3;
-scene.add(spotLight2.target);
-
->>>>>>> c277539e78b130cb8fdf826b926d6abb9a8d9ec5
 /**
  * Museum
  */
@@ -657,12 +644,8 @@ window.addEventListener("keypress", _event => {
       soundGuitarposition6.play();
     });
   }
-<<<<<<< HEAD
 })
 // Displaying an element on which the positional sound is based
-=======
-});
->>>>>>> c277539e78b130cb8fdf826b926d6abb9a8d9ec5
 const audioGuitar = new THREE.Mesh(
   new THREE.SphereBufferGeometry(1, 1, 8),
   new THREE.MeshNormalMaterial({
@@ -682,7 +665,7 @@ audioGuitar.add(
   soundGuitarposition5,
   soundGuitarposition6
 );
->>>>>>> c277539e78b130cb8fdf826b926d6abb9a8d9ec5
+
 
 const soundpianoposition = new THREE.PositionalAudio(listener);
 const soundpianoposition1 = new THREE.PositionalAudio(listener);
