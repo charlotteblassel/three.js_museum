@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
     <title>Music museum</title>
 </head>
 <body>
     <div class="blocker">
-        <div>
-            <h1>Music museum</h1>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim tempora distinctio consequatur exercitationem corrupti. Perspiciatis exercitationem minus eveniet ut, dolorem modi iure explicabo, consequatur blanditiis magnam similique ipsa et a.</p>
-            </div>
-           <div class="control">
-               <div class="forwardControlInstruction"></div>
-               <div class="backwardControlInstruction"></div>
-               <div class="leftControlInstruction"></div>
-               <div class="rightControlInstruction"></div>
-               <div class="spaceControlInstruction"></div>
-               <div class="escControlInstruction"></div>
-           </div>
-           <div class="realisation">
-               <p>réalisé par : nanananananananna</p>
-           </div>
-            
+        <div class="blockerTxt">
+            <h1 id="musicMuseumTitle">Music Museum</h1>
+            <h3>Bienvenue dans le musée virtuel de la musique ! Enrichis ta culture musicale grâce à cette expérience 3D dans laquelle tu pourras en savoir plus sur les instruments de musique.</h3>
         </div>
+        <div class="controlContainer">
+            <div class="txtControl">
+                <h1>Pour te déplacer, utilise les touches <span class="orange">ZQSD</span> de ton clavier. Pour pouvoir tourner la tête, appuie sur <span class="orange">Espace</span> afin de bloquer ta souris, et appuie sur <span class="orange">Echap</span> lorsque tu souhaites retrouver ta souris !</h1>
+            </div>
+            <div class="control">
+                <div class="controlRow">
+                    <div class="forwardControlInstruction btnKey">Z</div>
+                </div>
+                <div class="controlRow">
+                    <div class="leftControlInstruction btnKey">Q</div>
+                    <div class="backwardControlInstruction btnKey">S</div>
+                    <div class="rightControlInstruction btnKey">D</div>
+                </div>
+                <div class="controlRow">
+                    <div class="spaceControlInstruction btnKey">___</div>
+                    <div class="escControlInstruction btnKey">Esc</div>
+                </div>
+           </div>
+        </div>
+           <div class="realisation">
+               <p>Réalisé dans le cadre d'un projet scolaire.</p>
+           </div>
     </div>
+    <script type="text/javascript" src="scripts/main.js"></script>
 </body>
 </html>
