@@ -428,7 +428,7 @@ xylophone.group.position.y = -0.2
 scene.add(xylophone.group)
 
 const bassviolin = new Bassviolin()
-bassviolin.group.position.y = 0.8
+bassviolin.group.position.y = 1.2
 bassviolin.group.position.x = -1
 scene.add(bassviolin.group)
 
