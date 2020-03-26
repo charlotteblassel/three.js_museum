@@ -559,76 +559,69 @@ const guitarSound7 = new Audio(guitar7);
 
 const listener = new THREE.AudioListener();
 camera.add(listener);
-const sound = new THREE.PositionalAudio(listener);
-const sound1 = new THREE.PositionalAudio(listener);
-const sound2 = new THREE.PositionalAudio(listener);
-const sound3 = new THREE.PositionalAudio(listener);
-const sound4 = new THREE.PositionalAudio(listener);
-const sound5 = new THREE.PositionalAudio(listener);
-const sound6 = new THREE.PositionalAudio(listener);
+const soundpianoposition = new THREE.PositionalAudio(listener);
+const soundpianoposition1 = new THREE.PositionalAudio(listener);
+const soundpianoposition2 = new THREE.PositionalAudio(listener);
+const soundpianoposition3 = new THREE.PositionalAudio(listener);
+const soundpianoposition4 = new THREE.PositionalAudio(listener);
+const soundpianoposition5 = new THREE.PositionalAudio(listener);
+const soundpianoposition6 = new THREE.PositionalAudio(listener);
 
 
 const audioLoader = new THREE.AudioLoader();
 
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
-    audioLoader.load(piano1, buffer => {
-      sound.setBuffer(buffer);
-      sound.setRefDistance(0.7);
-      sound.setMaxDistance(0.1);
-      sound2.currentTime = 0;
-      sound2.play();
-    });
+    audioLoader.load(guitar1, buffer => {
+      soundpianoposition.setBuffer(buffer);
+      soundpianoposition.setRefDistance(1);
+      soundpianoposition.currentTime = 0;
+      soundpianoposition.play();
+    })
   } else if (_event.code === "KeyR") {
     audioLoader.load(guitar2, buffer => {
-      sound1.setBuffer(buffer);
-      sound1.setRefDistance(0.12);
-
-      sound1.currentTime = 0;
-      sound1.play();
-    });
+      soundpianoposition1.setBuffer(buffer);
+      soundpianoposition1.setRefDistance(1);
+      soundpianoposition1.currentTime = 0;
+      soundpianoposition1.play();
+    })
   } else if (_event.code === "KeyT") {
     audioLoader.load(guitar3, buffer => {
-      sound2.setBuffer(buffer);
-      sound2.setRefDistance(0.12);
-
-      sound2.currentTime = 0;
-      sound2.play();
-    });
+      soundpianoposition2.setBuffer(buffer);
+      soundpianoposition2.setRefDistance(1);
+      soundpianoposition2.currentTime = 0;
+      soundpianoposition2.play();
+    })
   } else if (_event.code === "KeyY") {
     audioLoader.load(guitar4, buffer => {
-      sound3.setBuffer(buffer);
-      sound3.setRefDistance(0.12);
-
-      sound3.currentTime = 0;
-      sound3.play();
-    });
+      soundpianoposition3.setBuffer(buffer);
+      soundpianoposition3.setRefDistance(1);
+      soundpianoposition3.currentTime = 0;
+      soundpianoposition3.play();
+    })
   } else if (_event.code === "KeyU") {
     audioLoader.load(guitar5, buffer => {
-      sound4.setBuffer(buffer);
-      sound4.setRefDistance(0.12);
-
-      sound4.currentTime = 0;
-      sound4.play();
-    });
+      soundpianoposition4.setBuffer(buffer);
+      soundpianoposition4.setRefDistance(1);
+      soundpianoposition4.currentTime = 0;
+      soundpianoposition4.play();
+    })
   } else if (_event.code === "KeyI") {
     audioLoader.load(guitar6, buffer => {
-      sound5.setBuffer(buffer);
-      sound5.setRefDistance(0.12);
-
-      sound5.currentTime = 0;
-      sound5.play();
-    });
+      soundpianoposition5.setBuffer(buffer);
+      soundpianoposition5.setRefDistance(1);
+      soundpianoposition5.currentTime = 0;
+      soundpianoposition5.play();
+    })
   } else if (_event.code === "KeyO") {
     audioLoader.load(guitar7, buffer => {
-      sound6.setBuffer(buffer);
-      sound6.setRefDistance(0.12);
-
-      sound6.currentTime = 0;
-      sound6.play();
-    });
+      soundpianoposition6.setBuffer(buffer);
+      soundpianoposition6.setRefDistance(1);
+      soundpianoposition6.currentTime = 0;
+      soundpianoposition6.play();
+    })
   }
-});
+})
 const audioFirstRoom = new THREE.Mesh(
   new THREE.SphereBufferGeometry(1, 1, 8),
   new THREE.MeshNormalMaterial({
@@ -638,7 +631,7 @@ const audioFirstRoom = new THREE.Mesh(
 
 audioFirstRoom.position.set(-10.2, 0.5, -26.8);
 scene.add(audioFirstRoom);
-audioFirstRoom.add(sound, sound1, sound2, sound3, sound4, sound5, sound6);
+audioFirstRoom.add(soundpianoposition, soundpianoposition1,soundpianoposition2, soundpianoposition3, soundpianoposition4, soundpianoposition5, soundpianoposition6);
 
 // const listener2 = new THREE.AudioListener();
 // camera.add(listener2);
