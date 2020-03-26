@@ -110,6 +110,8 @@ const onKeyUp = _event => {
   if (_event.code === "KeyD") {
     moveRight = false;
   }
+
+  // this code was used to jump, to help build the museum
   //    if (_event.key === ' '  || _event.code === 'space')
   // {
   //     camera.position.y += 3
@@ -129,6 +131,8 @@ document.addEventListener("keyup", onKeyUp);
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
+// We added lights over each instrument
+
 const spotLight = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
 spotLight.position.z = -32
 spotLight.position.y = 2
@@ -145,7 +149,6 @@ scene.add(spotLight2)
 
 spotLight2.target.position.z = 3
 scene.add(spotLight2.target)
-
 
 /**
  * Museum
@@ -495,12 +498,14 @@ museumGroup.add(upRightWallTwentyFive.group);
 /**
  * Music instrument
  */
+// Positioning the tambourin on its base
 const tambourin = new Tambourin();
 tambourin.group.position.x = 9.8;
 tambourin.group.position.z = -27;
 tambourin.group.position.y = 0.6;
 scene.add(tambourin.group);
 
+// Positioning the guitar on its base
 const guitar = new Guitar();
 guitar.group.position.x = -9.5;
 guitar.group.position.z = -26.5;
@@ -508,18 +513,21 @@ guitar.group.position.y = 0.5;
 guitar.group.rotation.y = Math.PI / 2;
 scene.add(guitar.group);
 
+// Positioning the bell near the entrance
 const bell = new Bell();
 bell.group.position.x = 1.5;
 bell.group.position.z = -0.2;
 bell.group.position.y = 1.9;
 scene.add(bell.group);
 
+// Positioning the piano on its base
 const piano = new Piano();
 piano.group.position.x = -9.9;
 piano.group.position.z = -15.1;
 piano.group.position.y = 0.5;
 scene.add(piano.group);
 
+// Positioning the xylophone on its base
 const xylophone = new Xylophone();
 xylophone.group.position.x = 10.1;
 xylophone.group.position.z = -15;
@@ -527,6 +535,7 @@ xylophone.group.position.y = 0.2;
 xylophone.group.rotation.y = Math.PI /2
 scene.add(xylophone.group);
 
+// Positioning the bassviolin on its base
 const bassviolin = new Bassviolin();
 bassviolin.group.position.x = 0;
 bassviolin.group.position.z = -36;
@@ -539,6 +548,7 @@ scene.add(bassviolin.group);
 
 // AUDIO
 
+// Importing the piano songs
 import piano1 from "../static/sounds/piano/piano1.mp3";
 import piano2 from "../static/sounds/piano/piano2.mp3";
 import piano3 from "../static/sounds/piano/piano3.mp3";
@@ -547,6 +557,7 @@ import piano5 from "../static/sounds/piano/piano5.mp3";
 import piano6 from "../static/sounds/piano/piano6.mp3";
 import piano7 from "../static/sounds/piano/piano7.mp3";
 
+// Importing the guitar song
 import guitar1 from "../static/sounds/guitare/guitare1.mp3";
 import guitar2 from "../static/sounds/guitare/guitare2.mp3";
 import guitar3 from "../static/sounds/guitare/guitare3.mp3";
@@ -574,7 +585,6 @@ const guitarSound7 = new Audio(guitar7);
 const listener = new THREE.AudioListener();
 camera.add(listener);
 
-
 const soundGuitarposition = new THREE.PositionalAudio(listener);
 const soundGuitarposition1 = new THREE.PositionalAudio(listener);
 const soundGuitarposition2 = new THREE.PositionalAudio(listener);
@@ -586,6 +596,7 @@ const soundGuitarposition6 = new THREE.PositionalAudio(listener);
 
 const audioLoader = new THREE.AudioLoader();
 
+// Sounds played when we click on the keyboard
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
     audioLoader.load(guitar1, buffer => {
@@ -638,6 +649,7 @@ window.addEventListener("keypress", _event => {
     })
   }
 })
+// Displaying an element on which the positional sound is based
 const audioGuitar = new THREE.Mesh(
   new THREE.SphereBufferGeometry(1, 1, 8),
   new THREE.MeshNormalMaterial({
@@ -645,14 +657,9 @@ const audioGuitar = new THREE.Mesh(
   })
 );
 
-
 audioGuitar.position.set(-10.2, 0.5, -26.8);
 scene.add(audioGuitar);
 audioGuitar.add(soundGuitarposition, soundGuitarposition1,soundGuitarposition2, soundGuitarposition3, soundGuitarposition4, soundGuitarposition5, soundGuitarposition6);
-
-
-
-
 
 const soundpianoposition = new THREE.PositionalAudio(listener);
 const soundpianoposition1 = new THREE.PositionalAudio(listener);
@@ -694,6 +701,7 @@ const soundpianoposition6 = new THREE.PositionalAudio(listener);
 
 var axis = new THREE.Vector3(0, 4, 0).normalize();
 var speed = 0.05;
+
 /**
  * Renderer
  */
