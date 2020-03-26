@@ -18,7 +18,7 @@ export default class Bassviolin
                     {
     
                         this.bassviolin = gltf.scene.children[0]
-                        this.bassviolin.scale.set(0.18, 0.18, 0.18)
+                        this.bassviolin.scale.set(0.28, 0.28, 0.28)
                         this.group.add(this.bassviolin)
                     }
             }
