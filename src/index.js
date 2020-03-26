@@ -182,13 +182,13 @@ museumGroup.add(centralFloor.group)
 // Base
 const baseOne = new Bases(2, 2, 1, 32, -9.8, 0, -15)
 museumGroup.add(baseOne.group)
-const baseTwo = new Bases(1, 1, 1, 32, 9.8, 0, -15)
+const baseTwo = new Bases(2, 2, 1, 32, 9.8, 0, -15)
 museumGroup.add(baseTwo.group)
-const baseThree = new Bases(1.2, 1.2, 1, 32, -9.8, 0, -27)
+const baseThree = new Bases(2, 2, 1, 32, -9.8, 0, -27)
 museumGroup.add(baseThree.group)
-const baseFour = new Bases(0.5, 0.5, 1, 32, 9.8, 0, -27)
+const baseFour = new Bases(2, 2, 1, 32, 9.8, 0, -27)
 museumGroup.add(baseFour.group)
-const baseFive = new Bases(1, 1, 1, 32, 0, 0, -33)
+const baseFive = new Bases(2, 2, 1, 32, 0, 0, -33)
 museumGroup.add(baseFive.group)
 
 // Doors
@@ -405,40 +405,31 @@ museumGroup.add(upRightWallTwentyFour.group)
  * Music instrument
  */
 const tambourin = new Tambourin()
-tambourin.group.position.x = 9.8
-tambourin.group.position.z = -27
-tambourin.group.position.y = 0.6
+tambourin.group.position.y = 0.15
+tambourin.group.position.z = -5
 scene.add(tambourin.group)
 
 const guitar = new Guitar()
-guitar.group.position.x = -10.2
-guitar.group.position.z = -26.8
-guitar.group.position.y = 0.5
+guitar.group.position.x = 1
+guitar.group.position.z = -2
 scene.add(guitar.group)
 
 const bell = new Bell()
-bell.group.position.x = 0.65
-bell.group.position.z = -1.5
-bell.group.position.y = 2
+bell.group.position.x = -2
 scene.add(bell.group)
 
 const piano = new Piano()
-piano.group.position.x = -9.9
-piano.group.position.z = -15.1
-piano.group.position.y = 0.5
+piano.group.position.x = 3
 scene.add(piano.group)
 
 const xylophone = new Xylophone()
-xylophone.group.position.x = 9.8
-xylophone.group.position.z = -14.6
-xylophone.group.position.y = 0.2
+xylophone.group.position.z = -3
+xylophone.group.position.y = -0.2
 scene.add(xylophone.group)
 
 const bassviolin = new Bassviolin()
-bassviolin.group.position.x = 0
-bassviolin.group.position.z = -33
-bassviolin.group.position.y = 1.7
-
+bassviolin.group.position.y = 1.2
+bassviolin.group.position.x = -1
 scene.add(bassviolin.group)
 
 /**
@@ -486,33 +477,24 @@ const listener = new THREE.AudioListener()
 camera.add(listener)
 
 const sound = new THREE.PositionalAudio(listener)
-const sound1 = new THREE.PositionalAudio(listener)
 const audioLoder = new THREE.AudioLoader()
 
 window.addEventListener("keypress", (_event)=>{
     if(_event.code === 'KeyE'){
-        
+
         audioLoder.load(guitar1,(buffer)=>{
             sound.setBuffer(buffer),
             sound.setRefDistance(0.12)
-            sound.currentTime=0
+            sound.currentTime = 1
             sound.play()
+            console.log("pute")
         })
-    }else if(_event.code === 'KeyR'){
-        audioLoder.load(guitar2,(buffer)=>{
-            sound1.setBuffer(buffer),
-            sound1.setRefDistance(0.12)
-            sound1.currentTime=0
-            sound1.play()
-        })
+       
+        
+        
     }
-    
 })
-// audioLoder.load(guitar1,(buffer)=>{
-//     sound.setBuffer(buffer),
-//     sound.setRefDistance(0.12)
-//     sound.play()
-// })
+
 
 const audioFirstRoom = new THREE.Mesh(
     new THREE.SphereBufferGeometry(1, 1, 8),
@@ -530,7 +512,7 @@ audioFirstRoom.add(sound)
 
 // let positionCamera = camera.position.x
 
-// const playPiano = () =>{
+// const gay = () =>{
 //     window.addEventListener(
 //         'keypress',
 //         (_event)=>{
