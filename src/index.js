@@ -16,6 +16,8 @@ import Xylophone from './scripts/Xylophone.js'
 import Bassviolin from './scripts/Bassviolin.js'
 import Sky from './assets/sky.jpg'
 
+const blocker = document.querySelector(".blocker")
+
 /**
  * Textures
  */
@@ -659,7 +661,7 @@ window.addEventListener("resize", () => {
 document.body.addEventListener("keydown", _e => {
   if (_e.key === " ") {
     controls.lock();
-    // blocker.style.display = 'none';
+    blocker.style.display = 'none';
   }
 });
 
