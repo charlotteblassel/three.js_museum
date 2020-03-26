@@ -16,6 +16,42 @@ import Xylophone from "./scripts/Xylophone.js";
 import Bassviolin from "./scripts/Bassviolin.js";
 import Sky from "./assets/sky.jpg";
 
+
+// BLOCKER PAGE 
+
+const realisation = document.querySelector('.realisation')
+const forwardControlInstruction = document.querySelector('.forwardControlInstruction')
+const leftControlInstruction = document.querySelector('.leftControlInstruction')
+const backwardControlInstruction = document.querySelector('.backwardControlInstruction')
+const rightControlInstruction = document.querySelector('.rightControlInstruction')
+const spaceControlInstruction = document.querySelector('.spaceControlInstruction')
+const escControlInstruction = document.querySelector('.escControlInstruction')
+const SQSKey = document.querySelector('.SQSKey')
+const espaceKey = document.querySelector('.espaceKey')
+const escKey = document.querySelector('.escKey')
+
+
+let transition = setTimeout(
+    function (){
+        realisation.style.opacity='0'
+    },4000
+)
+let transition2 = setTimeout(
+    function (){
+        realisation.textContent='Appuyez sur ESPACE pour entrer dans le musée'
+        realisation.style.opacity='1'
+        realisation.style.border='1px solid red'
+    },5000
+)
+
+forwardControlInstruction.addEventListener(
+    'click',
+    ()=>{
+        window.alert('oij')
+    }
+)
+
+
 const blocker = document.querySelector(".blocker");
 
 /**
@@ -592,15 +628,37 @@ const soundGuitarposition6 = new THREE.PositionalAudio(listener);
 
 const audioLoader = new THREE.AudioLoader();
 
-// Sounds played when we click on the keyboard
+// Loading the sound
+audioLoader.load(guitar1, buffer => {
+  soundGuitarposition.setBuffer(buffer)
+  soundGuitarposition.setRefDistance(1.8)
+})
+
+const playSound = (_positionalSound) =>
+{
+  _positionalSound._startedAt = _positionalSound.context.currentTime + 0
+
+  const source = _positionalSound.context.createBufferSource()
+  source.buffer = _positionalSound.buffer
+  source.loop = _positionalSound.loop
+  source.loopStart = _positionalSound.loopStart
+  source.loopEnd = _positionalSound.loopEnd
+  source.onended = _positionalSound.onEnded.bind( _positionalSound )
+  source.start(_positionalSound._startedAt, _positionalSound._pausedAt + _positionalSound.offset, _positionalSound.duration)
+
+  _positionalSound.isPlaying = true
+
+  _positionalSound.source = source
+
+  _positionalSound.setDetune( _positionalSound.detune )
+  _positionalSound.setPlaybackRate( _positionalSound.playbackRate )
+
+  _positionalSound.connect()
+}
+
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
-    audioLoader.load(guitar1, buffer => {
-      soundGuitarposition.setBuffer(buffer);
-      soundGuitarposition.setRefDistance(1.8);
-      soundGuitarposition.currentTime = 0;
-      soundGuitarposition.play();
-    });
+    playSound(soundGuitarposition)
   } else if (_event.code === "KeyR") {
     audioLoader.load(guitar2, buffer => {
       soundGuitarposition1.setBuffer(buffer);
@@ -644,8 +702,7 @@ window.addEventListener("keypress", _event => {
       soundGuitarposition6.play();
     });
   }
-})
-// Displaying an element on which the positional sound is based
+});
 const audioGuitar = new THREE.Mesh(
   new THREE.SphereBufferGeometry(1, 1, 8),
   new THREE.MeshNormalMaterial({
@@ -665,7 +722,6 @@ audioGuitar.add(
   soundGuitarposition5,
   soundGuitarposition6
 );
-
 
 const soundpianoposition = new THREE.PositionalAudio(listener);
 const soundpianoposition1 = new THREE.PositionalAudio(listener);
@@ -792,3 +848,5 @@ const loop = () => {
 loop();
 
 window.addEventListener("click", () => {});
+
+
