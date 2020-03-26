@@ -129,13 +129,11 @@ document.addEventListener("keyup", onKeyUp);
 const ambientLight = new THREE.AmbientLight(0xffffff, 1)
 scene.add(ambientLight)
 
-const spotLight = new THREE.SpotLight(0xfddfff , 1, 1, Math.PI * 0.2, 0.5)
-spotLight.position.z = 3
+const spotLight = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
+spotLight.position.z = -32
 spotLight.position.y = 2
-scene.add(spotLight)
 
-spotLight.target.position.z = - 2
-scene.add(spotLight.target)
+spotLight.target.position.z = -36
 
 /**
  * Museum
