@@ -1,14 +1,14 @@
 # Music Museum in three.js
 
 ##### (Project at HETIC)
-Welcome in our Music Museum, created to put you in a 3D immersion in the musical universe.
+Welcome to our Music Museum, created to put you in a 3D immersion in the musical universe.
 
 Avalaible at musicmuseum.netlify.com
 
 ## Features
 - 5 instruments (piano, guitar, contrebasse, tambourine, xylophone)
-- keys (ZQSD) to move around the museum
-- sound of instruments when you get close 
+- ZQSD keys to move around the museum
+- sound of instruments when you approach them
 - directional sounds
 - presentation of the instruments 
 
