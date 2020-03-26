@@ -14,13 +14,13 @@ import Bell from './scripts/Bell.js'
 import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone.js'
 import Bassviolin from './scripts/Bassviolin.js'
-import Sky from "./assets/sky.jpg"
+import Sky from './assets/sky.jpg'
 
 /**
  * Textures
  */
-const textureLoader = new THREE.TextureLoader();
-const skyBackground = textureLoader.load(Sky);
+const textureLoader = new THREE.TextureLoader()
+const skyBackground = textureLoader.load(Sky)
 
 /**
  * Sizes+
@@ -126,6 +126,14 @@ document.addEventListener("keyup", onKeyUp);
  */
 const ambientLight = new THREE.AmbientLight(0xffffff, 1)
 scene.add(ambientLight)
+
+const spotLight = new THREE.SpotLight(0xfddfff , 1, 1, Math.PI * 0.2, 0.5)
+spotLight.position.z = 3
+spotLight.position.y = 2
+scene.add(spotLight)
+
+spotLight.target.position.z = - 2
+scene.add(spotLight.target)
 
 /**
  * Museum
@@ -432,9 +440,9 @@ guitar.group.position.y = 0.5;
 scene.add(guitar.group);
 
 const bell = new Bell();
-bell.group.position.x = 0.65;
-bell.group.position.z = -1.5;
-bell.group.position.y = 2;
+bell.group.position.x = 1.5;
+bell.group.position.z = -0.2;
+bell.group.position.y = 1.9;
 scene.add(bell.group);
 
 const piano = new Piano();
@@ -451,9 +459,8 @@ scene.add(xylophone.group);
 
 const bassviolin = new Bassviolin();
 bassviolin.group.position.x = 0;
-bassviolin.group.position.z = -33;
+bassviolin.group.position.z = -36;
 bassviolin.group.position.y = 1.7;
-
 scene.add(bassviolin.group);
 
 /**
@@ -500,60 +507,56 @@ const guitarSound7 = new Audio(guitar7);
 
 const listener = new THREE.AudioListener();
 camera.add(listener);
-
 const sound = new THREE.PositionalAudio(listener)
-const sound1 = new THREE.PositionalAudio(listener)
-const sound2 = new THREE.PositionalAudio(listener)
-const sound3 = new THREE.PositionalAudio(listener)
-const audioLoder = new THREE.AudioLoader();
+
+const audioLoader = new THREE.AudioLoader();
 
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
-    audioLoder.load(guitar1, buffer => {
+    audioLoader.load(guitar1, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(1);
-      soundThird.setMaxDistance(0.10)
-      sound.currentTime = 0;
+      sound.currentTime = 0
       sound.play();
     })
   } else if (_event.code === "KeyR") {
-    audioLoder.load(guitar2, buffer => {
+    audioLoader.load(guitar2, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
       sound.currentTime = 0;
       sound.play();
     })
   } 
   else if (_event.code === "KeyT") {
-    audioLoder.load(guitar3, buffer => {
+    audioLoader.load(guitar3, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
       sound.currentTime = 0;
       sound.play();
     })
   }
   else if (_event.code === "KeyY") {
-    audioLoder.load(guitar4, buffer => {
+    audioLoader.load(guitar4, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
-      sound.currentTime = 1;
+      sound.currentTime = 0;
       sound.play();
     })
   }
   else if (_event.code === "KeyU") {
-    audioLoder.load(guitar5, buffer => {
+    audioLoader.load(guitar5, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
-      sound.currentTime = 1;
+      sound.currentTime = 0;
       sound.play();
     })
   }
   else if (_event.code === "KeyI") {
-    audioLoder.load(guitar6, buffer => {
+    audioLoader.load(guitar6, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
-      sound.currentTime = 1;
+      sound.currentTime = 0;
       sound.play();
     })
   }
   else if (_event.code === "KeyO") {
-    audioLoder.load(guitar7, buffer => {
+    audioLoader.load(guitar7, buffer => {
       sound.setBuffer(buffer), sound.setRefDistance(0.12);
-      sound.currentTime = 1;
+      sound.currentTime = 0;
       sound.play();
     })
   }
@@ -564,48 +567,49 @@ const audioFirstRoom = new THREE.Mesh(
   new THREE.MeshNormalMaterial({
     color: 0xff0000
   })
-);
+)
 
 audioFirstRoom.position.set(-10.2, 0.5, -26.8)
 scene.add(audioFirstRoom);
 audioFirstRoom.add(sound)
 
-// let positionCamera = camera.position.x;
-
-// const playPiano = () => {
-//   window.addEventListener("keypress", _event => {
-//     if (_event.code === "KeyE") {
-//       pianoSound1.play();
-//       pianoSound1.currentTime = 0;
-//     }
-//     if (_event.code === "KeyR") {
-//       pianoSound2.play();
-//       pianoSound2.currentTime = 0;
-//     }
-//     if (_event.code === "KeyT") {
-//       pianoSound3.play();
-//       pianoSound3.currentTime = 0;
-//     }
-//     if (_event.code === "KeyY") {
-//       pianoSound4.play();
-//       pianoSound4.currentTime = 0;
-//     }
-//     if (_event.code === "KeyU") {
-//       pianoSound5.play();
-//       pianoSound5.currentTime = 0;
-//     }
-//     if (_event.code === "KeyI") {
-//       pianoSound6.play();
-//       pianoSound6.currentTime = 0;
-//     }
-//     if (_event.code === "KeyO") {
-//       pianoSound7.play();
-//       pianoSound7.currentTime = 0;
-//     }
-//   });
-// };
 
 
+
+
+
+
+const listener2 = new THREE.AudioListener();
+camera.add(listener2);
+const sound2 = new THREE.PositionalAudio(listener2)
+
+const audioLoader2 = new THREE.AudioLoader();
+
+window.addEventListener("keypress", _event => {
+
+    if (_event.code === "KeyE") {
+        audioLoader2.load(piano1, buffer => {
+          sound2.setBuffer(buffer), sound2.setRefDistance(1);
+          sound2.currentTime = 0
+          sound2.play();
+        })
+      }
+  
+})
+const audioPiano = new THREE.Mesh(
+  new THREE.SphereBufferGeometry(1, 1, 8),
+  new THREE.MeshNormalMaterial({
+    color: 0xff0000
+  })
+)
+
+audioPiano.position.set(-9.9, 0.5, -15.1)
+scene.add(audioPiano);
+audioPiano.add(sound2)
+
+
+// var axis = new THREE.Vector3(0, 4, 0).normalize();
+// var speed = 0.05;
 /**
  * Renderer
  */
@@ -682,9 +686,11 @@ const loop = () => {
 
   prevTime = time;
 
-  // xylophone.group.rotateY(0.09)
-  // xylophone.group.rotateX(0.09)
+//   xylophone.group.rotateOnAxis(axis, speed);
+//   xylophone.group.rotation.y += 0.05
 
   renderer.render(scene, camera);
-};
-loop();
+}
+loop()
+
+

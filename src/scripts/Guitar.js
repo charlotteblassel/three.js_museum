@@ -22,13 +22,6 @@ export default class Guitar
                         // this.guitar.material = new THREE.MeshNormalMaterial()
                         this.group.add(this.guitar)
                     }
-
-               
-
-             
-
-
-                
             }
         )
     }
