@@ -13,7 +13,7 @@ import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
 import Bassviolin from './scripts/Bassviolin.js'
 import Sky from './assets/sky.jpg'
-import Tree from './scripts/Tree.js'
+// import Tree from './scripts/Tree.js'
 
 /**
  * Textures
@@ -382,15 +382,15 @@ museumGroup.add(upRightWallTwentyFour.group)
  * Tree
  */
 
-const tree1 = new Tree()
-tree1.group.position.x = 3
-tree1.group.position.z = -1.5
-scene.add(tree1.group)
+// const tree1 = new Tree()
+// tree1.group.position.x = 3
+// tree1.group.position.z = -1.5
+// scene.add(tree1.group)
 
-const tree2 = new Tree()
-tree2.group.position.x = -3
-tree2.group.position.z = -1.5
-scene.add(tree2.group)
+// const tree2 = new Tree()
+// tree2.group.position.x = -3
+// tree2.group.position.z = -1.5
+// scene.add(tree2.group)
 
 /**
  * Music instrument
