@@ -466,7 +466,6 @@ const guitarSound7 = new Audio(guitar7)
 // const listener = new THREE.AudioListener()
 // camera.add(listener)
 
-<<<<<<< HEAD
 // const sound = new THREE.PositionalAudio(listener)
 
 // const audioLoader = new THREE.AudioLoader()
@@ -474,34 +473,6 @@ const guitarSound7 = new Audio(guitar7)
 //     sound.setBuffer(buffer)
 //     sound.setRefDistance(1)
 //     sound.setMaxDistance(0.10)
-=======
-const listener = new THREE.AudioListener()
-camera.add(listener)
-
-const sound = new THREE.PositionalAudio(listener)
-const audioLoder = new THREE.AudioLoader()
-
-window.addEventListener("keypress", (_event)=>{
-    if(_event.code === 'KeyE'){
-        
-        audioLoder.load(piano5,(buffer)=>{
-            sound.setBuffer(buffer),
-            sound.setRefDistance(0.12)
-            sound.play()
-        })
-    }else if(_event.code === 'KeyR'){
-        audioLoder.load(guitar1,(buffer)=>{
-            sound.setBuffer(buffer),
-            sound.setRefDistance(0.12)
-            sound.play()
-        })
-    }
-    
-})
-// audioLoder.load(guitar1,(buffer)=>{
-//     sound.setBuffer(buffer),
-//     sound.setRefDistance(0.12)
->>>>>>> parent of 4f4fac3... Merge branch 'master' of https://github.com/charlotteblassel/three.js_museum
 //     sound.play()
 // })
 
