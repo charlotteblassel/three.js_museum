@@ -112,3 +112,7 @@ canvas
     transition : all 1s;
     padding : 10px;
 }
+
+.orange{
+    background-color: orange;
+}
