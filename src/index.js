@@ -673,6 +673,11 @@ window.addEventListener("keypress", _event => {
     });
   }
 });
+<<<<<<< HEAD
+// Displaying an element on which the positional sound is based
+
+=======
+>>>>>>> 1378f1d71c3baa80f4307633a8a5361b6a8a7e01
 const audioGuitar = new THREE.Mesh(
   new THREE.SphereBufferGeometry(1, 1, 8),
   new THREE.MeshNormalMaterial({
