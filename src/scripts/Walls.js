@@ -14,27 +14,29 @@ const bricksAmbientOcclusionTexture = textureLoader.load(bricksAmbientOcclusionS
 
 export default class Walls
 {
-    constructor(x, y, z, positionX, positionY, positionZ, rotationY)
+    constructor(width, positionX, positionY, positionZ, rotationX, rotationY)
     {
         this.group = new THREE.Group()
-        this.x = x
-        this.y = y
-        this.z = z
+        this.width = width
         this.positionX = positionX
         this.positionY = positionY
         this.positionZ = positionZ
+        this.rotationX = rotationX
         this.rotationY = rotationY
         this.wallMesh = new THREE.Mesh(
-            new THREE.BoxGeometry(this.x, this.y, this.z),
+            new THREE.PlaneGeometry(this.width, this.width),
             new THREE.MeshStandardMaterial({
                 map: bricksColorTexture,
-                normalMap: bricksNormalTexture,
-                aoMap: bricksAmbientOcclusionTexture
+                // normalMap: bricksNormalTexture,
+                aoMap: bricksAmbientOcclusionTexture,
+                side: THREE.DoubleSide
+                // wireframe:true
             })
         )
         this.wallMesh.position.x = this.positionX
-        this.wallMesh.position.z = this.positionZ
         this.wallMesh.position.y = this.positionY
+        this.wallMesh.position.z = this.positionZ
+        this.wallMesh.rotation.x = this.rotationX
         this.wallMesh.rotation.y = this.rotationY
         this.group.add(this.wallMesh)
     }
