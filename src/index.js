@@ -110,14 +110,14 @@ const onKeyUp = ( _event ) =>{
     {
         moveRight = false;
     }
-       if (_event.key === ' '  || _event.code === 'space')
-    {
-        camera.position.y += 3
-    }
-    if (_event.key === 'Control' ||  _event.code === 'ControlLeft')
-    {
-        camera.position.y -= 3
-    }
+    //    if (_event.key === ' '  || _event.code === 'space')
+    // {
+    //     camera.position.y += 3
+    // }
+    // if (_event.key === 'Control' ||  _event.code === 'ControlLeft')
+    // {
+    //     camera.position.y -= 3
+    // }
 }
 
 
@@ -513,20 +513,20 @@ const gay = () =>{
                 
                 
             }
-            // if(_event.code === 'KeyI'){
-            //     pianoSound6.play()
-            //     pianoSound6.currentTime=0
-            //     positionCamera = camera.position.x
+            if(_event.code === 'KeyI'){
+                pianoSound6.play()
+                pianoSound6.currentTime=0
+                positionCamera = camera.position.x
                 
                 
-            // }
-            // if(_event.code === 'KeyO'){
-            //     pianoSound7.play()
-            //     pianoSound7.currentTime=0
-            //     positionCamera = camera.position.x
+            }
+            if(_event.code === 'KeyO'){
+                pianoSound7.play()
+                pianoSound7.currentTime=0
+                positionCamera = camera.position.x
                 
                 
-            // }
+            }
         }
     )
     
@@ -571,20 +571,20 @@ const kara = (instru) =>{
                 
                 
             }
-            // if(_event.code === 'KeyI'){
-            //     instru+Sound6.play()
-            //     // instru.Sound6.currentTime=0
-            //     positionCamera = camera.position.x
+            if(_event.code === 'KeyI'){
+                instru+Sound6.play()
+                // instru.Sound6.currentTime=0
+                positionCamera = camera.position.x
                 
                 
-            // }
-            // if(_event.code === 'KeyO'){
-            //     instru+Sound7.play()
-            //     // instru.Sound7.currentTime=0
-            //     positionCamera = camera.position.x
+            }
+            if(_event.code === 'KeyO'){
+                instru+Sound7.play()
+                // instru.Sound7.currentTime=0
+                positionCamera = camera.position.x
                 
                 
-            // }
+            }
         }
     )
     
