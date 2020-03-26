@@ -3,15 +3,22 @@ import * as THREE from 'three'
 import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockControls.js'
 import Walls from './scripts/Walls.js'
 import Doors from './scripts/Doors.js'
-import Grounds from './scripts/Grounds.js'
-import Tambourin from './scripts/Tambourin.js'
-import Guitar from './scripts/Guitar.js'
+import Grass from './scripts/Grass.js'
+import Floor from './scripts/Floor.js'
+import Bases from './scripts/Base.js'
+import Tambourin from "./scripts/Tambourin.js"
+import Guitar from "./scripts/Guitar.js"
 import Bell from './scripts/Bell.js'
 import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
 import Bassviolin from './scripts/Bassviolin.js'
+import Sky from "./assets/sky.jpg"
 
-//import trySounds from '../static/sounds/quack-sound-effect.mp3'
+/**
+ * Textures
+ */
+const textureLoader = new THREE.TextureLoader()
+const skyBackground = textureLoader.load(Sky)
 
 /**
  * Sizes+
@@ -37,14 +44,15 @@ window.addEventListener('mousemove', (_event) =>
  * Scene
  */
 const scene = new THREE.Scene()
+scene.background = skyBackground
 
 /**
  * Camera
  */
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 99999)
 camera.lookAt(scene.position)
-camera.position.z = 8
-camera.position.y = 1
+camera.position.z = 10
+camera.position.y = 1.8
 scene.add(camera)
 
 // move
@@ -82,7 +90,6 @@ const onKeyDown = ( _event ) => {
     {
         moveRight = true;
     }
-
 }
 
 // Controls KeyUp
@@ -154,99 +161,253 @@ const museumGroup = new THREE.Group()
 scene.add(museumGroup)
 
 // Grounds
-const outsideGround = new Grounds(30, 30, 0, 0, 0, Math.PI * -0.5, 0)
-museumGroup.add(outsideGround.group)
+const grass = new Grass(60, 60, 0, 0, -15, Math.PI / -2, 0)
+museumGroup.add(grass.group)
+
+const entryFloor = new Floor(1.75, 3, 0, 0.01, -1.5, Math.PI / -2, 0)
+museumGroup.add(entryFloor.group)
+const instrumentFloorOne = new Floor(6, 6, -9.85, 0.01, -15, Math.PI / -2, 0)
+museumGroup.add(instrumentFloorOne.group)
+const instrumentFloorTwo = new Floor(6, 6, 9.85, 0.01, -15, Math.PI / -2, 0)
+museumGroup.add(instrumentFloorTwo.group)
+const instrumentFloorThree = new Floor(6, 6, -9.85, 0.01, -27, Math.PI / -2, 0)
+museumGroup.add(instrumentFloorThree.group)
+const instrumentFloorFour = new Floor(6, 6, 9.85, 0.01, -27, Math.PI / -2, 0)
+museumGroup.add(instrumentFloorFour.group)
+const instrumentFloorFive = new Floor(7.75, 7.75, 0, 0.001, -32.125, Math.PI / -2, 0)
+museumGroup.add(instrumentFloorFive.group)
+const centralFloor = new Floor(13.7, 27, 0, 0.01, -16.5, Math.PI / -2, 0)
+museumGroup.add(centralFloor.group)
+
+// Base
+const baseOne = new Bases(2, 2, 1, 32, -9.8, 0, -15)
+museumGroup.add(baseOne.group)
+const baseTwo = new Bases(2, 2, 1, 32, 9.8, 0, -15)
+museumGroup.add(baseTwo.group)
+const baseThree = new Bases(2, 2, 1, 32, -9.8, 0, -27)
+museumGroup.add(baseThree.group)
+const baseFour = new Bases(2, 2, 1, 32, 9.8, 0, -27)
+museumGroup.add(baseFour.group)
+const baseFive = new Bases(2, 2, 1, 32, 0, 0, -33)
+museumGroup.add(baseFive.group)
 
 // Doors
-const leftDoor = new Doors(1, 2, 0.1, -0.5, 1, 3)
-museumGroup.add(leftDoor.group)
+const door = new Doors(3, 3, 0, 1.35, 0, 0)
+museumGroup.add(door.group)
 
 // Walls
-
-    // Front
-const frontLeftWall = new Walls(2, 2, 0.1, -2, 1, 3, 0)
-museumGroup.add(frontLeftWall.group)
-const frontRightWall = new Walls(2, 2, 0.1, 2, 1, 3, 0)
-museumGroup.add(frontRightWall.group)
-const frontLeftWallTwo = new Walls(2, 2, 0.1, -3.9, 1, 1, 0)
-museumGroup.add(frontLeftWallTwo.group)
-const frontRightWallTwo = new Walls(2, 2, 0.1, 3.9, 1, 1, 0)
-museumGroup.add(frontRightWallTwo.group)
-const frontLeftWallThree = new Walls(2, 2, 0.1, -5.9, 1, -0.9, 0)
-museumGroup.add(frontLeftWallThree.group)
-const frontRightWallThree = new Walls(2, 2, 0.1, 5.9, 1, -0.9, 0)
-museumGroup.add(frontRightWallThree.group)
-const frontLeftWallFour = new Walls(2, 2, 0.1, -5.9, 1, -4.80, 0)
-museumGroup.add(frontLeftWallFour.group)
-const frontRightWallFour = new Walls(2, 2, 0.1, 5.9, 1, -4.80, 0)
-museumGroup.add(frontRightWallFour.group)
-const frontLeftWallFive = new Walls(2, 2, 0.1, -5.9, 1, -8.80, 0)
-museumGroup.add(frontLeftWallFive.group)
-const frontRightWallFive = new Walls(2, 2, 0.1, 5.9, 1, -8.80, 0)
-museumGroup.add(frontRightWallFive.group)
-const frontLeftWallSix = new Walls(2, 2, 0.1, -5.9, 1, -12.80, 0)
-museumGroup.add(frontLeftWallSix.group)
-const frontRightWallSix = new Walls(2, 2, 0.1, 5.9, 1, -12.80, 0)
-museumGroup.add(frontRightWallSix.group)
-
-    // Back
-const backWall = new Walls(2, 2, 0.1, -3.9, 1, -12.80, 0)
+const backWall = new Walls(3, 0, 1.2, -36.001, 0, 0)
 museumGroup.add(backWall.group)
-const backWallTwo = new Walls(2, 2, 0.1, -1.9, 1, -12.80, 0)
-museumGroup.add(backWallTwo.group)
-const backWallThree = new Walls(2, 2, 0.1, 1.9, 1, -12.80, 0)
-museumGroup.add(backWallThree.group)
-const backWallFour = new Walls(2, 2, 0.1, 3.9, 1, -12.80, 0)
-museumGroup.add(backWallFour.group)
-const backWallFive = new Walls(2, 2, 0.1, 0, 1, -12.80, 0)
-museumGroup.add(backWallFive.group)
-// const upFrontWall = new Walls(6, 2, 0.1, 0, 3, 3, 0)
-// museumGroup.add(upFrontWall.group)
+const upBackWall = new Walls(3, 0, 4.2, -36.001, 0, 0)
+museumGroup.add(upBackWall.group)
 
-    // Side
-const sideRightWall = new Walls(2, 2, 0.1, 2.95, 1, 2, Math.PI * 0.5)
-museumGroup.add(sideRightWall.group)
-const sideLeftWall = new Walls(2, 2, 0.1, -2.95, 1, 2, Math.PI * 0.5)
-museumGroup.add(sideLeftWall.group)
-const sideRightWallTwo = new Walls(2, 2, 0.1, 4.85, 1, 0.05, Math.PI * 0.5)
-museumGroup.add(sideRightWallTwo.group)
-const sideLeftWallTwo = new Walls(2, 2, 0.1, -4.85, 1, 0.05, Math.PI * 0.5)
-museumGroup.add(sideLeftWallTwo.group)
-const sideRightWallThree = new Walls(2, 2, 0.1, 6.85, 1, -1.85, Math.PI * 0.5)
-museumGroup.add(sideRightWallThree.group)
-const sideLeftWallThree = new Walls(2, 2, 0.1, -6.85, 1, -1.85, Math.PI * 0.5)
-museumGroup.add(sideLeftWallThree.group)
-const sideRightWallFour = new Walls(2, 2, 0.1, 6.85, 1, -3.85, Math.PI * 0.5)
-museumGroup.add(sideRightWallFour.group)
-const sideLeftWallFour = new Walls(2, 2, 0.1, -6.85, 1, -3.85, Math.PI * 0.5)
-museumGroup.add(sideLeftWallFour.group)
-const sideRightWallFive = new Walls(2, 2, 0.1, 4.85, 1, -5.75, Math.PI * 0.5)
-museumGroup.add(sideRightWallFive.group)
-const sideLeftWallFive = new Walls(2, 2, 0.1, -4.9, 1, -5.75, Math.PI * 0.5)
-museumGroup.add(sideLeftWallFive.group)
-const sideRightWallSix = new Walls(2, 2, 0.1, 4.85, 1, -7.75, Math.PI * 0.5)
-museumGroup.add(sideRightWallSix.group)
-const sideLeftWallSix = new Walls(2, 2, 0.1, -4.85, 1, -7.75, Math.PI * 0.5)
-museumGroup.add(sideLeftWallSix.group)
-const sideRightWallSeven = new Walls(2, 2, 0.1, 6.85, 1, -9.75, Math.PI * 0.5)
-museumGroup.add(sideRightWallSeven.group)
-const sideLeftWallSeven = new Walls(2, 2, 0.1, -6.85, 1, -9.75, Math.PI * 0.5)
-museumGroup.add(sideLeftWallSeven.group)
-const sideRightWallHeight = new Walls(2, 2, 0.1, 6.85, 1, -11.75, Math.PI * 0.5)
-museumGroup.add(sideRightWallHeight.group)
-const sideLeftWallHeight = new Walls(2, 2, 0.1, -6.85, 1, -11.75, Math.PI * 0.5)
-museumGroup.add(sideLeftWallHeight.group)
+/* Left side */
+const leftWallOne = new Walls(3, -0.85, 1.2, -1.5, 0, Math.PI / -2)
+museumGroup.add(leftWallOne.group)
+const leftWallTwo = new Walls(3, -2.35, 1.2, -3, 0, 0)
+museumGroup.add(leftWallTwo.group)
+const leftWallThree = new Walls(3, -5.35, 1.2, -3, 0, 0)
+museumGroup.add(leftWallThree.group)
+const leftWallFour = new Walls(3, -6.85, 1.2, -4.5, 0, Math.PI / -2)
+museumGroup.add(leftWallFour.group)
+const leftWallFive = new Walls(3, -6.85, 1.2, -7.5, 0, Math.PI / -2)
+museumGroup.add(leftWallFive.group)
+const leftWallSix = new Walls(3, -6.85, 1.2, -10.5, 0, Math.PI / -2)
+museumGroup.add(leftWallSix.group)
+const leftWallSeven = new Walls(3, -8.35, 1.2, -12, 0, 0)
+museumGroup.add(leftWallSeven.group)
+const leftWallEight = new Walls(3, -11.35, 1.2, -12, 0, 0)
+museumGroup.add(leftWallEight.group)
+const leftWallNine = new Walls(3, -12.85, 1.2, -13.5, 0, Math.PI / -2)
+museumGroup.add(leftWallNine.group)
+const leftWallTen = new Walls(3, -12.85, 1.2, -16.5, 0, Math.PI / -2)
+museumGroup.add(leftWallTen.group)
+const leftWallEleven = new Walls(3, -8.35, 1.2, -18, 0, 0)
+museumGroup.add(leftWallEleven.group)
+const leftWallTwelve = new Walls(3, -11.35, 1.2, -18, 0, 0)
+museumGroup.add(leftWallTwelve.group)
+const leftWallThirteen = new Walls(3, -6.85, 1.2, -19.5, 0, Math.PI / -2)
+museumGroup.add(leftWallThirteen.group)
+const leftWallFourteen = new Walls(3, -6.85, 1.2, -22.5, 0, Math.PI / -2)
+museumGroup.add(leftWallFourteen.group)
+const leftWallFifteen = new Walls(3, -8.35, 1.2, -24, 0, 0)
+museumGroup.add(leftWallFifteen.group)
+const leftWallSixteen = new Walls(3, -11.35, 1.2, -24, 0, 0)
+museumGroup.add(leftWallSixteen.group)
+const leftWallSeventeen = new Walls(3, -12.85, 1.2, -25.5, 0, Math.PI / -2)
+museumGroup.add(leftWallSeventeen.group)
+const leftWallEighteen = new Walls(3, -12.85, 1.2, -28.5, 0, Math.PI / -2)
+museumGroup.add(leftWallEighteen.group)
+const leftWallNineteen = new Walls(3, -8.35, 1.2, -30, 0, 0)
+museumGroup.add(leftWallNineteen.group)
+const leftWallTwenty = new Walls(3, -11.35, 1.2, -30, 0, 0)
+museumGroup.add(leftWallTwenty.group)
+const leftWallTwentyOne = new Walls(3, -5.35, 1.2, -30, 0, 0)
+museumGroup.add(leftWallTwentyOne.group)
+const leftWallTwentyTwo = new Walls(3, -3.85, 1.2, -31.5, 0, Math.PI / -2)
+museumGroup.add(leftWallTwentyTwo.group)
+const leftWallTwentyThree = new Walls(3, -3.85, 1.2, -34.5, 0, Math.PI / -2)
+museumGroup.add(leftWallTwentyThree.group)
+const leftWallTwentyFour = new Walls(3, -2.35, 1.2, -36, 0, 0)
+museumGroup.add(leftWallTwentyFour.group)
 
+/* Right side */
+const rightWallOne = new Walls(3, 0.85, 1.2, -1.5, 0, Math.PI / -2)
+museumGroup.add(rightWallOne.group)
+const rightWallTwo = new Walls(3, 2.35, 1.2, -3, 0, 0)
+museumGroup.add(rightWallTwo.group)
+const rightWallThree = new Walls(3, 5.35, 1.2, -3, 0, 0)
+museumGroup.add(rightWallThree.group)
+const rightWallFour = new Walls(3, 6.85, 1.2, -4.5, 0, Math.PI / -2)
+museumGroup.add(rightWallFour.group)
+const rightWallFive = new Walls(3, 6.85, 1.2, -7.5, 0, Math.PI / -2)
+museumGroup.add(rightWallFive.group)
+const rightWallSix = new Walls(3, 6.85, 1.2, -10.5, 0, Math.PI / -2)
+museumGroup.add(rightWallSix.group)
+const rightWallSeven = new Walls(3, 8.35, 1.2, -12, 0, 0)
+museumGroup.add(rightWallSeven.group)
+const rightWallEight = new Walls(3, 11.35, 1.2, -12, 0, 0)
+museumGroup.add(rightWallEight.group)
+const rightWallNine = new Walls(3, 12.85, 1.2, -13.5, 0, Math.PI / -2)
+museumGroup.add(rightWallNine.group)
+const rightWallTen = new Walls(3, 12.85, 1.2, -16.5, 0, Math.PI / -2)
+museumGroup.add(rightWallTen.group)
+const rightWallEleven = new Walls(3, 8.35, 1.2, -18, 0, 0)
+museumGroup.add(rightWallEleven.group)
+const rightWallTwelve = new Walls(3, 11.35, 1.2, -18, 0, 0)
+museumGroup.add(rightWallTwelve.group)
+const rightWallThirteen = new Walls(3, 6.85, 1.2, -19.5, 0, Math.PI / -2)
+museumGroup.add(rightWallThirteen.group)
+const rightWallFourteen = new Walls(3, 6.85, 1.2, -22.5, 0, Math.PI / -2)
+museumGroup.add(rightWallFourteen.group)
+const rightWallFifteen = new Walls(3, 8.35, 1.2, -24, 0, 0)
+museumGroup.add(rightWallFifteen.group)
+const rightWallSixteen = new Walls(3, 11.35, 1.2, -24, 0, 0)
+museumGroup.add(rightWallSixteen.group)
+const rightWallSeventeen = new Walls(3, 12.85, 1.2, -25.5, 0, Math.PI / -2)
+museumGroup.add(rightWallSeventeen.group)
+const rightWallEighteen = new Walls(3, 12.85, 1.2, -28.5, 0, Math.PI / -2)
+museumGroup.add(rightWallEighteen.group)
+const rightWallNineteen = new Walls(3, 8.35, 1.2, -30, 0, 0)
+museumGroup.add(rightWallNineteen.group)
+const rightWallTwenty = new Walls(3, 11.35, 1.2, -30, 0, 0)
+museumGroup.add(rightWallTwenty.group)
+const rightWallTwentyOne = new Walls(3, 5.35, 1.2, -30, 0, 0)
+museumGroup.add(rightWallTwentyOne.group)
+const rightWallTwentyTwo = new Walls(3, 3.85, 1.2, -31.5, 0, Math.PI / -2)
+museumGroup.add(rightWallTwentyTwo.group)
+const rightWallTwentyThree = new Walls(3, 3.85, 1.2, -34.5, 0, Math.PI / -2)
+museumGroup.add(rightWallTwentyThree.group)
+const rightWallTwentyFour = new Walls(3, 2.35, 1.2, -36, 0, 0)
+museumGroup.add(rightWallTwentyFour.group)
+
+/* Up side left */
+const upLeftWallOne = new Walls(3, -0.85, 4.2, -1.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallOne.group)
+const upLeftWallTwo = new Walls(3, -2.35, 4.2, -3, 0, 0)
+museumGroup.add(upLeftWallTwo.group)
+const upLeftWallThree = new Walls(3, -5.35, 4.2, -3, 0, 0)
+museumGroup.add(upLeftWallThree.group)
+const upLeftWallFour = new Walls(3, -6.85, 4.2, -4.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallFour.group)
+const upLeftWallFive = new Walls(3, -6.85, 4.2, -7.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallFive.group)
+const upLeftWallSix = new Walls(3, -6.85, 4.2, -10.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallSix.group)
+const upLeftWallSeven = new Walls(3, -8.35, 4.2, -12, 0, 0)
+museumGroup.add(upLeftWallSeven.group)
+const upLeftWallEight = new Walls(3, -11.35, 4.2, -12, 0, 0)
+museumGroup.add(upLeftWallEight.group)
+const upLeftWallNine = new Walls(3, -12.85, 4.2, -13.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallNine.group)
+const upLeftWallTen = new Walls(3, -12.85, 4.2, -16.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallTen.group)
+const upLeftWallEleven = new Walls(3, -8.35, 4.2, -18, 0, 0)
+museumGroup.add(upLeftWallEleven.group)
+const upLeftWallTwelve = new Walls(3, -11.35, 4.2, -18, 0, 0)
+museumGroup.add(upLeftWallTwelve.group)
+const upLeftWallThirteen = new Walls(3, -6.85, 4.2, -19.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallThirteen.group)
+const upLeftWallFourteen = new Walls(3, -6.85, 4.2, -22.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallFourteen.group)
+const upLeftWallFifteen = new Walls(3, -8.35, 4.2, -24, 0, 0)
+museumGroup.add(upLeftWallFifteen.group)
+const upLeftWallSixteen = new Walls(3, -11.35, 4.2, -24, 0, 0)
+museumGroup.add(upLeftWallSixteen.group)
+const upLeftWallSeventeen = new Walls(3, -12.85, 4.2, -25.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallSeventeen.group)
+const upLeftWallEighteen = new Walls(3, -12.85, 4.2, -28.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallEighteen.group)
+const upLeftWallNineteen = new Walls(3, -8.35, 4.2, -30, 0, 0)
+museumGroup.add(upLeftWallNineteen.group)
+const upLeftWallTwenty = new Walls(3, -11.35, 4.2, -30, 0, 0)
+museumGroup.add(upLeftWallTwenty.group)
+const upLeftWallTwentyOne = new Walls(3, -5.35, 4.2, -30, 0, 0)
+museumGroup.add(upLeftWallTwentyOne.group)
+const upLeftWallTwentyTwo = new Walls(3, -3.85, 4.2, -31.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallTwentyTwo.group)
+const upLeftWallTwentyThree = new Walls(3, -3.85, 4.2, -34.5, 0, Math.PI / -2)
+museumGroup.add(upLeftWallTwentyThree.group)
+const upLeftWallTwentyFour = new Walls(3, -2.35, 4.2, -36, 0, 0)
+museumGroup.add(upLeftWallTwentyFour.group)
+
+/* Right side */
+const upRightWallOne = new Walls(3, 0.85, 4.2, -1.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallOne.group)
+const upRightWallTwo = new Walls(3, 2.35, 4.2, -3, 0, 0)
+museumGroup.add(upRightWallTwo.group)
+const upRightWallThree = new Walls(3, 5.35, 4.2, -3, 0, 0)
+museumGroup.add(upRightWallThree.group)
+const upRightWallFour = new Walls(3, 6.85, 4.2, -4.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallFour.group)
+const upRightWallFive = new Walls(3, 6.85, 4.2, -7.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallFive.group)
+const upRightWallSix = new Walls(3, 6.85, 4.2, -10.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallSix.group)
+const upRightWallSeven = new Walls(3, 8.35, 4.2, -12, 0, 0)
+museumGroup.add(upRightWallSeven.group)
+const upRightWallEight = new Walls(3, 11.35, 4.2, -12, 0, 0)
+museumGroup.add(upRightWallEight.group)
+const upRightWallNine = new Walls(3, 12.85, 4.2, -13.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallNine.group)
+const upRightWallTen = new Walls(3, 12.85, 4.2, -16.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallTen.group)
+const upRightWallEleven = new Walls(3, 8.35, 4.2, -18, 0, 0)
+museumGroup.add(upRightWallEleven.group)
+const upRightWallTwelve = new Walls(3, 11.35, 4.2, -18, 0, 0)
+museumGroup.add(upRightWallTwelve.group)
+const upRightWallThirteen = new Walls(3, 6.85, 4.2, -19.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallThirteen.group)
+const upRightWallFourteen = new Walls(3, 6.85, 4.2, -22.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallFourteen.group)
+const upRightWallFifteen = new Walls(3, 8.35, 4.2, -24, 0, 0)
+museumGroup.add(upRightWallFifteen.group)
+const upRightWallSixteen = new Walls(3, 11.35, 4.2, -24, 0, 0)
+museumGroup.add(upRightWallSixteen.group)
+const upRightWallSeventeen = new Walls(3, 12.85, 4.2, -25.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallSeventeen.group)
+const upRightWallEighteen = new Walls(3, 12.85, 4.2, -28.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallEighteen.group)
+const upRightWallNineteen = new Walls(3, 8.35, 4.2, -30, 0, 0)
+museumGroup.add(upRightWallNineteen.group)
+const upRightWallTwenty = new Walls(3, 11.35, 4.2, -30, 0, 0)
+museumGroup.add(upRightWallTwenty.group)
+const upRightWallTwentyOne = new Walls(3, 5.35, 4.2, -30, 0, 0)
+museumGroup.add(upRightWallTwentyOne.group)
+const upRightWallTwentyTwo = new Walls(3, 3.85, 4.2, -31.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallTwentyTwo.group)
+const upRightWallTwentyThree = new Walls(3, 3.85, 4.2, -34.5, 0, Math.PI / -2)
+museumGroup.add(upRightWallTwentyThree.group)
+const upRightWallTwentyFour = new Walls(3, 2.35, 4.2, -36, 0, 0)
+museumGroup.add(upRightWallTwentyFour.group)
 
 /**
  * Music instrument
  */
-
 const tambourin = new Tambourin()
 tambourin.group.position.y = 0.15
 tambourin.group.position.z = -5
 scene.add(tambourin.group)
-
 
 const guitar = new Guitar()
 guitar.group.position.x = 1
@@ -267,7 +428,7 @@ xylophone.group.position.y = -0.2
 scene.add(xylophone.group)
 
 const bassviolin = new Bassviolin()
-bassviolin.group.position.y = 0.8
+bassviolin.group.position.y = 1.2
 bassviolin.group.position.x = -1
 scene.add(bassviolin.group)
 
@@ -473,8 +634,10 @@ tryIt()
  */
 const renderer = new THREE.WebGLRenderer()
 renderer.setSize(sizes.width, sizes.height)
+renderer.shadowMap.enabled = true
 renderer.setPixelRatio(window.devicePixelRatio)
 document.body.appendChild(renderer.domElement)
+renderer.render(scene, camera)
 
 /**
  * Camera Controll
@@ -514,23 +677,23 @@ const loop = () =>
 
     /**
      *  Get the the preformance time to creat a velocity
-    */
+     */
     const time = performance.now();
     const delta = (time - prevTime) / 1000;
 
-    velocity.x -= velocity.x * 20.0 * delta;
-    velocity.z -= velocity.z * 20.0 * delta;
+    velocity.x -= velocity.x * 10.0 * delta;
+    velocity.z -= velocity.z * 10.0 * delta;
 
     /**
      *   Creat a variable to have the axe of direction  exp : if direction x === -1 the locker go left
-    */
+     */
     direction.z = Number( moveForward ) - Number( moveBackward );
     direction.x = Number( moveRight ) - Number( moveLeft );
     direction.normalize()
 
     /**
      *   Applicate the velocity for direction
-    */
+     */
     if ( moveForward || moveBackward )
     {
         velocity.z -= direction.z * 100.0 * delta;
