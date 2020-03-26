@@ -112,11 +112,11 @@ const onKeyUp = _event => {
   }
   //    if (_event.key === ' '  || _event.code === 'space')
   // {
-  //     camera.position.y += 3
+  //     camera.position.y += 1
   // }
   // if (_event.key === 'Control' ||  _event.code === 'ControlLeft')
   // {
-  //     camera.position.y -= 3
+  //     camera.position.y -= 1
   // }
 };
 
@@ -590,8 +590,10 @@ window.addEventListener("keypress", _event => {
     audioLoader.load(guitar1, buffer => {
       soundGuitarposition.setBuffer(buffer);
       soundGuitarposition.setRefDistance(1.8);
+      soundGuitarposition.pause()
       soundGuitarposition.currentTime = 0;
       soundGuitarposition.play();
+
     })
   } else if (_event.code === "KeyR") {
     audioLoader.load(guitar2, buffer => {
