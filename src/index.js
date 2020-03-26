@@ -1,4 +1,4 @@
-import "./style/main.css";
+import "./style/main.css"
 import * as THREE from "three";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls.js";
 import Walls from "./scripts/Walls.js";
@@ -592,11 +592,17 @@ const soundGuitarposition6 = new THREE.PositionalAudio(listener);
 
 const audioLoader = new THREE.AudioLoader();
 
+
 // Loading the sound
 audioLoader.load(guitar1, buffer => {
   soundGuitarposition.setBuffer(buffer)
   soundGuitarposition.setRefDistance(1.8)
 })
+audioLoader.load(guitar2, buffer => {
+    soundGuitarposition1.setBuffer(buffer)
+    soundGuitarposition1.setRefDistance(1.8)
+})
+
 
 const playSound = (_positionalSound) =>
 {
