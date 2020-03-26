@@ -513,20 +513,20 @@ const gay = () =>{
                 
                 
             }
-            if(_event.code === 'KeyI'){
-                pianoSound6.play()
-                pianoSound6.currentTime=0
-                positionCamera = camera.position.x
+            // if(_event.code === 'KeyI'){
+            //     pianoSound6.play()
+            //     pianoSound6.currentTime=0
+            //     positionCamera = camera.position.x
                 
                 
-            }
-            if(_event.code === 'KeyO'){
-                pianoSound7.play()
-                pianoSound7.currentTime=0
-                positionCamera = camera.position.x
+            // }
+            // if(_event.code === 'KeyO'){
+            //     pianoSound7.play()
+            //     pianoSound7.currentTime=0
+            //     positionCamera = camera.position.x
                 
                 
-            }
+            // }
         }
     )
     
@@ -571,20 +571,20 @@ const kara = (instru) =>{
                 
                 
             }
-            if(_event.code === 'KeyI'){
-                instru+Sound6.play()
-                // instru.Sound6.currentTime=0
-                positionCamera = camera.position.x
+            // if(_event.code === 'KeyI'){
+            //     instru+Sound6.play()
+            //     // instru.Sound6.currentTime=0
+            //     positionCamera = camera.position.x
                 
                 
-            }
-            if(_event.code === 'KeyO'){
-                instru+Sound7.play()
-                // instru.Sound7.currentTime=0
-                positionCamera = camera.position.x
+            // }
+            // if(_event.code === 'KeyO'){
+            //     instru+Sound7.play()
+            //     // instru.Sound7.currentTime=0
+            //     positionCamera = camera.position.x
                 
                 
-            }
+            // }
         }
     )
     
@@ -663,7 +663,7 @@ document.body.addEventListener( 'keydown', (_e) => {
     if(_e.key === ' ')
     {
         controls.lock()
-        blocker.style.display = 'none';
+        // blocker.style.display = 'none';
     }
 },)
 
