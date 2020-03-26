@@ -312,6 +312,7 @@ const guitarSound7 = new Audio(guitar7)
 
 
 
+let positionCamera = camera.position.x
 
 const gay = () =>{
     window.addEventListener(
@@ -320,36 +321,49 @@ const gay = () =>{
             if(_event.code === 'KeyE'){
                 pianoSound1.play()
                 pianoSound1.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyR'){
                 pianoSound2.play()
                 pianoSound2.currentTime=0
+                positionCamera = camera.position.x
                 
             }
             if(_event.code === 'KeyT'){
                 pianoSound3.play()
                 pianoSound3.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyY'){
                 pianoSound4.play()
                 pianoSound4.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyU'){
                 pianoSound5.play()
                 pianoSound5.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyI'){
                 pianoSound6.play()
                 pianoSound6.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyO'){
                 pianoSound7.play()
                 pianoSound7.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
         }
@@ -359,43 +373,55 @@ const gay = () =>{
 
 
 
-const pédé = () =>{
-    window.addEventListener(
-        'keypress',
-        (_event)=>{
+const kara = (instru) =>{
+    window.addEventListener('keypress',(_event)=>{
             if(_event.code === 'KeyE'){
-                guitarSound1.play()
-                guitarSound1.currentTime=0
+                instru+Sound1.play()
+                // instru.Sound1.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyR'){
-                guitarSound2.play()
-                guitarSound2.currentTime=0
+                instru+Sound2.play()
+                // instru.Sound2 .currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyT'){
-                guitarSound3.play()
-                guitarSound3.currentTime=0
+                instru+Sound3.play()
+                // instru.Sound3.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyY'){
-                guitarSound4.play()
-                guitarSound4.currentTime=0
+                instru+Sound4.play()
+                // instru.Sound4.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyU'){
-                guitarSound5.play()
-                guitarSound5.currentTime=0
+                instru+Sound5.play()
+                // instru.Sound5.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyI'){
-                guitarSound6.play()
-                guitarSound6.currentTime=0
+                instru+Sound6.play()
+                // instru.Sound6.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
             if(_event.code === 'KeyO'){
-                guitarSound7.play()
-                guitarSound7.currentTime=0
+                instru+Sound7.play()
+                // instru.Sound7.currentTime=0
+                positionCamera = camera.position.x
+                
                 
             }
         }
@@ -403,13 +429,44 @@ const pédé = () =>{
     
 }
 
+kara("piano")
+
 const tryIt = () =>{
     if(camera.position.x > 5){
-        gay()
-    }else{
-        pédé()
+        kara("piano")
+    }else if(camera.position.x < 5){
+        kara("guitar")
     }
 }
+
+tryIt()
+tryIt()
+
+
+
+
+
+// const eventDraw = (event) => {
+//     mouseLocalisation.x = event.clientX
+//     mouseLocalisation.y = event.clientY
+//   }
+  
+//   window.addEventListener("keydown", e => {
+//     keyOpen = e.keyCode
+//     keyClose = e.keyCode
+//     if (keyOpen === 32) {
+//       window.addEventListener("mousemove", (eventDraw))
+//     } else if (keyClose === 69) {
+//       window.removeEventListener("mousemove", (eventDraw))
+//     }
+//   })
+
+
+
+
+
+  
+
 
 /**
  * Renderer
@@ -492,7 +549,7 @@ const loop = () =>
     prevTime = time;
 
    
-    tryIt()
+    // tryIt()
     // Render
     renderer.render(scene, camera)
 }
