@@ -521,9 +521,10 @@ piano.group.position.y = 0.5;
 scene.add(piano.group);
 
 const xylophone = new Xylophone();
-xylophone.group.position.x = 9.8;
-xylophone.group.position.z = -14.6;
+xylophone.group.position.x = 10.1;
+xylophone.group.position.z = -15;
 xylophone.group.position.y = 0.2;
+xylophone.group.rotation.y = Math.PI /2
 scene.add(xylophone.group);
 
 const bassviolin = new Bassviolin();
