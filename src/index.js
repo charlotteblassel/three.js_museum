@@ -500,9 +500,7 @@ const guitarSound7 = new Audio(guitar7);
 
 const listener = new THREE.AudioListener();
 camera.add(listener);
-for(i = 1; i > 7; i++ ){
-    sound[i] = new THREE.PositionalAudio(listener)
-}
+const sound = new THREE.PositionalAudio(listener)
 
 const audioLoder = new THREE.AudioLoader();
 
