@@ -479,21 +479,24 @@ const listener = new THREE.AudioListener()
 camera.add(listener)
 
 const sound = new THREE.PositionalAudio(listener)
+const sound1 = new THREE.PositionalAudio(listener)
 const audioLoder = new THREE.AudioLoader()
 
 window.addEventListener("keypress", (_event)=>{
     if(_event.code === 'KeyE'){
         
-        audioLoder.load(piano5,(buffer)=>{
-            sound.setBuffer(buffer),
-            sound.setRefDistance(0.12)
-            sound.play()
-        })
-    }else if(_event.code === 'KeyR'){
         audioLoder.load(guitar1,(buffer)=>{
             sound.setBuffer(buffer),
             sound.setRefDistance(0.12)
+            sound.currentTime=0
             sound.play()
+        })
+    }else if(_event.code === 'KeyR'){
+        audioLoder.load(guitar2,(buffer)=>{
+            sound1.setBuffer(buffer),
+            sound1.setRefDistance(0.12)
+            sound1.currentTime=0
+            sound1.play()
         })
     }
     
