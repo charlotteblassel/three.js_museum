@@ -463,43 +463,7 @@ const guitarSound6 = new Audio(guitar6)
 const guitarSound7 = new Audio(guitar7)
 
 
-// const listener = new THREE.AudioListener()
-// camera.add(listener)
 
-// const sound = new THREE.PositionalAudio(listener)
-
-// const audioLoader = new THREE.AudioLoader()
-// audioLoader.load(guitar1, (buffer)=>{
-//     sound.setBuffer(buffer)
-//     sound.setRefDistance(1)
-//     sound.setMaxDistance(0.10)
-//     sound.play()
-// })
-
-// const audioFirstRoom = new THREE.Mesh(
-//     new THREE.SphereBufferGeometry(1, 1, 1),
-//     new THREE.MeshNormalMaterial({
-//         color: 0xFF0000
-//     })
-// )
-// scene.add(audioFirstRoom)
-
-
-
-
-const listener = new THREE.AudioListener();
-camera.add( listener );
-
-// create the PositionalAudio object (passing in the listener)
-var sound = new THREE.PositionalAudio( listener );
-
-// load a sound and set it as the PositionalAudio object's buffer
-var audioLoader = new THREE.AudioLoader();
-audioLoader.load( guitar1, function( buffer ) {
-	sound.setBuffer( buffer );
-	sound.setRefDistance( 20 );
-	sound.play();
-});
 
 // create an object for the sound to play from
 var sphere = new THREE.SphereBufferGeometry( 20, 32, 16 );
