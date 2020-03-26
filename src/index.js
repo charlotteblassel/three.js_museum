@@ -432,9 +432,9 @@ guitar.group.position.y = 0.5;
 scene.add(guitar.group);
 
 const bell = new Bell();
-bell.group.position.x = 0.65;
-bell.group.position.z = -1.5;
-bell.group.position.y = 2;
+bell.group.position.x = 1.5;
+bell.group.position.z = -0.2;
+bell.group.position.y = 1.9;
 scene.add(bell.group);
 
 const piano = new Piano();
@@ -451,7 +451,7 @@ scene.add(xylophone.group);
 
 const bassviolin = new Bassviolin();
 bassviolin.group.position.x = 0;
-bassviolin.group.position.z = -33;
+bassviolin.group.position.z = -36;
 bassviolin.group.position.y = 1.7;
 
 scene.add(bassviolin.group);
