@@ -12,7 +12,8 @@ import Bell from './scripts/Bell.js'
 import Piano from './scripts/Piano.js'
 import Xylophone from './scripts/Xylophone'
 import Bassviolin from './scripts/Bassviolin.js'
-import Sky from "./assets/sky.jpg"
+import Sky from './assets/sky.jpg'
+import Tree from './scripts/Tree.js'
 
 /**
  * Textures
@@ -129,30 +130,6 @@ document.addEventListener('keyup', onKeyUp)
  */
 const ambientLight = new THREE.AmbientLight(0xffffff, 1)
 scene.add(ambientLight)
-
-// const moonLight = new THREE.DirectionalLight(0x0096ff, 1)
-// moonLight.position.set(1, 1, 1)
-// scene.add(moonLight)
-
-const doorLight = new THREE.PointLight(0xffd800, 2, 5)
-doorLight.position.y = 2.2
-doorLight.position.x = - 2.7
-scene.add(doorLight)
-
-// const ghostLightA = new THREE.PointLight(0xea00ff, 3, 5)
-// ghostLightA.position.z = 5
-// ghostLightA.position.y = 1
-// scene.add(ghostLightA)
-
-const ghostLightB = new THREE.PointLight(0x00d8ff, 3, 5)
-ghostLightB.position.x = 5
-ghostLightB.position.y = 1
-scene.add(ghostLightB)
-
-const ghostLightC = new THREE.PointLight(0xd8ff00, 3, 5)
-ghostLightC.position.z = - 5
-ghostLightC.position.y = 1
-scene.add(ghostLightC)
 
 /**
  * Museum
@@ -402,6 +379,20 @@ const upRightWallTwentyFour = new Walls(3, 2.35, 4.2, -36, 0, 0)
 museumGroup.add(upRightWallTwentyFour.group)
 
 /**
+ * Tree
+ */
+
+const tree1 = new Tree()
+tree1.group.position.x = 3
+tree1.group.position.z = -1.5
+scene.add(tree1.group)
+
+const tree2 = new Tree()
+tree2.group.position.x = -3
+tree2.group.position.z = -1.5
+scene.add(tree2.group)
+
+/**
  * Music instrument
  */
 const tambourin = new Tambourin()
@@ -472,37 +463,65 @@ const guitarSound6 = new Audio(guitar6)
 const guitarSound7 = new Audio(guitar7)
 
 
+// const listener = new THREE.AudioListener()
+// camera.add(listener)
 
-const listener = new THREE.AudioListener()
-camera.add(listener)
+// const sound = new THREE.PositionalAudio(listener)
 
-const sound = new THREE.PositionalAudio(listener)
-const audioLoder = new THREE.AudioLoader()
+// const audioLoader = new THREE.AudioLoader()
+// audioLoader.load(guitar1, (buffer)=>{
+//     sound.setBuffer(buffer)
+//     sound.setRefDistance(1)
+//     sound.setMaxDistance(0.10)
+//     sound.play()
+// })
 
-window.addEventListener("keypress", (_event)=>{
-    if(_event.code === 'KeyE'){
-
-        audioLoder.load(guitar1,(buffer)=>{
-            sound.setBuffer(buffer),
-            sound.setRefDistance(0.12)
-            sound.currentTime = 1
-            sound.play()
-            console.log("pute")
-        })
-       
-        
-        
-    }
-})
+// const audioFirstRoom = new THREE.Mesh(
+//     new THREE.SphereBufferGeometry(1, 1, 1),
+//     new THREE.MeshNormalMaterial({
+//         color: 0xFF0000
+//     })
+// )
+// scene.add(audioFirstRoom)
 
 
-const audioFirstRoom = new THREE.Mesh(
-    new THREE.SphereBufferGeometry(1, 1, 8),
-    new THREE.MeshNormalMaterial({color: 0xFF0000})
-)
+
+
+const listener = new THREE.AudioListener();
+camera.add( listener );
+
+// create the PositionalAudio object (passing in the listener)
+var sound = new THREE.PositionalAudio( listener );
+
+// load a sound and set it as the PositionalAudio object's buffer
+var audioLoader = new THREE.AudioLoader();
+audioLoader.load( guitar1, function( buffer ) {
+	sound.setBuffer( buffer );
+	sound.setRefDistance( 20 );
+	sound.play();
+});
+
+// create an object for the sound to play from
+var sphere = new THREE.SphereBufferGeometry( 20, 32, 16 );
+var material = new THREE.MeshPhongMaterial( { color: 0xff2200 } );
+var mesh = new THREE.Mesh( sphere, material );
+scene.add( mesh );
+
 // finally add the sound to the mesh
-scene.add(audioFirstRoom)
-audioFirstRoom.add(sound)
+mesh.add( sound );
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
