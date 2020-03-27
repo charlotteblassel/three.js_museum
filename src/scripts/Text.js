@@ -30,7 +30,8 @@ export default class Text
                 bevelEnabled: false
             }),
             new THREE.MeshStandardMaterial({
-                map:textColorTexture
+                map:textColorTexture,
+                side: THREE.DoubleSide
             })
             )
             this.entryText.position.x = this.positionX
