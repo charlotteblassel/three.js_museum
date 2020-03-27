@@ -584,40 +584,8 @@ import contrebasse7 from "../static/sounds/contrebasse/contrebasse7.mp3";
 
 import bell1 from "../static/sounds/cloche.mp3"
 
-const pianoSound1 = new Audio(piano1);
-const pianoSound2 = new Audio(piano2);
-const pianoSound3 = new Audio(piano3);
-const pianoSound4 = new Audio(piano4);
-const pianoSound5 = new Audio(piano5);
-const pianoSound6 = new Audio(piano6);
-const pianoSound7 = new Audio(piano7);
-
-const guitarSound1 = new Audio(guitar1);
-const guitarSound2 = new Audio(guitar2);
-const guitarSound3 = new Audio(guitar3);
-const guitarSound4 = new Audio(guitar4);
-const guitarSound5 = new Audio(guitar5);
-const guitarSound6 = new Audio(guitar6);
-const guitarSound7 = new Audio(guitar7);
-
-const xyloSound1 = new Audio(xylo1);
-const xyloSound2 = new Audio(xylo2);
-const xyloSound3 = new Audio(xylo3);
-const xyloSound4 = new Audio(xylo4);
-const xyloSound5 = new Audio(xylo5);
-const xyloSound6 = new Audio(xylo6);
-const xyloSound7 = new Audio(xylo7);
-
-const tambourinSound1 = new Audio(tambourinSoloSound);
 const bellSound1 = new Audio(bell1)
 
-const contrebasseSound1 = new Audio(contrebasse1);
-const contrebasseSound2 = new Audio(contrebasse2);
-const contrebasseSound3 = new Audio(contrebasse3);
-const contrebasseSound4 = new Audio(contrebasse4);
-const contrebasseSound5 = new Audio(contrebasse5);
-const contrebasseSound6 = new Audio(contrebasse6);
-const contrebasseSound7 = new Audio(contrebasse7);
 
 const listener = new THREE.AudioListener();
 camera.add(listener);
