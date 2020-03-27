@@ -478,7 +478,7 @@ museumGroup.add(upRightWallTwentyFive.group);
 /**
  * Text
  */
-const frontText = new Text('Museum of ♫', 1, 0.3, -3.85, 3.8, 0.2, 0)
+const frontText = new Text('Museum of ♫', 1, 0.3, -3.85, 3.8, 0.01, 0)
 museumGroup.add(frontText.group)
 const pianoText = new Text('Pour jouer :\nf / g / h / j / k / l ', 0.5, 0.01, -12.84, 4.5, -13, Math.PI / 2)
 museumGroup.add(pianoText.group)
