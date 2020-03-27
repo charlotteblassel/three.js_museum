@@ -1,5 +1,12 @@
 import * as THREE from 'three'
 import font from '../font/ft78_Regular.json'
+import textColorSource from '../assets/wood/color.jpg'
+
+/**
+ * Textures
+ */
+const textureLoader = new THREE.TextureLoader()
+const textColorTexture = textureLoader.load(textColorSource)
 
 export default class Text
 {
@@ -23,7 +30,7 @@ export default class Text
                 bevelEnabled: false
             }),
             new THREE.MeshStandardMaterial({
-                color: 0xff0000
+                map:textColorTexture
             })
             )
             this.entryText.position.x = this.positionX
