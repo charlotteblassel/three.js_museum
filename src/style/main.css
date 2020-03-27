@@ -29,19 +29,18 @@ canvas
 .blocker{
     position: absolute;
     width: 100%;
-    height: auto;
-    margin-top: 7%;
+    height: 90%;
+    margin-top: 10%;
     z-index: 3;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: baseline;
+    justify-content: space-around;
     align-items: center;
-    background-color: #eaeac5;
     }
 
 .blockerTxt{
-    height: 120px;
+    height: 100px;
     display: flex;
     margin : 0px 150px;
     flex-direction: column;
@@ -52,7 +51,7 @@ canvas
 
 .controlContainer{
     width : 100%;
-    height: 300px;
+    height: 350px;
     background-color: #eaeac5;
     display: flex;
 }
