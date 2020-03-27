@@ -1070,3 +1070,10 @@ const loop = () => {
 loop();
 
 window.addEventListener("click", () => {});
+
+
+// guitare = e / r / t / y / u / i / o 
+// piano =  f / g / h / j / k / l
+// xylo = x / c / v / b / n / , 
+// tambour = a
+// contrbasse = 1 / 2 / 3 / 4 / 5 / 6 / 7
