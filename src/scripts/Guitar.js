@@ -19,10 +19,12 @@ export default class Guitar
     
                         this.guitar = gltf.scene.children[0]
                         this.guitar.scale.set(0.05, 0.05, 0.05)
-                        // this.guitar.material = new THREE.MeshNormalMaterial()
                         this.group.add(this.guitar)
                     }
             }
         )
     }
 }
+
+
+

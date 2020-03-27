@@ -15,7 +15,7 @@ export default class Ceilling
         this.ceillingMesh = new THREE.Mesh(
             new THREE.PlaneGeometry(this.x, this.y),
             new THREE.MeshBasicMaterial({
-                color: 0xE0CDA9,
+                color: 0x54483e,
                 side: THREE.DoubleSide
             })
         )
