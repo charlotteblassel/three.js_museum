@@ -1,12 +1,12 @@
-import * as THREE from 'three'
-import font from '../font/ft78_Regular.json'
-import textColorSource from '../assets/wood/color.jpg'
+import * as THREE from "three";
+import font from "../font/ft78_Regular.json";
+import textColorSource from "../assets/wood/color.jpg";
 
 /**
  * Textures
  */
-const textureLoader = new THREE.TextureLoader()
-const textColorTexture = textureLoader.load(textColorSource)
+const textureLoader = new THREE.TextureLoader();
+const textColorTexture = textureLoader.load(textColorSource);
 
 export default class Text
 {
