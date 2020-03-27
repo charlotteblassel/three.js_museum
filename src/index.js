@@ -151,22 +151,15 @@ spotLight2.target.position.z = -16
 scene.add(spotLight2.target)
 
 const spotLight3 = new THREE.SpotLight(0xfddfff, 1, 12, Math.PI * 0.2, 0.5)
-spotLight3.position.x = 15
-spotLight3.position.z = -14
+spotLight3.position.x = 10.6
+spotLight3.position.z = -14.7
 spotLight3.position.y = 1
 spotLight3.rotation.z = Math.PI / 2
 scene.add(spotLight3)
-spotLight3.target.position.z = -16
+spotLight3.target.position.z = -16.7
 scene.add(spotLight3.target)
 
-const spotLight4 = new THREE.SpotLight(0xfddfff, 1, 12, Math.PI * 0.2, 0.5)
-spotLight4.position.x = -13
-spotLight4.position.z = -25
-spotLight4.position.y = 2
-spotLight4.rotation.z = Math.PI / 2
-scene.add(spotLight4)
-spotLight4.target.position.z = -27
-scene.add(spotLight4.target)
+
 
 /**
  * Museum
