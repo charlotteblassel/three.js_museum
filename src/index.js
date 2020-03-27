@@ -718,31 +718,31 @@ audioLoader.load(piano7, buffer => {
 // Loading the sound Xylo
 audioLoader.load(xylo1, buffer => {
   soundXyloPosition.setBuffer(buffer);
-  soundXyloPosition.setRefDistance(1.8);
+  soundXyloPosition.setRefDistance(0.9 );
 });
 audioLoader.load(xylo2, buffer => {
   soundXyloPosition1.setBuffer(buffer);
-  soundXyloPosition1.setRefDistance(1.8);
+  soundXyloPosition1.setRefDistance(0.9 );
 });
 audioLoader.load(xylo3, buffer => {
   soundXyloPosition2.setBuffer(buffer);
-  soundXyloPosition2.setRefDistance(1.8);
+  soundXyloPosition2.setRefDistance(0.9 );
 });
 audioLoader.load(xylo4, buffer => {
   soundXyloPosition3.setBuffer(buffer);
-  soundXyloPosition3.setRefDistance(1.8);
+  soundXyloPosition3.setRefDistance(0.9 );
 });
 audioLoader.load(xylo5, buffer => {
   soundXyloPosition4.setBuffer(buffer);
-  soundXyloPosition4.setRefDistance(1.8);
+  soundXyloPosition4.setRefDistance(0.9 );
 });
 audioLoader.load(xylo6, buffer => {
   soundXyloPosition5.setBuffer(buffer);
-  soundXyloPosition5.setRefDistance(1.8);
+  soundXyloPosition5.setRefDistance(0.9 );
 });
 audioLoader.load(xylo7, buffer => {
   soundXyloPosition6.setBuffer(buffer);
-  soundXyloPosition6.setRefDistance(1.8);
+  soundXyloPosition6.setRefDistance(0.9 );
 });
 
 // Loading the sound Tambourin
@@ -762,23 +762,23 @@ audioLoader.load(contrebasse2, buffer => {
 });
 audioLoader.load(contrebasse3, buffer => {
   soundContrebassePosition2.setBuffer(buffer);
-  soundContrebassePosition2.setRefDistance(1.8);
+  soundContrebassePosition2.setRefDistance(3);
 });
 audioLoader.load(contrebasse4, buffer => {
   soundContrebassePosition3.setBuffer(buffer);
-  soundContrebassePosition3.setRefDistance(1.8);
+  soundContrebassePosition3.setRefDistance(3);
 });
 audioLoader.load(contrebasse5, buffer => {
   soundContrebassePosition4.setBuffer(buffer);
-  soundContrebassePosition4.setRefDistance(1.8);
+  soundContrebassePosition4.setRefDistance(3);
 });
 audioLoader.load(contrebasse6, buffer => {
   soundContrebassePosition5.setBuffer(buffer);
-  soundContrebassePosition5.setRefDistance(1.8);
+  soundContrebassePosition5.setRefDistance(3);
 });
 audioLoader.load(contrebasse7, buffer => {
   soundContrebassePosition6.setBuffer(buffer);
-  soundContrebassePosition6.setRefDistance(1.8);
+  soundContrebassePosition6.setRefDistance(3);
 });
 
 const playSound = _positionalSound => {
@@ -877,6 +877,7 @@ const audioGuitar = new THREE.Mesh(
 );
 
 audioGuitar.position.set(-10.2, 0.5, -26.8);
+audioGuitar.visible = false
 scene.add(audioGuitar);
 
 audioGuitar.add(
@@ -899,6 +900,7 @@ const audioPiano = new THREE.Mesh(
 );
 
 audioPiano.position.set(-9.9, 0.5, -15.1);
+audioPiano.visible = false
 scene.add(audioPiano);
 
 audioPiano.add(
@@ -921,6 +923,7 @@ const audioXylo = new THREE.Mesh(
 );
 
 audioXylo.position.set(10.1, 0.2, -15);
+audioXylo.visible = false
 scene.add(audioXylo);
 
 audioXylo.add(
@@ -944,7 +947,7 @@ const audiTambourin = new THREE.Mesh(
 
 audiTambourin.position.set(9.8, 0.6, -27);
 scene.add(audiTambourin);
-
+audiTambourin.visible = false
 audiTambourin.add(soundTambourinPosition);
 
 // Displaying an element on which the positional sound is based
@@ -956,7 +959,8 @@ const audioContrebasse = new THREE.Mesh(
   })
 );
 
-audioContrebasse.position.set(10.1, 0.2, -15);
+audioContrebasse.position.set(0, 1.7, -36);
+audioContrebasse.visible = false
 scene.add(audioContrebasse);
 
 audioContrebasse.add(
