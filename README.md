@@ -3,7 +3,7 @@
 ##### (Project at HETIC)
 Welcome to our Music Museum, created to put you in a 3D immersion in the musical universe.
 
-Avalaible at musicmuseum.netlify.com
+Avalaible [here](https://musicmuseum.netlify.com/)
 
 ## Features
 - 5 instruments (piano, guitar, contrebasse, tambourine, xylophone)
