@@ -480,7 +480,7 @@ museumGroup.add(upRightWallTwentyFive.group);
  */
 const frontText = new Text('Museum of ♫', 1, 0.3, -3.85, 3.8, 0.01, 0)
 museumGroup.add(frontText.group)
-const pianoText = new Text('Pour jouer :\nf / g / h / j / k / l / m', 0.5, 0.1, -12.84, 4.5, -12.3, Math.PI / 2)
+const pianoText = new Text('Pour jouer :\nf / g / h / j / k / l / m', 0.5, 0.1, -12.84, 4.5, -12.35, Math.PI / 2)
 museumGroup.add(pianoText.group)
 const guitarText = new Text('Pour jouer :\ne / r / t / y / u / i / o', 0.5, 0.1, -12.84, 4.5, -24.5, Math.PI / 2)
 museumGroup.add(guitarText.group)
@@ -490,6 +490,8 @@ const tambourinText = new Text('Pour jouer : a', 0.5, 0.1, 12.84, 4, -28.8, Math
 museumGroup.add(tambourinText.group)
 const contrebasseText = new Text('Pour jouer :\n1 / 2 / 3 / 4 / 5 / 6 / 7', 0.5, 0.1, -2.85, 4.5, -38.9, 0)
 museumGroup.add(contrebasseText.group)
+const endText = new Text('Pour jouer :\n1 / 2 / 3 / 4 / 5 / 6 / 7', 0.5, 0.1, -2.85, 4.5, -38.9, 0)
+museumGroup.add(endText.group)
 
 /**
  * Music instrument
