@@ -592,6 +592,11 @@ import xylo5 from "../static/sounds/xylophone/xylo5.mp3"
 import xylo6 from "../static/sounds/xylophone/xylo6.mp3"
 import xylo7 from "../static/sounds/xylophone/xylo7.mp3"
 
+import tambourinSoloSound from "../static/sounds/tambourin/tambourin.mp3"
+
+
+
+
 const pianoSound1 = new Audio(piano1)
 const pianoSound2 = new Audio(piano2)
 const pianoSound3 = new Audio(piano3)
@@ -615,6 +620,8 @@ const xyloSound4 = new Audio(xylo4)
 const xyloSound5 = new Audio(xylo5)
 const xyloSound6 = new Audio(xylo6)
 const xyloSound7 = new Audio(xylo7)
+
+const tambourinSound1= new Audio(tambourinSoloSound)
 
 const listener = new THREE.AudioListener();
 camera.add(listener);
@@ -642,6 +649,8 @@ const soundXyloPosition3 = new THREE.PositionalAudio(listener)
 const soundXyloPosition4 = new THREE.PositionalAudio(listener)
 const soundXyloPosition5 = new THREE.PositionalAudio(listener)
 const soundXyloPosition6 = new THREE.PositionalAudio(listener)
+
+const soundTambourinPosition = new THREE.PositionalAudio(listener)
 
 
 
@@ -742,6 +751,13 @@ audioLoader.load(guitar7, buffer => {
       soundXyloPosition6.setRefDistance(1.8)
   })
 
+// Loading the sound Tambourin
+  audioLoader.load(tambourinSoloSound, buffer => {
+    soundTambourinPosition.setBuffer(buffer)
+    soundTambourinPosition.setRefDistance(1.8)
+})
+
+  
 
 
 const playSound = (_positionalSound) =>
@@ -813,6 +829,10 @@ window.addEventListener("keypress", _event => {
   } else if (_event.code === "KeyM") {
     playSound(soundXyloPosition6)
   }
+
+  else if(_event.code === "KeyQ"){
+    playSound(soundTambourinPosition)
+  }
 })
 // Displaying an element on which the positional sound is based
 
@@ -882,6 +902,21 @@ const audioXylo = new THREE.Mesh(
   );
 
 
+// Displaying an element on which the positional sound is based
+
+const audiTambourin = new THREE.Mesh(
+    new THREE.SphereBufferGeometry(1, 1, 8),
+    new THREE.MeshNormalMaterial({
+      color: 0xff0000
+    })
+  );
+  
+  audiTambourin.position.set(9.8, 0.6 ,-27)
+  scene.add(audiTambourin);
+  
+  audiTambourin.add(
+    soundTambourinPosition
+  );
 
 
 
