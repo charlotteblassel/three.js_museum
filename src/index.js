@@ -490,8 +490,6 @@ const tambourinText = new Text('Pour jouer : a', 0.5, 0.1, 12.84, 4, -28.8, Math
 museumGroup.add(tambourinText.group)
 const contrebasseText = new Text('Pour jouer :\n1 / 2 / 3 / 4 / 5 / 6 / 7', 0.5, 0.1, -2.85, 4.5, -38.9, 0)
 museumGroup.add(contrebasseText.group)
-const endText = new Text('Pour jouer :\n1 / 2 / 3 / 4 / 5 / 6 / 7', 0.5, 0.1, -2.85, 4.5, -38.9, 0)
-museumGroup.add(endText.group)
 
 /**
  * Music instrument
@@ -1038,8 +1036,8 @@ document.addEventListener('click', () =>
             }
         )
         bellSound1.currentTime = 0
-    } bellSound1.play()
-    
+        bellSound1.play()
+    }
 })
 
 /**
