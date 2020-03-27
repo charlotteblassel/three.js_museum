@@ -488,8 +488,19 @@ const xyloText = new Text('Pour jouer :\nw/ x / c / v / b / n / ,', 0.5, 0.1, 12
 museumGroup.add(xyloText.group)
 const tambourinText = new Text('Pour jouer : a', 0.5, 0.1, 12.84, 4, -28.8, Math.PI / -2)
 museumGroup.add(tambourinText.group)
-const contrebasseText = new Text('Pour jouer :\n1 / 2 / 3 / 4 / 5 / 6 / 7', 0.5, 0.1, -2.85, 4.5, -38.9, 0)
+const contrebasseText = new Text('Pour jouer :\n1 / 2 / 3 / 4 / 5 / 6 / 7', 0.5, 0.1, -2.85, 4.5, -38.99, 0)
 museumGroup.add(contrebasseText.group)
+
+const pianoInfoText = new Text('Le piano est un instrument\nde musique polyphonique, \nà clavier,de la famille \ndes cordes frappées.', 0.3, 0.03, -12, 4.5, -17.99, 0)
+museumGroup.add(pianoInfoText.group)
+const guitarInfoText = new Text('Instrument à cordes.\nLe corps creux de la guitare, \ngénéralement appelé caisse \nde résonance, transforme \nla vibration des cordes \nen ondes sonores.', 0.3, 0.03, -12.3, 4.5, -29.99, 0)
+museumGroup.add(guitarInfoText.group)
+const contrebasseInfoText = new Text('La contrebasse est un instrument \nde musique semblable au \nvioloncelle, mais plus volumineux \net plus grave. C\'est un \ndes plus grand instrument \nde la famille des cordes frottées, \nle plus grand étant l\'octobasse.', 0.3, 0.03, 3.84, 4.5, -38.99, Math.PI / -2)
+museumGroup.add(contrebasseInfoText.group)
+const xyloInfoText = new Text('Le xylophone est un instrument \nde musique constitué de lames \nqu\'on frappe avec \ndes petits maillets.', 0.3, 0.03, 7.3, 4.5, -17.99, 0)
+museumGroup.add(xyloInfoText.group)
+const tambourinInfoText = new Text('il est constitué d\'un cadre de \nqui sert de caisse de résonance \net d\'un manche, d\'un diamètre \nvariant d\'une vingtaine à une \ncinquantaine de centimètres sur \nlequel est tendue une membrane \nqui sert de surface à percuter.', 0.3, 0.03, 7.1, 4.5, -29.99, 0)
+museumGroup.add(tambourinInfoText.group)
 
 /**
  * Music instrument
@@ -984,8 +995,10 @@ document.body.addEventListener("keydown", _e => {
 let hoverDoor = false
 document.addEventListener('click', () =>
 {
-    if(hoverDoor == false)
+    if(hoverDoor)
     {
+        bellSound1.currentTime = 0
+        bellSound1.play()
         TweenLite.to(
             door.group.position,
             1,
@@ -1003,9 +1016,7 @@ document.addEventListener('click', () =>
                 ease: 'Power3.easeInOut'
             }
         )
-        bellSound1.currentTime = 0
-        bellSound1.play()
-    }
+      }
 })
 
 /**
@@ -1020,13 +1031,13 @@ const loop = () => {
 
   const intersects = raycaster.intersectObject(door.group, true)
    if(intersects.length)
-  {
+   {
       hoverDoor = true
-  }
-  else
-  {
+    }
+    else
+    {
       hoverDoor = false
-  }
+    }
 
   /**
    *  Get the the preformance time to creat a velocity
