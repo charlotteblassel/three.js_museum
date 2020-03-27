@@ -976,7 +976,7 @@ const audioContrebasse = new THREE.Mesh(
   })
 );
 
-audioContrebasse.position.set(10.1, 0.2, -15);
+audioContrebasse.position.set(0, 1.7, -36);
 scene.add(audioContrebasse);
 
 audioContrebasse.add(
