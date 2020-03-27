@@ -110,6 +110,8 @@ const onKeyUp = _event => {
     moveRight = false
   }
 
+
+     // if u want to set a  ""jump""
   // this code was used to jump, to help build the museum
   //    if (_event.key === ' '  || _event.code === 'space')
   // {
