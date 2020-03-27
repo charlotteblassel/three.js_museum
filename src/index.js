@@ -594,6 +594,14 @@ import xylo7 from "../static/sounds/xylophone/xylo7.mp3"
 
 import tambourinSoloSound from "../static/sounds/tambourin/tambourin.mp3"
 
+import contrebasse1 from "../static/sounds/contrebasse/contrebasse1.mp3"
+import contrebasse2 from "../static/sounds/contrebasse/contrebasse2.mp3"
+import contrebasse3 from "../static/sounds/contrebasse/contrebasse3.mp3"
+import contrebasse4 from "../static/sounds/contrebasse/contrebasse4.mp3"
+import contrebasse5 from "../static/sounds/contrebasse/contrebasse5.mp3"
+import contrebasse6 from "../static/sounds/contrebasse/contrebasse6.mp3"
+import contrebasse7 from "../static/sounds/contrebasse/contrebasse7.mp3"
+
 
 
 
@@ -623,6 +631,14 @@ const xyloSound7 = new Audio(xylo7)
 
 const tambourinSound1= new Audio(tambourinSoloSound)
 
+const contrebasseSound1 = new Audio(contrebasse1)
+const contrebasseSound2 = new Audio(contrebasse2)
+const contrebasseSound3 = new Audio(contrebasse3)
+const contrebasseSound4 = new Audio(contrebasse4)
+const contrebasseSound5 = new Audio(contrebasse5)
+const contrebasseSound6 = new Audio(contrebasse6)
+const contrebasseSound7 = new Audio(contrebasse7)
+
 const listener = new THREE.AudioListener();
 camera.add(listener);
 
@@ -651,6 +667,14 @@ const soundXyloPosition5 = new THREE.PositionalAudio(listener)
 const soundXyloPosition6 = new THREE.PositionalAudio(listener)
 
 const soundTambourinPosition = new THREE.PositionalAudio(listener)
+
+const soundContrebassePosition = new THREE.PositionalAudio(listener)
+const soundContrebassePosition1 = new THREE.PositionalAudio(listener)
+const soundContrebassePosition2 = new THREE.PositionalAudio(listener)
+const soundContrebassePosition3 = new THREE.PositionalAudio(listener)
+const soundContrebassePosition4 = new THREE.PositionalAudio(listener)
+const soundContrebassePosition5 = new THREE.PositionalAudio(listener)
+const soundContrebassePosition6 = new THREE.PositionalAudio(listener)
 
 
 
@@ -757,6 +781,36 @@ audioLoader.load(guitar7, buffer => {
     soundTambourinPosition.setRefDistance(1.8)
 })
 
+
+// Loading the sound contrebasse
+audioLoader.load(contrebasse1, buffer => {
+    soundContrebassePosition.setBuffer(buffer)
+    soundContrebassePosition.setRefDistance(1.8)
+  })
+  audioLoader.load(contrebasse2, buffer => {
+      soundContrebassePosition1.setBuffer(buffer)
+      soundContrebassePosition1.setRefDistance(1.8)
+  })
+  audioLoader.load(contrebasse3, buffer => {
+    soundContrebassePosition2.setBuffer(buffer)
+    soundContrebassePosition2.setRefDistance(1.8)
+  })
+  audioLoader.load(contrebasse4, buffer => {
+      soundContrebassePosition3.setBuffer(buffer)
+      soundContrebassePosition3.setRefDistance(1.8)
+  })
+  audioLoader.load(contrebasse5, buffer => {
+    soundContrebassePosition4.setBuffer(buffer)
+    soundContrebassePosition4.setRefDistance(1.8)
+  })
+  audioLoader.load(contrebasse6, buffer => {
+      soundContrebassePosition5.setBuffer(buffer)
+      soundContrebassePosition5.setRefDistance(1.8)
+  })
+  audioLoader.load(contrebasse7, buffer => {
+      soundContrebassePosition6.setBuffer(buffer)
+      soundContrebassePosition6.setRefDistance(1.8)
+  })
   
 
 
@@ -833,6 +887,23 @@ window.addEventListener("keypress", _event => {
   else if(_event.code === "KeyQ"){
     playSound(soundTambourinPosition)
   }
+
+  else if (_event.code === "Digit1") {
+    playSound(soundContrebassePosition)
+  } else if (_event.code === "Digit2") {
+    playSound(soundContrebassePosition1)
+  } else if (_event.code === "Digit3") {
+    playSound(soundContrebassePosition2)
+  } else if (_event.code === "Digit4") {
+    playSound(soundContrebassePosition3)
+  } else if (_event.code === "Digit5") {
+    playSound(soundContrebassePosition4)
+  } else if (_event.code === "Digit6") {
+    playSound(soundContrebassePosition5)
+  } else if (_event.code === "Digit7") {
+    playSound(soundContrebassePosition6)
+  }
+
 })
 // Displaying an element on which the positional sound is based
 
@@ -920,6 +991,27 @@ const audiTambourin = new THREE.Mesh(
 
 
 
+// Displaying an element on which the positional sound is based
+
+const audioContrebasse = new THREE.Mesh(
+    new THREE.SphereBufferGeometry(2, 2, 2),
+    new THREE.MeshNormalMaterial({
+      color: 0xff0000
+    })
+  );
+  
+  audioContrebasse.position.set(10.1, 0.2 ,-15)
+  scene.add(audioContrebasse);
+  
+  audioContrebasse.add(
+    soundContrebassePosition,
+    soundContrebassePosition1,
+    soundContrebassePosition2,
+    soundContrebassePosition3,
+    soundContrebassePosition4,
+    soundContrebassePosition5,
+    soundContrebassePosition6
+  );
 
 
 
@@ -1001,8 +1093,7 @@ const loop = () => {
 
   prevTime = time;
 
-  //   xylophone.group.rotateOnAxis(axis, speed);
-  //   xylophone.group.rotation.y += 0.05
+ 
 
   renderer.render(scene, camera);
 };
