@@ -877,6 +877,7 @@ const audioGuitar = new THREE.Mesh(
 );
 
 audioGuitar.position.set(-10.2, 0.5, -26.8);
+audioGuitar.visible = false
 scene.add(audioGuitar);
 
 audioGuitar.add(
@@ -899,6 +900,7 @@ const audioPiano = new THREE.Mesh(
 );
 
 audioPiano.position.set(-9.9, 0.5, -15.1);
+audioPiano.visible = false
 scene.add(audioPiano);
 
 audioPiano.add(
@@ -921,6 +923,7 @@ const audioXylo = new THREE.Mesh(
 );
 
 audioXylo.position.set(10.1, 0.2, -15);
+audioXylo.visible = false
 scene.add(audioXylo);
 
 audioXylo.add(
@@ -944,7 +947,7 @@ const audiTambourin = new THREE.Mesh(
 
 audiTambourin.position.set(9.8, 0.6, -27);
 scene.add(audiTambourin);
-
+audiTambourin.visible = false
 audiTambourin.add(soundTambourinPosition);
 
 // Displaying an element on which the positional sound is based
@@ -957,6 +960,7 @@ const audioContrebasse = new THREE.Mesh(
 );
 
 audioContrebasse.position.set(0, 1.7, -36);
+audioContrebasse.visible = false
 scene.add(audioContrebasse);
 
 audioContrebasse.add(
