@@ -1,23 +1,23 @@
-import "./style/main.css";
-import * as THREE from "three";
-import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls.js";
-import Walls from "./scripts/Walls.js";
-import Doors from "./scripts/Doors.js";
-import Grass from "./scripts/Grass.js";
-import Floor from "./scripts/Floor.js";
-import Ceilling from "./scripts/Ceilling.js";
-import Bases from "./scripts/Base.js";
-import Roof from "./scripts/Roof.js";
-import Tambourin from "./scripts/Tambourin.js";
-import Guitar from "./scripts/Guitar.js";
-import Bell from "./scripts/Bell.js";
-import Piano from "./scripts/Piano.js";
-import Xylophone from "./scripts/Xylophone.js";
-import Bassviolin from "./scripts/Bassviolin.js";
-import Sky from "./assets/sky.jpg";
-
+import './style/main.styl'
+import * as THREE from 'three'
+import { TweenLite, TimelineLite } from 'gsap/all'
+import {PointerLockControls} from 'three/examples/jsm/controls/PointerLockControls.js'
+import Walls from './scripts/Walls.js'
+import Doors from './scripts/Doors.js'
+import Grass from './scripts/Grass.js'
+import Floor from './scripts/Floor.js'
+import Ceilling from './scripts/Ceilling.js'
+import Bases from './scripts/Base.js'
+import Roof from './scripts/Roof.js'
+import Tambourin from "./scripts/Tambourin.js"
+import Guitar from "./scripts/Guitar.js"
+import Bell from './scripts/Bell.js'
+import Piano from './scripts/Piano.js'
+import Xylophone from './scripts/Xylophone.js'
+import Bassviolin from './scripts/Bassviolin.js'
+import Text from './scripts/Text.js'
+import Sky from './assets/sky.jpg'
 const blocker = document.querySelector(".blocker");
-
 /**
  * Textures
  */
@@ -173,6 +173,7 @@ scene.add(spotLight4.target);
 const museumGroup = new THREE.Group();
 scene.add(museumGroup);
 
+
 // Grounds
 /* Grass */
 const grass = new Grass(60, 60, 0, 0, -15, Math.PI / -2, 0);
@@ -209,58 +210,18 @@ const centralFloor = new Floor(13.7, 33, 0, 0.01, -16.5, Math.PI / -2, 0);
 museumGroup.add(centralFloor.group);
 
 /* Ceilling */
-const instrumentCeillingOne = new Ceilling(
-  6,
-  6,
-  -9.85,
-  5.7,
-  -15,
-  Math.PI / -2,
-  0
-);
-museumGroup.add(instrumentCeillingOne.group);
-const instrumentCeillingTwo = new Ceilling(
-  6,
-  6,
-  9.85,
-  5.7,
-  -15,
-  Math.PI / -2,
-  0
-);
-museumGroup.add(instrumentCeillingTwo.group);
-const instrumentCeillingThree = new Ceilling(
-  6,
-  6,
-  -9.85,
-  5.7,
-  -27,
-  Math.PI / -2,
-  0
-);
-museumGroup.add(instrumentCeillingThree.group);
-const instrumentCeillingFour = new Ceilling(
-  6,
-  6,
-  9.85,
-  5.7,
-  -27,
-  Math.PI / -2,
-  0
-);
-museumGroup.add(instrumentCeillingFour.group);
-const instrumentCeillingFive = new Ceilling(
-  7.72,
-  7.72,
-  0,
-  5.7,
-  -35.125,
-  Math.PI / -2,
-  0
-);
-museumGroup.add(instrumentCeillingFive.group);
-const centralCeilling = new Ceilling(13.7, 33, 0, 5.7, -16.5, Math.PI / -2, 0);
-museumGroup.add(centralCeilling.group);
+const instrumentCeillingOne = new Ceilling(6, 6, -9.85, 5.7, -15, Math.PI / -2, 0)
+museumGroup.add(instrumentCeillingOne.group)
+const instrumentCeillingTwo = new Ceilling(6, 6, 9.85, 5.7, -15, Math.PI / -2, 0)
+museumGroup.add(instrumentCeillingTwo.group)
+const instrumentCeillingThree = new Ceilling(6, 6, -9.85, 5.7, -27, Math.PI / -2, 0)
+museumGroup.add(instrumentCeillingThree.group)
+const instrumentCeillingFour = new Ceilling(6, 6, 9.85, 5.7, -27, Math.PI / -2, 0)
+museumGroup.add(instrumentCeillingFour.group)
+const instrumentCeillingFive = new Ceilling(7.72, 7.72, 0, 5.70, -35.14, Math.PI / -2, 0)
+museumGroup.add(instrumentCeillingFive.group)
+const centralCeilling = new Ceilling(13.7, 33, 0, 5.7, -16.5, Math.PI / -2, 0)
+museumGroup.add(centralCeilling.group)
 
 // Roof
 const instrumentRoofOne = new Roof(6, 3, 4, -9.85, 7.21, -15, Math.PI / -4);
@@ -295,6 +256,8 @@ museumGroup.add(baseFive.group);
 // Doors
 const door = new Doors(3, 3, 0, 1.35, 0, 0);
 museumGroup.add(door.group);
+
+const raycaster = new THREE.Raycaster()
 
 // Walls
 const backWall = new Walls(3, 0, 1.2, -39.001, 0, 0);
@@ -513,6 +476,22 @@ const upRightWallTwentyFive = new Walls(3, 2.35, 4.2, -39, 0, 0);
 museumGroup.add(upRightWallTwentyFive.group);
 
 /**
+ * Text
+ */
+const frontText = new Text('Museum of ♫', 1, 0.3, -3.85, 3.8, 0.01, 0)
+museumGroup.add(frontText.group)
+const pianoText = new Text('Pour jouer :\nf / g / h / j / k / l ', 0.5, 0.01, -12.84, 4.5, -13, Math.PI / 2)
+museumGroup.add(pianoText.group)
+const guitarText = new Text('Pour jouer :\ne / r / t / y / u / i / o', 0.5, 0.01, -12.84, 4.5, -24.5, Math.PI / 2)
+museumGroup.add(guitarText.group)
+const xyloText = new Text('Pour jouer :\nx / c / v / b / n / ,', 0.5, 0.01, 12.84, 4.5, -17, Math.PI / -2)
+museumGroup.add(xyloText.group)
+const tambourinText = new Text('Pour jouer : a', 0.5, 0.01, 12.84, 4, -28.8, Math.PI / -2)
+museumGroup.add(tambourinText.group)
+const contrebasseText = new Text('Pour jouer :\n1 / 2 / 3 / 4 / 5 / 6 / 7', 0.5, 0.01, -2.85, 4.5, -38.9, 0)
+museumGroup.add(contrebasseText.group)
+
+/**
  * Music instrument
  */
 // Positioning the tambourin on its base
@@ -582,6 +561,7 @@ import guitar4 from "../static/sounds/guitare/guitare4.mp3";
 import guitar5 from "../static/sounds/guitare/guitare5.mp3";
 import guitar6 from "../static/sounds/guitare/guitare6.mp3";
 import guitar7 from "../static/sounds/guitare/guitare7.mp3";
+import { Mesh } from 'three'
 
 // Importing the Xylo song
 import xylo1 from "../static/sounds/xylophone/xylo1.mp3";
@@ -996,6 +976,7 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(sizes.width, sizes.height);
 renderer.shadowMap.enabled = true;
 renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setClearAlpha(0);
 document.body.appendChild(renderer.domElement);
 renderer.render(scene, camera);
 
@@ -1025,11 +1006,50 @@ document.body.addEventListener("keydown", _e => {
   }
 });
 
+let hoverDoor = false
+document.addEventListener('click', () =>
+{
+    if(hoverDoor)
+    {
+        TweenLite.to(
+            door.group.position,
+            1,
+            {
+                x: door.group.position.x -0.85,
+                z: door.group.position.z -0.85,
+                ease: 'Power3.easeInOut'
+            }
+        )
+        TweenLite.to(
+            door.group.rotation,
+            1,
+            {
+                y: Math.PI / 2,
+                ease: 'Power3.easeInOut'
+            }
+        )
+    }
+})
+
 /**
  * Loop
  */
 const loop = () => {
   window.requestAnimationFrame(loop);
+
+  // Cursor raycasting
+  const raycasterCursor = new THREE.Vector2(cursor.x * 2, - cursor.y * 2)
+  raycaster.setFromCamera(raycasterCursor, camera)
+
+  const intersects = raycaster.intersectObject(door.group, true)
+   if(intersects.length)
+  {
+      hoverDoor = true
+  }
+  else
+  {
+      hoverDoor = false
+  }
 
   /**
    *  Get the the preformance time to creat a velocity
