@@ -718,31 +718,31 @@ audioLoader.load(piano7, buffer => {
 // Loading the sound Xylo
 audioLoader.load(xylo1, buffer => {
   soundXyloPosition.setBuffer(buffer);
-  soundXyloPosition.setRefDistance(1.8);
+  soundXyloPosition.setRefDistance(0.9 );
 });
 audioLoader.load(xylo2, buffer => {
   soundXyloPosition1.setBuffer(buffer);
-  soundXyloPosition1.setRefDistance(1.8);
+  soundXyloPosition1.setRefDistance(0.9 );
 });
 audioLoader.load(xylo3, buffer => {
   soundXyloPosition2.setBuffer(buffer);
-  soundXyloPosition2.setRefDistance(1.8);
+  soundXyloPosition2.setRefDistance(0.9 );
 });
 audioLoader.load(xylo4, buffer => {
   soundXyloPosition3.setBuffer(buffer);
-  soundXyloPosition3.setRefDistance(1.8);
+  soundXyloPosition3.setRefDistance(0.9 );
 });
 audioLoader.load(xylo5, buffer => {
   soundXyloPosition4.setBuffer(buffer);
-  soundXyloPosition4.setRefDistance(1.8);
+  soundXyloPosition4.setRefDistance(0.9 );
 });
 audioLoader.load(xylo6, buffer => {
   soundXyloPosition5.setBuffer(buffer);
-  soundXyloPosition5.setRefDistance(1.8);
+  soundXyloPosition5.setRefDistance(0.9 );
 });
 audioLoader.load(xylo7, buffer => {
   soundXyloPosition6.setBuffer(buffer);
-  soundXyloPosition6.setRefDistance(1.8);
+  soundXyloPosition6.setRefDistance(0.9 );
 });
 
 // Loading the sound Tambourin
@@ -762,23 +762,23 @@ audioLoader.load(contrebasse2, buffer => {
 });
 audioLoader.load(contrebasse3, buffer => {
   soundContrebassePosition2.setBuffer(buffer);
-  soundContrebassePosition2.setRefDistance(1.8);
+  soundContrebassePosition2.setRefDistance(3);
 });
 audioLoader.load(contrebasse4, buffer => {
   soundContrebassePosition3.setBuffer(buffer);
-  soundContrebassePosition3.setRefDistance(1.8);
+  soundContrebassePosition3.setRefDistance(3);
 });
 audioLoader.load(contrebasse5, buffer => {
   soundContrebassePosition4.setBuffer(buffer);
-  soundContrebassePosition4.setRefDistance(1.8);
+  soundContrebassePosition4.setRefDistance(3);
 });
 audioLoader.load(contrebasse6, buffer => {
   soundContrebassePosition5.setBuffer(buffer);
-  soundContrebassePosition5.setRefDistance(1.8);
+  soundContrebassePosition5.setRefDistance(3);
 });
 audioLoader.load(contrebasse7, buffer => {
   soundContrebassePosition6.setBuffer(buffer);
-  soundContrebassePosition6.setRefDistance(1.8);
+  soundContrebassePosition6.setRefDistance(3);
 });
 
 const playSound = _positionalSound => {
