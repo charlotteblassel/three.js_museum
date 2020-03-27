@@ -1,4 +1,4 @@
-import "./style/main.css"
+import "./style/main.css";
 import * as THREE from "three";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls.js";
 import Walls from "./scripts/Walls.js";
@@ -133,10 +133,10 @@ scene.add(ambientLight);
 
 // We added lights over each instrument
 
-const spotLight = new THREE.SpotLight(0xfddfff , 1, 12, Math.PI * 0.2, 0.5)
-spotLight.position.z = -32
-spotLight.position.y = 2
-scene.add(spotLight)
+const spotLight = new THREE.SpotLight(0xfddfff, 1, 12, Math.PI * 0.2, 0.5);
+spotLight.position.z = -32;
+spotLight.position.y = 2;
+scene.add(spotLight);
 spotLight.target.position.z = -36;
 scene.add(spotLight.target);
 
@@ -566,345 +566,327 @@ scene.add(bassviolin.group);
 // AUDIO
 
 // Importing the piano songs
-import piano1 from "../static/sounds/piano/piano1.mp3"
-import piano2 from "../static/sounds/piano/piano2.mp3"
-import piano3 from "../static/sounds/piano/piano3.mp3"
-import piano4 from "../static/sounds/piano/piano4.mp3"
-import piano5 from "../static/sounds/piano/piano5.mp3"
-import piano6 from "../static/sounds/piano/piano6.mp3"
-import piano7 from "../static/sounds/piano/piano7.mp3"
+import piano1 from "../static/sounds/piano/piano1.mp3";
+import piano2 from "../static/sounds/piano/piano2.mp3";
+import piano3 from "../static/sounds/piano/piano3.mp3";
+import piano4 from "../static/sounds/piano/piano4.mp3";
+import piano5 from "../static/sounds/piano/piano5.mp3";
+import piano6 from "../static/sounds/piano/piano6.mp3";
+import piano7 from "../static/sounds/piano/piano7.mp3";
 
 // Importing the guitar song
-import guitar1 from "../static/sounds/guitare/guitare1.mp3"
-import guitar2 from "../static/sounds/guitare/guitare2.mp3"
-import guitar3 from "../static/sounds/guitare/guitare3.mp3"
-import guitar4 from "../static/sounds/guitare/guitare4.mp3"
-import guitar5 from "../static/sounds/guitare/guitare5.mp3"
-import guitar6 from "../static/sounds/guitare/guitare6.mp3"
-import guitar7 from "../static/sounds/guitare/guitare7.mp3"
+import guitar1 from "../static/sounds/guitare/guitare1.mp3";
+import guitar2 from "../static/sounds/guitare/guitare2.mp3";
+import guitar3 from "../static/sounds/guitare/guitare3.mp3";
+import guitar4 from "../static/sounds/guitare/guitare4.mp3";
+import guitar5 from "../static/sounds/guitare/guitare5.mp3";
+import guitar6 from "../static/sounds/guitare/guitare6.mp3";
+import guitar7 from "../static/sounds/guitare/guitare7.mp3";
 
 // Importing the Xylo song
-import xylo1 from "../static/sounds/xylophone/xylo1.mp3"
-import xylo2 from "../static/sounds/xylophone/xylo2.mp3"
-import xylo3 from "../static/sounds/xylophone/xylo3.mp3"
-import xylo4 from "../static/sounds/xylophone/xylo4.mp3"
-import xylo5 from "../static/sounds/xylophone/xylo5.mp3"
-import xylo6 from "../static/sounds/xylophone/xylo6.mp3"
-import xylo7 from "../static/sounds/xylophone/xylo7.mp3"
+import xylo1 from "../static/sounds/xylophone/xylo1.mp3";
+import xylo2 from "../static/sounds/xylophone/xylo2.mp3";
+import xylo3 from "../static/sounds/xylophone/xylo3.mp3";
+import xylo4 from "../static/sounds/xylophone/xylo4.mp3";
+import xylo5 from "../static/sounds/xylophone/xylo5.mp3";
+import xylo6 from "../static/sounds/xylophone/xylo6.mp3";
+import xylo7 from "../static/sounds/xylophone/xylo7.mp3";
 
-import tambourinSoloSound from "../static/sounds/tambourin/tambourin.mp3"
+import tambourinSoloSound from "../static/sounds/tambourin/tambourin.mp3";
 
-import contrebasse1 from "../static/sounds/contrebasse/contrebasse1.mp3"
-import contrebasse2 from "../static/sounds/contrebasse/contrebasse2.mp3"
-import contrebasse3 from "../static/sounds/contrebasse/contrebasse3.mp3"
-import contrebasse4 from "../static/sounds/contrebasse/contrebasse4.mp3"
-import contrebasse5 from "../static/sounds/contrebasse/contrebasse5.mp3"
-import contrebasse6 from "../static/sounds/contrebasse/contrebasse6.mp3"
-import contrebasse7 from "../static/sounds/contrebasse/contrebasse7.mp3"
+import contrebasse1 from "../static/sounds/contrebasse/contrebasse1.mp3";
+import contrebasse2 from "../static/sounds/contrebasse/contrebasse2.mp3";
+import contrebasse3 from "../static/sounds/contrebasse/contrebasse3.mp3";
+import contrebasse4 from "../static/sounds/contrebasse/contrebasse4.mp3";
+import contrebasse5 from "../static/sounds/contrebasse/contrebasse5.mp3";
+import contrebasse6 from "../static/sounds/contrebasse/contrebasse6.mp3";
+import contrebasse7 from "../static/sounds/contrebasse/contrebasse7.mp3";
 
+const pianoSound1 = new Audio(piano1);
+const pianoSound2 = new Audio(piano2);
+const pianoSound3 = new Audio(piano3);
+const pianoSound4 = new Audio(piano4);
+const pianoSound5 = new Audio(piano5);
+const pianoSound6 = new Audio(piano6);
+const pianoSound7 = new Audio(piano7);
 
+const guitarSound1 = new Audio(guitar1);
+const guitarSound2 = new Audio(guitar2);
+const guitarSound3 = new Audio(guitar3);
+const guitarSound4 = new Audio(guitar4);
+const guitarSound5 = new Audio(guitar5);
+const guitarSound6 = new Audio(guitar6);
+const guitarSound7 = new Audio(guitar7);
 
+const xyloSound1 = new Audio(xylo1);
+const xyloSound2 = new Audio(xylo2);
+const xyloSound3 = new Audio(xylo3);
+const xyloSound4 = new Audio(xylo4);
+const xyloSound5 = new Audio(xylo5);
+const xyloSound6 = new Audio(xylo6);
+const xyloSound7 = new Audio(xylo7);
 
-const pianoSound1 = new Audio(piano1)
-const pianoSound2 = new Audio(piano2)
-const pianoSound3 = new Audio(piano3)
-const pianoSound4 = new Audio(piano4)
-const pianoSound5 = new Audio(piano5)
-const pianoSound6 = new Audio(piano6)
-const pianoSound7 = new Audio(piano7)
+const tambourinSound1 = new Audio(tambourinSoloSound);
 
-const guitarSound1 = new Audio(guitar1)
-const guitarSound2 = new Audio(guitar2)
-const guitarSound3 = new Audio(guitar3)
-const guitarSound4 = new Audio(guitar4)
-const guitarSound5 = new Audio(guitar5)
-const guitarSound6 = new Audio(guitar6)
-const guitarSound7 = new Audio(guitar7)
-
-const xyloSound1 = new Audio(xylo1)
-const xyloSound2 = new Audio(xylo2)
-const xyloSound3 = new Audio(xylo3)
-const xyloSound4 = new Audio(xylo4)
-const xyloSound5 = new Audio(xylo5)
-const xyloSound6 = new Audio(xylo6)
-const xyloSound7 = new Audio(xylo7)
-
-const tambourinSound1= new Audio(tambourinSoloSound)
-
-const contrebasseSound1 = new Audio(contrebasse1)
-const contrebasseSound2 = new Audio(contrebasse2)
-const contrebasseSound3 = new Audio(contrebasse3)
-const contrebasseSound4 = new Audio(contrebasse4)
-const contrebasseSound5 = new Audio(contrebasse5)
-const contrebasseSound6 = new Audio(contrebasse6)
-const contrebasseSound7 = new Audio(contrebasse7)
+const contrebasseSound1 = new Audio(contrebasse1);
+const contrebasseSound2 = new Audio(contrebasse2);
+const contrebasseSound3 = new Audio(contrebasse3);
+const contrebasseSound4 = new Audio(contrebasse4);
+const contrebasseSound5 = new Audio(contrebasse5);
+const contrebasseSound6 = new Audio(contrebasse6);
+const contrebasseSound7 = new Audio(contrebasse7);
 
 const listener = new THREE.AudioListener();
 camera.add(listener);
 
-const soundGuitarposition = new THREE.PositionalAudio(listener)
-const soundGuitarposition1 = new THREE.PositionalAudio(listener)
-const soundGuitarposition2 = new THREE.PositionalAudio(listener)
-const soundGuitarposition3 = new THREE.PositionalAudio(listener)
-const soundGuitarposition4 = new THREE.PositionalAudio(listener)
-const soundGuitarposition5 = new THREE.PositionalAudio(listener)
-const soundGuitarposition6 = new THREE.PositionalAudio(listener)
+const soundGuitarposition = new THREE.PositionalAudio(listener);
+const soundGuitarposition1 = new THREE.PositionalAudio(listener);
+const soundGuitarposition2 = new THREE.PositionalAudio(listener);
+const soundGuitarposition3 = new THREE.PositionalAudio(listener);
+const soundGuitarposition4 = new THREE.PositionalAudio(listener);
+const soundGuitarposition5 = new THREE.PositionalAudio(listener);
+const soundGuitarposition6 = new THREE.PositionalAudio(listener);
 
-const soundPianoposition = new THREE.PositionalAudio(listener)
-const soundPianoposition1 = new THREE.PositionalAudio(listener)
-const soundPianoposition2 = new THREE.PositionalAudio(listener)
-const soundPianoposition3 = new THREE.PositionalAudio(listener)
-const soundPianoposition4 = new THREE.PositionalAudio(listener)
-const soundPianoposition5 = new THREE.PositionalAudio(listener)
-const soundPianoposition6 = new THREE.PositionalAudio(listener)
+const soundPianoposition = new THREE.PositionalAudio(listener);
+const soundPianoposition1 = new THREE.PositionalAudio(listener);
+const soundPianoposition2 = new THREE.PositionalAudio(listener);
+const soundPianoposition3 = new THREE.PositionalAudio(listener);
+const soundPianoposition4 = new THREE.PositionalAudio(listener);
+const soundPianoposition5 = new THREE.PositionalAudio(listener);
+const soundPianoposition6 = new THREE.PositionalAudio(listener);
 
-const soundXyloPosition = new THREE.PositionalAudio(listener)
-const soundXyloPosition1 = new THREE.PositionalAudio(listener)
-const soundXyloPosition2 = new THREE.PositionalAudio(listener)
-const soundXyloPosition3 = new THREE.PositionalAudio(listener)
-const soundXyloPosition4 = new THREE.PositionalAudio(listener)
-const soundXyloPosition5 = new THREE.PositionalAudio(listener)
-const soundXyloPosition6 = new THREE.PositionalAudio(listener)
+const soundXyloPosition = new THREE.PositionalAudio(listener);
+const soundXyloPosition1 = new THREE.PositionalAudio(listener);
+const soundXyloPosition2 = new THREE.PositionalAudio(listener);
+const soundXyloPosition3 = new THREE.PositionalAudio(listener);
+const soundXyloPosition4 = new THREE.PositionalAudio(listener);
+const soundXyloPosition5 = new THREE.PositionalAudio(listener);
+const soundXyloPosition6 = new THREE.PositionalAudio(listener);
 
-const soundTambourinPosition = new THREE.PositionalAudio(listener)
+const soundTambourinPosition = new THREE.PositionalAudio(listener);
 
-const soundContrebassePosition = new THREE.PositionalAudio(listener)
-const soundContrebassePosition1 = new THREE.PositionalAudio(listener)
-const soundContrebassePosition2 = new THREE.PositionalAudio(listener)
-const soundContrebassePosition3 = new THREE.PositionalAudio(listener)
-const soundContrebassePosition4 = new THREE.PositionalAudio(listener)
-const soundContrebassePosition5 = new THREE.PositionalAudio(listener)
-const soundContrebassePosition6 = new THREE.PositionalAudio(listener)
-
-
+const soundContrebassePosition = new THREE.PositionalAudio(listener);
+const soundContrebassePosition1 = new THREE.PositionalAudio(listener);
+const soundContrebassePosition2 = new THREE.PositionalAudio(listener);
+const soundContrebassePosition3 = new THREE.PositionalAudio(listener);
+const soundContrebassePosition4 = new THREE.PositionalAudio(listener);
+const soundContrebassePosition5 = new THREE.PositionalAudio(listener);
+const soundContrebassePosition6 = new THREE.PositionalAudio(listener);
 
 const audioLoader = new THREE.AudioLoader();
 
-
 // Loading the sound Guitar
 audioLoader.load(guitar1, buffer => {
-  soundGuitarposition.setBuffer(buffer)
-  soundGuitarposition.setRefDistance(1.8)
-})
+  soundGuitarposition.setBuffer(buffer);
+  soundGuitarposition.setRefDistance(1.8);
+});
 audioLoader.load(guitar2, buffer => {
-    soundGuitarposition1.setBuffer(buffer)
-    soundGuitarposition1.setRefDistance(1.8)
-})
+  soundGuitarposition1.setBuffer(buffer);
+  soundGuitarposition1.setRefDistance(1.8);
+});
 audioLoader.load(guitar3, buffer => {
-  soundGuitarposition2.setBuffer(buffer)
-  soundGuitarposition2.setRefDistance(1.8)
-})
+  soundGuitarposition2.setBuffer(buffer);
+  soundGuitarposition2.setRefDistance(1.8);
+});
 audioLoader.load(guitar4, buffer => {
-    soundGuitarposition3.setBuffer(buffer)
-    soundGuitarposition3.setRefDistance(1.8)
-})
+  soundGuitarposition3.setBuffer(buffer);
+  soundGuitarposition3.setRefDistance(1.8);
+});
 audioLoader.load(guitar5, buffer => {
-  soundGuitarposition4.setBuffer(buffer)
-  soundGuitarposition4.setRefDistance(1.8)
-})
+  soundGuitarposition4.setBuffer(buffer);
+  soundGuitarposition4.setRefDistance(1.8);
+});
 audioLoader.load(guitar6, buffer => {
-    soundGuitarposition5.setBuffer(buffer)
-    soundGuitarposition5.setRefDistance(1.8)
-})
+  soundGuitarposition5.setBuffer(buffer);
+  soundGuitarposition5.setRefDistance(1.8);
+});
 audioLoader.load(guitar7, buffer => {
-    soundGuitarposition6.setBuffer(buffer)
-    soundGuitarposition6.setRefDistance(1.8)
-})
-
-
+  soundGuitarposition6.setBuffer(buffer);
+  soundGuitarposition6.setRefDistance(1.8);
+});
 
 // Loading the sound Piano
-  audioLoader.load(piano1, buffer => {
-    soundPianoposition.setBuffer(buffer)
-    soundPianoposition.setRefDistance(1.8)
-  })
-  audioLoader.load(piano2, buffer => {
-      soundPianoposition1.setBuffer(buffer)
-      soundPianoposition1.setRefDistance(1.8)
-  })
-  audioLoader.load(piano3, buffer => {
-    soundPianoposition2.setBuffer(buffer)
-    soundPianoposition2.setRefDistance(1.8)
-  })
-  audioLoader.load(piano4, buffer => {
-      soundPianoposition3.setBuffer(buffer)
-      soundPianoposition3.setRefDistance(1.8)
-  })
-  audioLoader.load(piano5, buffer => {
-    soundPianoposition4.setBuffer(buffer)
-    soundPianoposition4.setRefDistance(1.8)
-  })
-  audioLoader.load(piano6, buffer => {
-      soundPianoposition5.setBuffer(buffer)
-      soundPianoposition5.setRefDistance(1.8)
-  })
-  audioLoader.load(piano7, buffer => {
-      soundPianoposition6.setBuffer(buffer)
-      soundPianoposition6.setRefDistance(1.8)
-  })
-
-
+audioLoader.load(piano1, buffer => {
+  soundPianoposition.setBuffer(buffer);
+  soundPianoposition.setRefDistance(1.8);
+});
+audioLoader.load(piano2, buffer => {
+  soundPianoposition1.setBuffer(buffer);
+  soundPianoposition1.setRefDistance(1.8);
+});
+audioLoader.load(piano3, buffer => {
+  soundPianoposition2.setBuffer(buffer);
+  soundPianoposition2.setRefDistance(1.8);
+});
+audioLoader.load(piano4, buffer => {
+  soundPianoposition3.setBuffer(buffer);
+  soundPianoposition3.setRefDistance(1.8);
+});
+audioLoader.load(piano5, buffer => {
+  soundPianoposition4.setBuffer(buffer);
+  soundPianoposition4.setRefDistance(1.8);
+});
+audioLoader.load(piano6, buffer => {
+  soundPianoposition5.setBuffer(buffer);
+  soundPianoposition5.setRefDistance(1.8);
+});
+audioLoader.load(piano7, buffer => {
+  soundPianoposition6.setBuffer(buffer);
+  soundPianoposition6.setRefDistance(1.8);
+});
 
 // Loading the sound Xylo
-  audioLoader.load(xylo1, buffer => {
-    soundXyloPosition.setBuffer(buffer)
-    soundXyloPosition.setRefDistance(1.8)
-  })
-  audioLoader.load(xylo2, buffer => {
-      soundXyloPosition1.setBuffer(buffer)
-      soundXyloPosition1.setRefDistance(1.8)
-  })
-  audioLoader.load(xylo3, buffer => {
-    soundXyloPosition2.setBuffer(buffer)
-    soundXyloPosition2.setRefDistance(1.8)
-  })
-  audioLoader.load(xylo4, buffer => {
-      soundXyloPosition3.setBuffer(buffer)
-      soundXyloPosition3.setRefDistance(1.8)
-  })
-  audioLoader.load(xylo5, buffer => {
-    soundXyloPosition4.setBuffer(buffer)
-    soundXyloPosition4.setRefDistance(1.8)
-  })
-  audioLoader.load(xylo6, buffer => {
-      soundXyloPosition5.setBuffer(buffer)
-      soundXyloPosition5.setRefDistance(1.8)
-  })
-  audioLoader.load(xylo7, buffer => {
-      soundXyloPosition6.setBuffer(buffer)
-      soundXyloPosition6.setRefDistance(1.8)
-  })
+audioLoader.load(xylo1, buffer => {
+  soundXyloPosition.setBuffer(buffer);
+  soundXyloPosition.setRefDistance(1.8);
+});
+audioLoader.load(xylo2, buffer => {
+  soundXyloPosition1.setBuffer(buffer);
+  soundXyloPosition1.setRefDistance(1.8);
+});
+audioLoader.load(xylo3, buffer => {
+  soundXyloPosition2.setBuffer(buffer);
+  soundXyloPosition2.setRefDistance(1.8);
+});
+audioLoader.load(xylo4, buffer => {
+  soundXyloPosition3.setBuffer(buffer);
+  soundXyloPosition3.setRefDistance(1.8);
+});
+audioLoader.load(xylo5, buffer => {
+  soundXyloPosition4.setBuffer(buffer);
+  soundXyloPosition4.setRefDistance(1.8);
+});
+audioLoader.load(xylo6, buffer => {
+  soundXyloPosition5.setBuffer(buffer);
+  soundXyloPosition5.setRefDistance(1.8);
+});
+audioLoader.load(xylo7, buffer => {
+  soundXyloPosition6.setBuffer(buffer);
+  soundXyloPosition6.setRefDistance(1.8);
+});
 
 // Loading the sound Tambourin
-  audioLoader.load(tambourinSoloSound, buffer => {
-    soundTambourinPosition.setBuffer(buffer)
-    soundTambourinPosition.setRefDistance(1.8)
-})
-
+audioLoader.load(tambourinSoloSound, buffer => {
+  soundTambourinPosition.setBuffer(buffer);
+  soundTambourinPosition.setRefDistance(1.8);
+});
 
 // Loading the sound contrebasse
 audioLoader.load(contrebasse1, buffer => {
-    soundContrebassePosition.setBuffer(buffer)
-    soundContrebassePosition.setRefDistance(1.8)
-  })
-  audioLoader.load(contrebasse2, buffer => {
-      soundContrebassePosition1.setBuffer(buffer)
-      soundContrebassePosition1.setRefDistance(1.8)
-  })
-  audioLoader.load(contrebasse3, buffer => {
-    soundContrebassePosition2.setBuffer(buffer)
-    soundContrebassePosition2.setRefDistance(1.8)
-  })
-  audioLoader.load(contrebasse4, buffer => {
-      soundContrebassePosition3.setBuffer(buffer)
-      soundContrebassePosition3.setRefDistance(1.8)
-  })
-  audioLoader.load(contrebasse5, buffer => {
-    soundContrebassePosition4.setBuffer(buffer)
-    soundContrebassePosition4.setRefDistance(1.8)
-  })
-  audioLoader.load(contrebasse6, buffer => {
-      soundContrebassePosition5.setBuffer(buffer)
-      soundContrebassePosition5.setRefDistance(1.8)
-  })
-  audioLoader.load(contrebasse7, buffer => {
-      soundContrebassePosition6.setBuffer(buffer)
-      soundContrebassePosition6.setRefDistance(1.8)
-  })
-  
+  soundContrebassePosition.setBuffer(buffer);
+  soundContrebassePosition.setRefDistance(1.8);
+});
+audioLoader.load(contrebasse2, buffer => {
+  soundContrebassePosition1.setBuffer(buffer);
+  soundContrebassePosition1.setRefDistance(1.8);
+});
+audioLoader.load(contrebasse3, buffer => {
+  soundContrebassePosition2.setBuffer(buffer);
+  soundContrebassePosition2.setRefDistance(1.8);
+});
+audioLoader.load(contrebasse4, buffer => {
+  soundContrebassePosition3.setBuffer(buffer);
+  soundContrebassePosition3.setRefDistance(1.8);
+});
+audioLoader.load(contrebasse5, buffer => {
+  soundContrebassePosition4.setBuffer(buffer);
+  soundContrebassePosition4.setRefDistance(1.8);
+});
+audioLoader.load(contrebasse6, buffer => {
+  soundContrebassePosition5.setBuffer(buffer);
+  soundContrebassePosition5.setRefDistance(1.8);
+});
+audioLoader.load(contrebasse7, buffer => {
+  soundContrebassePosition6.setBuffer(buffer);
+  soundContrebassePosition6.setRefDistance(1.8);
+});
 
+const playSound = _positionalSound => {
+  _positionalSound._startedAt = _positionalSound.context.currentTime + 0;
 
-const playSound = (_positionalSound) =>
-{
-  _positionalSound._startedAt = _positionalSound.context.currentTime + 0
+  const source = _positionalSound.context.createBufferSource();
+  source.buffer = _positionalSound.buffer;
+  source.loop = _positionalSound.loop;
+  source.loopStart = _positionalSound.loopStart;
+  source.loopEnd = _positionalSound.loopEnd;
+  source.onended = _positionalSound.onEnded.bind(_positionalSound);
+  source.start(
+    _positionalSound._startedAt,
+    _positionalSound._pausedAt + _positionalSound.offset,
+    _positionalSound.duration
+  );
 
-  const source = _positionalSound.context.createBufferSource()
-  source.buffer = _positionalSound.buffer
-  source.loop = _positionalSound.loop
-  source.loopStart = _positionalSound.loopStart
-  source.loopEnd = _positionalSound.loopEnd
-  source.onended = _positionalSound.onEnded.bind( _positionalSound )
-  source.start(_positionalSound._startedAt, _positionalSound._pausedAt + _positionalSound.offset, _positionalSound.duration)
+  _positionalSound.isPlaying = true;
 
-  _positionalSound.isPlaying = true
+  _positionalSound.source = source;
 
-  _positionalSound.source = source
+  _positionalSound.setDetune(_positionalSound.detune);
+  _positionalSound.setPlaybackRate(_positionalSound.playbackRate);
 
-  _positionalSound.setDetune( _positionalSound.detune )
-  _positionalSound.setPlaybackRate( _positionalSound.playbackRate )
-
-  _positionalSound.connect()
-}
+  _positionalSound.connect();
+};
 
 window.addEventListener("keypress", _event => {
   if (_event.code === "KeyE") {
-    playSound(soundGuitarposition)
+    playSound(soundGuitarposition);
   } else if (_event.code === "KeyR") {
-    playSound(soundGuitarposition1)
+    playSound(soundGuitarposition1);
   } else if (_event.code === "KeyT") {
-    playSound(soundGuitarposition2)
+    playSound(soundGuitarposition2);
   } else if (_event.code === "KeyY") {
-    playSound(soundGuitarposition3)
+    playSound(soundGuitarposition3);
   } else if (_event.code === "KeyU") {
-    playSound(soundGuitarposition4)
+    playSound(soundGuitarposition4);
   } else if (_event.code === "KeyI") {
-    playSound(soundGuitarposition5)
+    playSound(soundGuitarposition5);
   } else if (_event.code === "KeyO") {
-    playSound(soundGuitarposition6)
-  } 
-    else if (_event.code === "KeyF") {
-    playSound(soundPianoposition)
+    playSound(soundGuitarposition6);
+  } else if (_event.code === "KeyF") {
+    playSound(soundPianoposition);
   } else if (_event.code === "KeyG") {
-    playSound(soundPianoposition1)
+    playSound(soundPianoposition1);
   } else if (_event.code === "KeyH") {
-    playSound(soundPianoposition2)
+    playSound(soundPianoposition2);
   } else if (_event.code === "KeyJ") {
-    playSound(soundPianoposition3)
+    playSound(soundPianoposition3);
   } else if (_event.code === "KeyK") {
-    playSound(soundPianoposition4)
+    playSound(soundPianoposition4);
   } else if (_event.code === "KeyL") {
-    playSound(soundPianoposition5)
+    playSound(soundPianoposition5);
   } else if (_event.code === "Semicolon") {
-    playSound(soundPianoposition6)
-  }
-
-  else if (_event.code === "KeyZ") {
-    playSound(soundXyloPosition)
+    playSound(soundPianoposition6);
+  } else if (_event.code === "KeyZ") {
+    playSound(soundXyloPosition);
   } else if (_event.code === "KeyX") {
-    playSound(soundXyloPosition1)
+    playSound(soundXyloPosition1);
   } else if (_event.code === "KeyC") {
-    playSound(soundXyloPosition2)
+    playSound(soundXyloPosition2);
   } else if (_event.code === "KeyV") {
-    playSound(soundXyloPosition3)
+    playSound(soundXyloPosition3);
   } else if (_event.code === "KeyB") {
-    playSound(soundXyloPosition4)
+    playSound(soundXyloPosition4);
   } else if (_event.code === "KeyN") {
-    playSound(soundXyloPosition5)
+    playSound(soundXyloPosition5);
   } else if (_event.code === "KeyM") {
-    playSound(soundXyloPosition6)
-  }
-
-  else if(_event.code === "KeyQ"){
-    playSound(soundTambourinPosition)
-  }
-
-  else if (_event.code === "Digit1") {
-    playSound(soundContrebassePosition)
+    playSound(soundXyloPosition6);
+  } else if (_event.code === "KeyQ") {
+    playSound(soundTambourinPosition);
+  } else if (_event.code === "Digit1") {
+    playSound(soundContrebassePosition);
   } else if (_event.code === "Digit2") {
-    playSound(soundContrebassePosition1)
+    playSound(soundContrebassePosition1);
   } else if (_event.code === "Digit3") {
-    playSound(soundContrebassePosition2)
+    playSound(soundContrebassePosition2);
   } else if (_event.code === "Digit4") {
-    playSound(soundContrebassePosition3)
+    playSound(soundContrebassePosition3);
   } else if (_event.code === "Digit5") {
-    playSound(soundContrebassePosition4)
+    playSound(soundContrebassePosition4);
   } else if (_event.code === "Digit6") {
-    playSound(soundContrebassePosition5)
+    playSound(soundContrebassePosition5);
   } else if (_event.code === "Digit7") {
-    playSound(soundContrebassePosition6)
+    playSound(soundContrebassePosition6);
   }
-
-})
+});
 // Displaying an element on which the positional sound is based
 
 const audioGuitar = new THREE.Mesh(
@@ -927,95 +909,85 @@ audioGuitar.add(
   soundGuitarposition6
 );
 
-
 // Displaying an element on which the positional sound is based
 
 const audioPiano = new THREE.Mesh(
-    new THREE.SphereBufferGeometry(1, 1, 8),
-    new THREE.MeshNormalMaterial({
-      color: 0xff0000
-    })
-  );
-  
-  audioPiano.position.set(-9.9, 0.5, -15.1)
-  scene.add(audioPiano);
-  
-  audioPiano.add(
-    soundPianoposition,
-    soundPianoposition1,
-    soundPianoposition2,
-    soundPianoposition3,
-    soundPianoposition4,
-    soundPianoposition5,
-    soundPianoposition6
-  );
+  new THREE.SphereBufferGeometry(1, 1, 8),
+  new THREE.MeshNormalMaterial({
+    color: 0xff0000
+  })
+);
+
+audioPiano.position.set(-9.9, 0.5, -15.1);
+scene.add(audioPiano);
+
+audioPiano.add(
+  soundPianoposition,
+  soundPianoposition1,
+  soundPianoposition2,
+  soundPianoposition3,
+  soundPianoposition4,
+  soundPianoposition5,
+  soundPianoposition6
+);
 
 // Displaying an element on which the positional sound is based
 
 const audioXylo = new THREE.Mesh(
-    new THREE.SphereBufferGeometry(1, 1, 8),
-    new THREE.MeshNormalMaterial({
-      color: 0xff0000
-    })
-  );
-  
-  audioXylo.position.set(10.1, 0.2 ,-15)
-  scene.add(audioXylo);
-  
-  audioXylo.add(
-    soundXyloPosition,
-    soundXyloPosition1,
-    soundXyloPosition2,
-    soundXyloPosition3,
-    soundXyloPosition4,
-    soundXyloPosition5,
-    soundXyloPosition6
-  );
+  new THREE.SphereBufferGeometry(1, 1, 8),
+  new THREE.MeshNormalMaterial({
+    color: 0xff0000
+  })
+);
 
+audioXylo.position.set(10.1, 0.2, -15);
+scene.add(audioXylo);
+
+audioXylo.add(
+  soundXyloPosition,
+  soundXyloPosition1,
+  soundXyloPosition2,
+  soundXyloPosition3,
+  soundXyloPosition4,
+  soundXyloPosition5,
+  soundXyloPosition6
+);
 
 // Displaying an element on which the positional sound is based
 
 const audiTambourin = new THREE.Mesh(
-    new THREE.SphereBufferGeometry(1, 1, 8),
-    new THREE.MeshNormalMaterial({
-      color: 0xff0000
-    })
-  );
-  
-  audiTambourin.position.set(9.8, 0.6 ,-27)
-  scene.add(audiTambourin);
-  
-  audiTambourin.add(
-    soundTambourinPosition
-  );
+  new THREE.SphereBufferGeometry(1, 1, 8),
+  new THREE.MeshNormalMaterial({
+    color: 0xff0000
+  })
+);
 
+audiTambourin.position.set(9.8, 0.6, -27);
+scene.add(audiTambourin);
 
+audiTambourin.add(soundTambourinPosition);
 
 // Displaying an element on which the positional sound is based
 
 const audioContrebasse = new THREE.Mesh(
-    new THREE.SphereBufferGeometry(2, 2, 2),
-    new THREE.MeshNormalMaterial({
-      color: 0xff0000
-    })
-  );
-  
-  audioContrebasse.position.set(10.1, 0.2 ,-15)
-  scene.add(audioContrebasse);
-  
-  audioContrebasse.add(
-    soundContrebassePosition,
-    soundContrebassePosition1,
-    soundContrebassePosition2,
-    soundContrebassePosition3,
-    soundContrebassePosition4,
-    soundContrebassePosition5,
-    soundContrebassePosition6
-  );
+  new THREE.SphereBufferGeometry(2, 2, 2),
+  new THREE.MeshNormalMaterial({
+    color: 0xff0000
+  })
+);
 
+audioContrebasse.position.set(10.1, 0.2, -15);
+scene.add(audioContrebasse);
 
-
-
+audioContrebasse.add(
+  soundContrebassePosition,
+  soundContrebassePosition1,
+  soundContrebassePosition2,
+  soundContrebassePosition3,
+  soundContrebassePosition4,
+  soundContrebassePosition5,
+  soundContrebassePosition6
+);
 
 /**
  * Renderer
@@ -1092,8 +1064,6 @@ const loop = () => {
   controls.moveForward(-velocity.z * delta);
 
   prevTime = time;
-
- 
 
   renderer.render(scene, camera);
 };
