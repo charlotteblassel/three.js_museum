@@ -981,10 +981,9 @@ document.body.addEventListener("keydown", _e => {
   }
 });
 
-let hoverDoor = false
 document.addEventListener('click', () =>
 {
-    if(hoverDoor)
+    if(hoverDoor == false)
     {
         TweenLite.to(
             door.group.position,
