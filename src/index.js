@@ -582,6 +582,8 @@ import contrebasse5 from "../static/sounds/contrebasse/contrebasse5.mp3";
 import contrebasse6 from "../static/sounds/contrebasse/contrebasse6.mp3";
 import contrebasse7 from "../static/sounds/contrebasse/contrebasse7.mp3";
 
+import bell1 from "../static/sounds/cloche.mp3"
+
 const pianoSound1 = new Audio(piano1);
 const pianoSound2 = new Audio(piano2);
 const pianoSound3 = new Audio(piano3);
@@ -607,6 +609,7 @@ const xyloSound6 = new Audio(xylo6);
 const xyloSound7 = new Audio(xylo7);
 
 const tambourinSound1 = new Audio(tambourinSoloSound);
+const bellSound1 = new Audio(bell1)
 
 const contrebasseSound1 = new Audio(contrebasse1);
 const contrebasseSound2 = new Audio(contrebasse2);
@@ -718,31 +721,31 @@ audioLoader.load(piano7, buffer => {
 // Loading the sound Xylo
 audioLoader.load(xylo1, buffer => {
   soundXyloPosition.setBuffer(buffer);
-  soundXyloPosition.setRefDistance(0.9 );
+  soundXyloPosition.setRefDistance(0.9);
 });
 audioLoader.load(xylo2, buffer => {
   soundXyloPosition1.setBuffer(buffer);
-  soundXyloPosition1.setRefDistance(0.9 );
+  soundXyloPosition1.setRefDistance(0.9);
 });
 audioLoader.load(xylo3, buffer => {
   soundXyloPosition2.setBuffer(buffer);
-  soundXyloPosition2.setRefDistance(0.9 );
+  soundXyloPosition2.setRefDistance(0.9);
 });
 audioLoader.load(xylo4, buffer => {
   soundXyloPosition3.setBuffer(buffer);
-  soundXyloPosition3.setRefDistance(0.9 );
+  soundXyloPosition3.setRefDistance(0.9);
 });
 audioLoader.load(xylo5, buffer => {
   soundXyloPosition4.setBuffer(buffer);
-  soundXyloPosition4.setRefDistance(0.9 );
+  soundXyloPosition4.setRefDistance(0.9);
 });
 audioLoader.load(xylo6, buffer => {
   soundXyloPosition5.setBuffer(buffer);
-  soundXyloPosition5.setRefDistance(0.9 );
+  soundXyloPosition5.setRefDistance(0.9);
 });
 audioLoader.load(xylo7, buffer => {
   soundXyloPosition6.setBuffer(buffer);
-  soundXyloPosition6.setRefDistance(0.9 );
+  soundXyloPosition6.setRefDistance(0.9);
 });
 
 // Loading the sound Tambourin
@@ -1032,7 +1035,9 @@ document.addEventListener('click', () =>
                 ease: 'Power3.easeInOut'
             }
         )
-    }
+        bellSound1.currentTime = 0
+    } bellSound1.play()
+    
 })
 
 /**
