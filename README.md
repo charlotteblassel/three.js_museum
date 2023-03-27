@@ -14,7 +14,6 @@ Avalaible [here](https://musicmuseum.netlify.com/)
 
 ## Team : 
 - [David Dehe](https://github.com/David2he)
-- [Valentin Sejourne](https://github.com/valentinsejourne) 
 - [Axel Viskovic](https://github.com/axelviskovic)
 - [Charlotte Blassel](https://github.com/charlotteblassel)
 - [Aurélien Provenchère](https://github.com/aurelienprovenchere)
